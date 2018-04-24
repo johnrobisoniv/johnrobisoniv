@@ -1428,7 +1428,8 @@ var regionsData = {
       callback('Overview load csv function callback');
 
     },
-    cards: [{ // Card 0
+    cards: [
+      { // Card 0
         title: 'Overview: The African Maritime Space',
         menu: 'Regions Overview',
         metadata: {
@@ -1534,77 +1535,7 @@ var regionsData = {
             html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
           }
         ]
-      },
-      // { // Card 1
-      //   title: 'Region 1',
-      //   menu: 'Region 1',
-      //   metadata: {
-      //     owner: '',
-      //     description: ''
-      //   },
-      //   map: {
-      //     scale: [],
-      //     translate: [],
-      //     extent: [
-      //       [],
-      //       []
-      //     ],
-      //     highlights: [],
-      //     iso3: '',
-      //     load: function(index, csv) {
-      //       var layer = 'card-' + index + '-layer';
-      //       d3.select('.card-eez-layer')
-      //         .classed(layer, true);
-      //     },
-      //     switch: function(index) {
-      //       var hl = ['CPV', 'SEN', 'GNB', 'GMB', 'GIN', 'SLE', 'LBR'];
-      //       hl.forEach(function(iso) {
-      //         //d3.selectAl
-      //       });
-      //     }
-      //   },
-      //   els: [{
-      //       tag: 'h1',
-      //       text: ''
-      //     },
-      //     {
-      //       tag: 'caption',
-      //       text: '<em>A subheading line on the country\'s greatest strength</em>'
-      //     },
-      //     {
-      //       tag: 'p',
-      //       html: 'The first paragraph will introduce the country in the context of the region.'
-      //     },
-      //     // {
-      //     //   tag: 'radar'
-      //     // },
-      //     {
-      //       tag: 'video',
-      //       videoId: 'AXQHK213mFA',
-      //       thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
-      //     },
-      //     {
-      //       tag: 'caption',
-      //       text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-      //     },
-      //     {
-      //       tag: 'h2',
-      //       html: 'Country 1\'s Strengths'
-      //     },
-      //     {
-      //       tag: 'p',
-      //       html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-      //     },
-      //     {
-      //       tag: 'h2',
-      //       html: 'Challenges Facing Country 1'
-      //     },
-      //     {
-      //       tag: 'p',
-      //       html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
-      //     }
-      //   ]
-      // }
+      }
     ]
   },
   westernCoast: {
@@ -1719,51 +1650,40 @@ var regionsData = {
         ]
       },
       {
-        "title": "Cabo Verde",
-        "menu": "Cabo Verde",
-        "map": {
-          "highlights": [
-            "CPV"
-          ],
-          "iso3": "CPV",
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
-
-          }
-        },
-        "els": [{
-            "tag": "h1",
-            "text": "Cabo Verde"
-          },
-          {
-            "tag": "caption",
-            "text": "holder????"
-          },
-          {
-            "tag": "p",
-            "html": "Cabo Verde's exclusive economic zone covers roughly 800561 square kilometers of the [### relevant body of water ###].           This gives Cabo Verde the 1 largest EEZ in sub-Saharan Africa. Meanwhile, Cabo Verde's Maritime Enforcement Score indicates Cabo Verde is [#####] the regional average."
-          },
-          {
-            "tag": "radar"
-          },
-          {
-            "tag": "p",
-            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Cabo Verde ranks highest in . Cabo Verde's score of [NUMBER] in this area is high relative to its other issue scores,          due in part to its distance from the piracy and armed robbery hotspots in the Gulf of Guinea and western Indian Ocean.. Cabo Verde can further improve upon this area of relative strength by continuing to contribute to international efforts designed to further reduce piracy in West African waters.."
-          },
-          {
-            "tag": "p",
-            "html": "Cabo Verde is also above the regional average in [ list of all issues where country ranks above 16 ]."
-          },
-          {
-            "tag": "p",
-            "html": "The greatest remaining challenge for Cabo Verde is Illicit Trades. Cabo Verdescores [SCORE] in this area, [####above or below###] the regional average of [regional average]. To further             improve upon this score, Cabo Verde can continue to invest in maritime domain awareness and maritime enforcement capacity, so as to combat illicit traffic in cocaine and cannabis crossing the Atlantic Ocean from South America.. Further progress can be made by continue to invest in maritime domain awareness and maritime enforcement capacity, so as to combat illicit traffic in cocaine and cannabis crossing the Atlantic Ocean from South America.. Through these efforts, Cabo Verde can raise its weakest score and work toward comprehensive and lasting maritime security."
-          }
-        ]
-      },
+  "title": "Cote d'Ivoire",
+  "menu": "Cote d'Ivoire",
+  "map": {
+    "highlights": [
+      "CIV"
+    ],
+    "iso3": "CIV"
+  },
+  "els": [
+    {
+      "tag": "h1",
+      "text": "Cote d'Ivoire"
+    },
+    {
+      "tag": "p",
+      "html": "Cote d'Ivoire's exclusive economic zone covers roughly 176,254 square kilometers of the Gulf of Guinea.           This gives Cote d'Ivoire the seventeenth largest EEZ in sub-Saharan Africa. Meanwhile, Cote d'Ivoire's Maritime Enforcement Score indicates Cote d'Ivoire is below the regional average."
+    },
+    {
+      "tag": "radar"
+    },
+    {
+      "tag": "p",
+      "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Cote d'Ivoire ranks highest in International Cooperation. Cote d'Ivoire's score of 84 in this area is high relative to its other issue scores,          due in part to its participation in five of the seven global agreements counted in the score. Cote d'Ivoire can further improve upon this area of relative strength by signing and ratifying the Port State Measures Agreement."
+    },
+    {
+      "tag": "bigtext",
+      "html": "Cote d'Ivoire is also above the regional average in Rule of Law and Maritime Enforcement"
+    },
+    {
+      "tag": "p",
+      "html": "The greatest remaining challenge for Cote d'Ivoire is Illicit Trades. Cote d'Ivoire scores 9 in this area, above the regional average of 6. To further             improve upon this score, Cote d'Ivoire can continue to invest in maritime domain awareness and maritime enforcement capacity, so as to combat illicit traffic in cocaine crossing the Atlantic Ocean from South America. Cote d'Ivoire also sees considerable trafficking in synthetic drugs, opiates, and wildlife products.. Further progress can be made by working with African, European, and South American governments, as well as anti-wildlife trafficking NGOs.. Through these efforts, Cote d'Ivoire can raise its weakest score and work toward comprehensive and lasting maritime security."
+    }
+  ]
+},
       { // Card 2
         title: 'Senegal',
         menu: 'Senegal',
