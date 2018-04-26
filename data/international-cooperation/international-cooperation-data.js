@@ -71,9 +71,16 @@ var internationalCooperationData = {
           tag: 'p',
           html: 'International cooperation is strongly linked to a stronger rule of law and greater maritime enforcement capacity. In countries with high international cooperation scores, maritime mixed migration is relatively low.'
         },
+        // {
+        //   tag: 'p',
+        //   html: '*** An image here? Would fill the space nicely ***'
+        // },
         {
-          tag: 'p',
-          html: '*** An image here? Would fill the space nicely ***'
+          tag: 'img',
+          src: '../../assets/maritime-enforcement/cameroon-coast-guard.jpg',
+          alt: 'Cameroon Coast Guard',
+          caption: 'Centre for Multinational Coordination (CMC) in Douala, Cameroon. Photo by Jean-Pierre Larroque, OEF.'
+          // from http://www.ghananewsagency.org/social/ghana-and-u-s-maritime-forces-complete-combined-operation-73501
         },
         // {
         //   tag: 'img',
