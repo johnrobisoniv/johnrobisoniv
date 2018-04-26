@@ -1407,7 +1407,6 @@ var radarData = {
   }]
 } // end radarData
 
-
 var regionsData = {
   overview: {
     metadata: {
@@ -1428,115 +1427,113 @@ var regionsData = {
       callback('Overview load csv function callback');
 
     },
-    cards: [
-      { // Card 0
-        title: 'Overview: The African Maritime Space',
-        menu: 'Regions Overview',
-        metadata: {
-          owner: '',
-          description: ''
+    cards: [{ // Card 0
+      title: 'Overview: The African Maritime Space',
+      menu: 'Regions Overview',
+      metadata: {
+        owner: '',
+        description: ''
+      },
+      map: {
+        scale: [],
+        translate: [],
+        extent: [
+          [],
+          []
+        ],
+        path: '',
+        //  highlights: ['CPV', 'SEN', 'GNB', 'GMB', 'GIN', 'SLE', 'LBR'],
+        iso3: '',
+        load: function(index, csv) {
+          var layer = 'card-' + index + '-layer';
+          d3.select('.card-eez-layer')
+            .classed(layer, true);
         },
-        map: {
-          scale: [],
-          translate: [],
-          extent: [
-            [],
-            []
-          ],
-          path: '',
-          //  highlights: ['CPV', 'SEN', 'GNB', 'GMB', 'GIN', 'SLE', 'LBR'],
-          iso3: '',
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
-            // highlight each region with its color
-            var i = 0;
-            for (key in regionsData) {
-              var md = regionsData[key].metadata;
-              md.regionalCountries.forEach(function(iso, j) {
-                console.log(iso, j);
-                d3.selectAll('.country.' + iso)
-                  .style('fill', function() {
-                    //  console.log('white', j);
-                    return d3.interpolateLab('white', regionsColor[md.index])(0.6);
-                  })
-                  .style('stroke', 'white')
-                  .classed(key, true)
-                  .attr('data-region', md.path)
-                  .on('click', function(d) {
-                    var path = d3.select(this).attr('data-region');
-                    console.log(path);
+        switch: function(index) {
+          // highlight each region with its color
+          var i = 0;
+          for (key in regionsData) {
+            var md = regionsData[key].metadata;
+            md.regionalCountries.forEach(function(iso, j) {
+              console.log(iso, j);
+              d3.selectAll('.country.' + iso)
+                .style('fill', function() {
+                  //  console.log('white', j);
+                  return d3.interpolateLab('white', regionsColor[md.index])(0.6);
+                })
+                .style('stroke', 'white')
+                .classed(key, true)
+                .attr('data-region', md.path)
+                .on('click', function(d) {
+                  var path = d3.select(this).attr('data-region');
+                  console.log(path);
 
-                    window.location.href = './' + path;
-                  });
+                  window.location.href = './' + path;
+                });
 
-                d3.selectAll('.eez.' + iso)
-                  .style('stroke', regionsColor[md.index])
-                  .style('fill', regionsColor[md.index])
-                  .style('opacity', 0.4)
-                  .classed(key, true)
-                  .attr('data-region', md.path)
-                  .on('click', function(d) {
-                    var path = d3.select(this).attr('data-region');
-                    console.log(path);
+              d3.selectAll('.eez.' + iso)
+                .style('stroke', regionsColor[md.index])
+                .style('fill', regionsColor[md.index])
+                .style('opacity', 0.4)
+                .classed(key, true)
+                .attr('data-region', md.path)
+                .on('click', function(d) {
+                  var path = d3.select(this).attr('data-region');
+                  console.log(path);
 
-                    window.location.href = './' + path;
-                  });;
+                  window.location.href = './' + path;
+                });;
 
 
-              });
-              i++;
-
-            }
+            });
+            i++;
 
           }
+
+        }
+      },
+      els: [{
+          tag: 'h1',
+          text: 'The African Continent'
         },
-        els: [{
-            tag: 'h1',
-            text: 'The African Continent'
-          },
-          {
-            tag: 'caption',
-            text: '<em>A subheading line on the continent\'s greatest strength</em>'
-          },
-          {
-            tag: 'p',
-            html: 'The first paragraph will introduce the country in the context of the region and lorem ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. '
-          },
-          {
-            tag: 'radar'
-          },
-          {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
-          },
-          {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
-          }
-        ]
-      }
-    ]
+        {
+          tag: 'caption',
+          text: '<em>A subheading line on the continent\'s greatest strength</em>'
+        },
+        {
+          tag: 'p',
+          html: 'The first paragraph will introduce the country in the context of the region and lorem ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. '
+        },
+        {
+          tag: 'radar'
+        },
+        {
+          tag: 'video',
+          videoId: 'AXQHK213mFA',
+          thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
+        },
+        {
+          tag: 'caption',
+          text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
+        },
+        {
+          tag: 'h2',
+          html: 'Country 1\'s Strengths'
+        },
+        {
+          tag: 'p',
+          html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
+        },
+        {
+          tag: 'h2',
+          html: 'Challenges Facing Country 1'
+        },
+        {
+          tag: 'p',
+          html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+        }
+      ]
+    }]
   },
   westernCoast: {
     metadata: {
@@ -1557,9 +1554,16 @@ var regionsData = {
     },
     load: function(csv, callback) {
       callback('Western Coast load csv function callback');
+      var layer = '';
+      for (var i = 0; i < 8; i++) {
+        layer += 'card-' + i + '-layer ';
+      }
+      d3.select('.card-eez-layer')
+        .classed(layer, true);
+
+
     },
-    cards: [
-      { // Card 0
+    cards: [{ // Card 0
         title: 'Africa\'s Western Coast',
         menu: 'The Western Coast',
         metadata: {
@@ -1649,587 +1653,302 @@ var regionsData = {
           // ...
         ]
       },
+
       {
-  "title": "Cote d'Ivoire",
-  "menu": "Cote d'Ivoire",
-  "map": {
-    "highlights": [
-      "CIV"
-    ],
-    "iso3": "CIV"
-  },
-  "els": [
-    {
-      "tag": "h1",
-      "text": "Cote d'Ivoire"
-    },
-    {
-      "tag": "p",
-      "html": "Cote d'Ivoire's exclusive economic zone covers roughly 176,254 square kilometers of the Gulf of Guinea.           This gives Cote d'Ivoire the seventeenth largest EEZ in sub-Saharan Africa. Meanwhile, Cote d'Ivoire's Maritime Enforcement Score indicates Cote d'Ivoire is below the regional average."
-    },
-    {
-      "tag": "radar"
-    },
-    {
-      "tag": "p",
-      "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Cote d'Ivoire ranks highest in International Cooperation. Cote d'Ivoire's score of 84 in this area is high relative to its other issue scores,          due in part to its participation in five of the seven global agreements counted in the score. Cote d'Ivoire can further improve upon this area of relative strength by signing and ratifying the Port State Measures Agreement."
-    },
-    {
-      "tag": "bigtext",
-      "html": "Cote d'Ivoire is also above the regional average in Rule of Law and Maritime Enforcement"
-    },
-    {
-      "tag": "p",
-      "html": "The greatest remaining challenge for Cote d'Ivoire is Illicit Trades. Cote d'Ivoire scores 9 in this area, above the regional average of 6. To further             improve upon this score, Cote d'Ivoire can continue to invest in maritime domain awareness and maritime enforcement capacity, so as to combat illicit traffic in cocaine crossing the Atlantic Ocean from South America. Cote d'Ivoire also sees considerable trafficking in synthetic drugs, opiates, and wildlife products.. Further progress can be made by working with African, European, and South American governments, as well as anti-wildlife trafficking NGOs.. Through these efforts, Cote d'Ivoire can raise its weakest score and work toward comprehensive and lasting maritime security."
-    }
-  ]
-},
-      { // Card 2
-        title: 'Senegal',
-        menu: 'Senegal',
-        metadata: {
-          owner: '',
-          description: ''
-        },
-        map: {
-          scale: [],
-          translate: [],
-          extent: [
-            [-35, 0],
-            [-25, 35]
+        "title": "Cabo Verde",
+        "menu": "Cabo Verde",
+        "map": {
+          "highlights": [
+            "CPV"
           ],
-          highlights: ['SEN'],
-          iso3: '',
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
-
-          }
+          "iso3": "CPV",
+          "extent": [
+            [-35,
+              0
+            ],
+            [-25,
+              35
+            ]
+          ]
         },
-        els: [{
-            tag: 'h1',
-            text: 'Senegal'
+        "els": [{
+            "tag": "h1",
+            "text": "Cabo Verde"
           },
           {
-            tag: 'caption',
-            text: '<em>Senegal</em>'
+            "tag": "p",
+            "html": "Cabo Verde's exclusive economic zone covers roughly 800,561 square kilometers of the Atlantic Ocean.           This gives Cabo Verde the sixth largest EEZ in sub-Saharan Africa. Meanwhile, Cabo Verde's Maritime Enforcement Score indicates that the country is above the regional average."
           },
           {
-            tag: 'p',
-            html: 'Cabo Verde\'s exclusive economic zone covers roughly 800,561 square kilometers of the northeast Atlantic Ocean \
-                . This gives Cabo Verde the xth largest EEZ in sub-Saharan Africa. \
-                Meanwhile, Cabo Verde\'s Maritime Enforcement Capacity Score indicates Cabo Verde is slightly above \
-                the regional average.'
+            "tag": "radar"
           },
           {
-            tag: 'radar'
+            "tag": "p",
+            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Cabo Verde ranks highest in Piracy. Cabo Verde's score of 98 in this area is high relative to its other issue scores,          due in part to its distance from the piracy and armed robbery hotspots in the Gulf of Guinea and western Indian Ocean.. Cabo Verde can further improve upon this area of relative strength by continuing to contribute to international efforts designed to further reduce piracy in West African waters."
           },
           {
-            tag: 'p',
-            html: 'Across the nine issues covered by the Stable Seas Maritime Security Index, COUNTRY ranks highest in BEST ISSUE. \
-                COUNTRY’s score of NUMBER in this area is high relative to its other issue scores, due in part to SOMETHING RELEVANT \
-                AND INTERESTING. COUNTRY can further improve upon this area of relative strength by SUGGESTION BACKED BY THE SUBSCORES.'
+            "tag": "bigtext",
+            "html": "Cabo Verde is also above the regional average in Rule of Law, Maritime Enforcement, Coastal Welfare, Blue Economy, Fisheries, Piracy, Illicit Trades, and Maritime Mixed Migration."
           },
           {
-            tag: 'bigtext',
-            html: 'COUNTRY is also above the regional average in LIST OF ALL ISSUES WHERE COUNTRY RANKS ABOVE 16.'
-          },
-          {
-            tag: 'p',
-            html: 'The greatest remaining challenge for COUNTRY is WORST ISSUE RANKING. COUNTRY scores SCORE in this area, and this is slightly/significantly above/below the regional average of regional average for this score. To further improve upon this score, COUNTRY can SUGGESTION BACKED BY THE SUBSCORES, FOCUSED ON DOMESTIC POLICY. Further progress can be made by SUGGESTION BACKED BY THE SUBSCORES, FOCUSED ON INTERNATIONAL/REGIONAL EFFORT. Through these efforts, COUNTRY can raise its weakest score and work toward comprehensive and lasting maritime security.'
-          },
-          {
-            tag: 'img',
-            src: '../../assets/western-coast/radar-sample.png'
-          },
-          {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
-          },
-          {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+            "tag": "p",
+            "html": "The greatest remaining challenge for Cabo Verde is Illicit Trades. Cabo Verde scores 40 in this area, above the regional average of 29. To further             improve upon this score, Cabo Verde can continue to invest in maritime domain awareness and maritime enforcement capacity, so as to combat illicit traffic in cocaine and cannabis crossing the Atlantic Ocean from South America.. Further progress can be made by working with African, European, and South American partners to undermine this major route in the global narcotics network.. Through these efforts, Cabo Verde can raise its weakest score and work toward comprehensive and lasting maritime security."
           }
-
-          // ...
-
         ]
       },
-      { // Card 3
-        title: 'The Gambia',
-        menu: 'The Gambia',
-        metadata: {
-          owner: '',
-          description: ''
-        },
-        map: {
-          scale: [],
-          translate: [],
-          extent: [
-            [-35, 0],
-            [-25, 35]
+      {
+        "title": "Senegal",
+        "menu": "Senegal",
+        "map": {
+          "highlights": [
+            "SEN"
           ],
-          highlights: ['GMB'],
-          iso3: '',
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
-
-          }
+          "iso3": "SEN",
+          "extent": [
+            [-35,
+              0
+            ],
+            [-25,
+              35
+            ]
+          ]
         },
-        els: [{
-            tag: 'h1',
-            text: 'The Gambia'
+        "els": [{
+            "tag": "h1",
+            "text": "Senegal"
           },
           {
-            tag: 'caption',
-            text: '<em>Gambia</em>'
+            "tag": "p",
+            "html": "Senegal's exclusive economic zone covers roughly 158,861 square kilometers of the Atlantic Ocean.           This gives Senegal the nineteenth largest EEZ in sub-Saharan Africa. Meanwhile, Senegal's Maritime Enforcement Score indicates that the country is above the regional average."
           },
           {
-            tag: 'p',
-            html: 'Cabo Verde\'s exclusive economic zone covers roughly 800,561 square kilometers of the northeast Atlantic Ocean \
-                . This gives Cabo Verde the xth largest EEZ in sub-Saharan Africa. \
-                Meanwhile, Cabo Verde\'s Maritime Enforcement Capacity Score indicates Cabo Verde is slightly above \
-                the regional average.'
+            "tag": "radar"
           },
           {
-            tag: 'radar'
+            "tag": "p",
+            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Senegal ranks highest in Piracy. Senegal's score of 93 in this area is high relative to its other issue scores,          due in part to its distance from the piracy and armed robbery hotspots in the Gulf of Guinea and western Indian Ocean.. Senegal can further improve upon this area of relative strength by continuing to contribute to international efforts designed to further reduce piracy in West African waters."
           },
           {
-            tag: 'p',
-            html: 'Across the nine issues covered by the Stable Seas Maritime Security Index, COUNTRY ranks highest in BEST ISSUE. \
-                COUNTRY’s score of NUMBER in this area is high relative to its other issue scores, due in part to SOMETHING RELEVANT \
-                AND INTERESTING. COUNTRY can further improve upon this area of relative strength by SUGGESTION BACKED BY THE SUBSCORES.'
+            "tag": "bigtext",
+            "html": "Senegal is also above the regional average in Rule of Law, Maritime Enforcement, Coastal Welfare, Blue Economy, Fisheries, and Piracy."
           },
           {
-            tag: 'bigtext',
-            html: 'COUNTRY is also above the regional average in LIST OF ALL ISSUES WHERE COUNTRY RANKS ABOVE 16.'
-          },
-          {
-            tag: 'p',
-            html: 'The greatest remaining challenge for COUNTRY is WORST ISSUE RANKING. COUNTRY scores SCORE in this area, and this is slightly/significantly above/below the regional average of regional average for this score. To further improve upon this score, COUNTRY can SUGGESTION BACKED BY THE SUBSCORES, FOCUSED ON DOMESTIC POLICY. Further progress can be made by SUGGESTION BACKED BY THE SUBSCORES, FOCUSED ON INTERNATIONAL/REGIONAL EFFORT. Through these efforts, COUNTRY can raise its weakest score and work toward comprehensive and lasting maritime security.'
-          },
-          {
-            tag: 'img',
-            src: '../../assets/western-coast/radar-sample.png'
-          },
-          {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
-          },
-          {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+            "tag": "p",
+            "html": "The greatest remaining challenge for Senegal is Illicit Trades. Senegal scores 5 in this area,  about the same as  the regional average of 29. To further             improve upon this score, Senegal can continue to invest in maritime domain awareness and maritime enforcement capacity, so as to combat illicit traffic in cocaine and cannabis crossing the Atlantic Ocean from South America. Senegal can also continue to deter wildlife and ivory trafficking through domestic legal efforts and port security measures.. Further progress can be made by working with African, European, and South American governments, as well as anti-wildlife trafficking NGOs.. Through these efforts, Senegal can raise its weakest score and work toward comprehensive and lasting maritime security."
           }
-
-          // ...
-
         ]
       },
-      { // Card 4
-        title: 'Guinea-Bissau',
-        menu: 'Guinea-Bissau',
-        metadata: {
-          owner: '',
-          description: ''
-        },
-        map: {
-          scale: [],
-          translate: [],
-          extent: [
-            [-35, 0],
-            [-25, 35]
+      {
+        "title": "The Gambia",
+        "menu": "The Gambia",
+        "map": {
+          "highlights": [
+            "GMB"
           ],
-          highlights: ['GNB'],
-          iso3: '',
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
-
-          }
+          "iso3": "GMB",
+          "extent": [
+            [-35,
+              0
+            ],
+            [-25,
+              35
+            ]
+          ]
         },
-        els: [{
-            tag: 'h1',
-            text: 'Guinea-Bissau'
+        "els": [{
+            "tag": "h1",
+            "text": "The Gambia"
           },
           {
-            tag: 'caption',
-            text: '<em>Guinea-Bissau</em>'
+            "tag": "p",
+            "html": "The Gambia's exclusive economic zone covers roughly 23,112 square kilometers of the Atlantic Ocean.           This gives The Gambia the twenty-sixth largest EEZ in sub-Saharan Africa. Meanwhile, The Gambia's Maritime Enforcement Score indicates that the country is below the regional average."
           },
           {
-            tag: 'p',
-            html: 'Cabo Verde\'s exclusive economic zone covers roughly 800,561 square kilometers of the northeast Atlantic Ocean \
-                . This gives Cabo Verde the xth largest EEZ in sub-Saharan Africa. \
-                Meanwhile, Cabo Verde\'s Maritime Enforcement Capacity Score indicates Cabo Verde is slightly above \
-                the regional average.'
+            "tag": "radar"
           },
           {
-            tag: 'radar'
+            "tag": "p",
+            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, The Gambia ranks highest in Piracy. The Gambia's score of 94 in this area is high relative to its other issue scores,          due in part to its distance from the piracy and armed robbery hotspots in the Gulf of Guinea and western Indian Ocean.. The Gambia can further improve upon this area of relative strength by continuing to contribute to international efforts designed to further reduce piracy in West African waters."
           },
           {
-            tag: 'p',
-            html: 'Across the nine issues covered by the Stable Seas Maritime Security Index, COUNTRY ranks highest in BEST ISSUE. \
-                COUNTRY’s score of NUMBER in this area is high relative to its other issue scores, due in part to SOMETHING RELEVANT \
-                AND INTERESTING. COUNTRY can further improve upon this area of relative strength by SUGGESTION BACKED BY THE SUBSCORES.'
+            "tag": "bigtext",
+            "html": "The Gambia is also above the regional average in Coastal Welfare, Blue Economy, Piracy, and Illicit Trades."
           },
           {
-            tag: 'bigtext',
-            html: 'COUNTRY is also above the regional average in LIST OF ALL ISSUES WHERE COUNTRY RANKS ABOVE 16.'
-          },
-          {
-            tag: 'p',
-            html: 'The greatest remaining challenge for COUNTRY is WORST ISSUE RANKING. COUNTRY scores SCORE in this area, and this is slightly/significantly above/below the regional average of regional average for this score. To further improve upon this score, COUNTRY can SUGGESTION BACKED BY THE SUBSCORES, FOCUSED ON DOMESTIC POLICY. Further progress can be made by SUGGESTION BACKED BY THE SUBSCORES, FOCUSED ON INTERNATIONAL/REGIONAL EFFORT. Through these efforts, COUNTRY can raise its weakest score and work toward comprehensive and lasting maritime security.'
-          },
-          {
-            tag: 'img',
-            src: '../../assets/western-coast/radar-sample.png'
-          },
-          {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
-          },
-          {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+            "tag": "p",
+            "html": "The greatest remaining challenge for The Gambia is Maritime Enforcement. The Gambia scores 39 in this area, below the regional average of 41. To further             improve upon this score, The Gambia can increase its investment in maritime domain awareness, as our experts gave it one of the lowest scores in the region in this area. The Gambia can also develop its coastal patrol assets.. Further progress can be made by continued participation in regional integration efforts, including Gambian participation in Zone G of the Yaounde Code of Conduct.. Through these efforts, The Gambia can raise its weakest score and work toward comprehensive and lasting maritime security."
           }
-
-          // ...
-
         ]
       },
-      { // Card 5
-        title: 'Guinea',
-        menu: 'Guinea',
-        metadata: {
-          owner: '',
-          description: ''
-        },
-        map: {
-          scale: [],
-          translate: [],
-          extent: [
-            [-35, 0],
-            [-25, 35]
+      {
+        "title": "Guinea-Bissau",
+        "menu": "Guinea-Bissau",
+        "map": {
+          "highlights": [
+            "GNB"
           ],
-          highlights: ['GIN'],
-          iso3: '',
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
-
-          }
+          "iso3": "GNB",
+          "extent": [
+            [-35,
+              0
+            ],
+            [-25,
+              35
+            ]
+          ]
         },
-        els: [{
-            tag: 'h1',
-            text: 'Guinea'
+        "els": [{
+            "tag": "h1",
+            "text": "Guinea-Bissau"
           },
           {
-            tag: 'caption',
-            text: '<em>Guinea</em>'
+            "tag": "p",
+            "html": "Guinea-Bissau's exclusive economic zone covers roughly 123,725 square kilometers of the Atlantic Ocean.           This gives Guinea-Bissau the twenty-first largest EEZ in sub-Saharan Africa. Meanwhile, Guinea-Bissau's Maritime Enforcement Score indicates that the country is below the regional average."
           },
           {
-            tag: 'p',
-            html: 'Cabo Verde\'s exclusive economic zone covers roughly 800,561 square kilometers of the northeast Atlantic Ocean \
-                . This gives Cabo Verde the xth largest EEZ in sub-Saharan Africa. \
-                Meanwhile, Cabo Verde\'s Maritime Enforcement Capacity Score indicates Cabo Verde is slightly above \
-                the regional average.'
+            "tag": "radar"
           },
           {
-            tag: 'radar'
+            "tag": "p",
+            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Guinea-Bissau ranks highest in Piracy. Guinea-Bissau's score of 89 in this area is high relative to its other issue scores,          due in part to its distance from the piracy and armed robbery hotspots in the Gulf of Guinea and western Indian Ocean.. Guinea-Bissau can further improve upon this area of relative strength by continuing to contribute to international efforts designed to further reduce piracy in West African waters."
           },
           {
-            tag: 'p',
-            html: 'Across the nine issues covered by the Stable Seas Maritime Security Index, COUNTRY ranks highest in BEST ISSUE. \
-                COUNTRY’s score of NUMBER in this area is high relative to its other issue scores, due in part to SOMETHING RELEVANT \
-                AND INTERESTING. COUNTRY can further improve upon this area of relative strength by SUGGESTION BACKED BY THE SUBSCORES.'
+            "tag": "bigtext",
+            "html": "Guinea-Bissau is also above the regional average in Piracy, Illicit Trades, and Maritime Mixed Migration."
           },
           {
-            tag: 'bigtext',
-            html: 'COUNTRY is also above the regional average in LIST OF ALL ISSUES WHERE COUNTRY RANKS ABOVE 16.'
-          },
-          {
-            tag: 'p',
-            html: 'The greatest remaining challenge for COUNTRY is WORST ISSUE RANKING. COUNTRY scores SCORE in this area, and this is slightly/significantly above/below the regional average of regional average for this score. To further improve upon this score, COUNTRY can SUGGESTION BACKED BY THE SUBSCORES, FOCUSED ON DOMESTIC POLICY. Further progress can be made by SUGGESTION BACKED BY THE SUBSCORES, FOCUSED ON INTERNATIONAL/REGIONAL EFFORT. Through these efforts, COUNTRY can raise its weakest score and work toward comprehensive and lasting maritime security.'
-          },
-          {
-            tag: 'img',
-            src: '../../assets/western-coast/radar-sample.png'
-          },
-          {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
-          },
-          {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+            "tag": "p",
+            "html": "The greatest remaining challenge for Guinea-Bissau is Maritime Enforcement. Guinea-Bissau scores 28 in this area, below the regional average of 41. To further             improve upon this score, Guinea-Bissau can increase its investment in maritime domain awareness, as our experts gave it one of the lowest scores in the region in this area. Guinea-Bissau also has among the lowest number of coastal patrol vessels in West Africa, making it all but impossible to monitor illicit activity in the complicated and remote Bijagos archipelago.. Further progress can be made by continued participation in regional integration efforts, including Gambian participation in Zone G of the Yaounde Code of Conduct and regional counter-trafficking exercises.. Through these efforts, Guinea-Bissau can raise its weakest score and work toward comprehensive and lasting maritime security."
           }
-
-          // ...
-
         ]
       },
-      { // Card 6
-        title: 'Sierra Leone',
-        menu: 'Sierra Leone',
-        metadata: {
-          owner: '',
-          description: ''
-        },
-        map: {
-          scale: [],
-          translate: [],
-          extent: [
-            [-35, 0],
-            [-25, 35]
+      {
+        "title": "Guinea",
+        "menu": "Guinea",
+        "map": {
+          "highlights": [
+            "GIN"
           ],
-          highlights: ['SLE'],
-          iso3: '',
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
-
-          }
+          "iso3": "GIN",
+          "extent": [
+            [-35,
+              0
+            ],
+            [-25,
+              35
+            ]
+          ]
         },
-        els: [{
-            tag: 'h1',
-            text: 'Sierra Leone'
+        "els": [{
+            "tag": "h1",
+            "text": "Guinea"
           },
           {
-            tag: 'caption',
-            text: '<em>An island nation with strong Rule of Law</em>'
+            "tag": "p",
+            "html": "Guinea's exclusive economic zone covers roughly 59,426 square kilometers of the Atlantic Ocean.           This gives Guinea the twenty-third largest EEZ in sub-Saharan Africa. Meanwhile, Guinea's Maritime Enforcement Score indicates that the country is below the regional average."
           },
           {
-            tag: 'p',
-            html: 'Cabo Verde\'s exclusive economic zone covers roughly 800,561 square kilometers of the northeast Atlantic Ocean \
-                . This gives Cabo Verde the xth largest EEZ in sub-Saharan Africa. \
-                Meanwhile, Cabo Verde\'s Maritime Enforcement Capacity Score indicates Cabo Verde is slightly above \
-                the regional average.'
+            "tag": "radar"
           },
           {
-            tag: 'radar'
+            "tag": "p",
+            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Guinea ranks highest in International Cooperation. Guinea's score of 92 in this area is high relative to its other issue scores,          due in part to its exemplary participation in major international agreements. In fact, no country in sub-Saharan Africa recorded a higher International Cooperation score.. Guinea can further improve upon this area of relative strength by investing in further regional integration through Zone F of the Yaounde Code of Conduct and advocating for the more widespread adoption of the African Union's Lome Charter."
           },
           {
-            tag: 'p',
-            html: 'Across the nine issues covered by the Stable Seas Maritime Security Index, COUNTRY ranks highest in BEST ISSUE. \
-                COUNTRY’s score of NUMBER in this area is high relative to its other issue scores, due in part to SOMETHING RELEVANT \
-                AND INTERESTING. COUNTRY can further improve upon this area of relative strength by SUGGESTION BACKED BY THE SUBSCORES.'
+            "tag": "bigtext",
+            "html": "Guinea is also above the regional average in ."
           },
           {
-            tag: 'bigtext',
-            html: 'COUNTRY is also above the regional average in LIST OF ALL ISSUES WHERE COUNTRY RANKS ABOVE 16.'
-          },
-          {
-            tag: 'p',
-            html: 'The greatest remaining challenge for COUNTRY is WORST ISSUE RANKING. COUNTRY scores SCORE in this area, and this is slightly/significantly above/below the regional average of regional average for this score. To further improve upon this score, COUNTRY can SUGGESTION BACKED BY THE SUBSCORES, FOCUSED ON DOMESTIC POLICY. Further progress can be made by SUGGESTION BACKED BY THE SUBSCORES, FOCUSED ON INTERNATIONAL/REGIONAL EFFORT. Through these efforts, COUNTRY can raise its weakest score and work toward comprehensive and lasting maritime security.'
-          },
-          {
-            tag: 'img',
-            src: '../../assets/western-coast/radar-sample.png'
-          },
-          {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
-          },
-          {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+            "tag": "p",
+            "html": "The greatest remaining challenge for Guinea is Illicit Trades. Guinea scores 10 in this area, below the regional average of 29. To further             improve upon this score, Guinea can continue to invest in maritime domain awareness and maritime enforcement capacity, so as to combat illicit traffic in cocaine crossing the Atlantic Ocean from South America. Guinea also sees considerable trafficking in synthetic drugs, opiates, and wildlife products.. Further progress can be made by working with African, European, and South American governments, as well as anti-wildlife trafficking NGOs.. Through these efforts, Guinea can raise its weakest score and work toward comprehensive and lasting maritime security."
           }
-
-          // ...
-
         ]
       },
-      { // Card 6
-        title: 'Liberia',
-        menu: 'Liberia',
-        metadata: {
-          owner: '',
-          description: ''
-        },
-        map: {
-          scale: [],
-          translate: [],
-          extent: [
-            [-35, 0],
-            [-25, 35]
+      {
+        "title": "Sierra Leone",
+        "menu": "Sierra Leone",
+        "map": {
+          "highlights": [
+            "SLE"
           ],
-          highlights: ['LBR'],
-          iso3: '',
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
-
-          }
+          "iso3": "SLE",
+          "extent": [
+            [-35,
+              0
+            ],
+            [-25,
+              35
+            ]
+          ]
         },
-        els: [{
-            tag: 'h1',
-            text: 'Liberia'
+        "els": [{
+            "tag": "h1",
+            "text": "Sierra Leone"
           },
           {
-            tag: 'caption',
-            text: '<em>An island nation with strong Rule of Law</em>'
+            "tag": "p",
+            "html": "Sierra Leone's exclusive economic zone covers roughly 215,611 square kilometers of the Atlantic Ocean.           This gives Sierra Leone the fifteenth largest EEZ in sub-Saharan Africa. Meanwhile, Sierra Leone's Maritime Enforcement Score indicates that the country is below the regional average."
           },
           {
-            tag: 'p',
-            html: 'Cabo Verde\'s exclusive economic zone covers roughly 800,561 square kilometers of the northeast Atlantic Ocean \
-                . This gives Cabo Verde the xth largest EEZ in sub-Saharan Africa. \
-                Meanwhile, Cabo Verde\'s Maritime Enforcement Capacity Score indicates Cabo Verde is slightly above \
-                the regional average.'
+            "tag": "radar"
           },
           {
-            tag: 'radar'
+            "tag": "p",
+            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Sierra Leone ranks highest in Piracy. Sierra Leone's score of 82 in this area is high relative to its other issue scores,          due in part to its distance from the piracy and armed robbery hotspots in the Gulf of Guinea and western Indian Ocean.. Sierra Leone can further improve upon this area of relative strength by continuing to contribute to international efforts designed to further reduce piracy in West African waters."
           },
           {
-            tag: 'p',
-            html: 'Across the nine issues covered by the Stable Seas Maritime Security Index, COUNTRY ranks highest in BEST ISSUE. \
-                COUNTRY’s score of NUMBER in this area is high relative to its other issue scores, due in part to SOMETHING RELEVANT \
-                AND INTERESTING. COUNTRY can further improve upon this area of relative strength by SUGGESTION BACKED BY THE SUBSCORES.'
+            "tag": "bigtext",
+            "html": "Sierra Leone is also above the regional average in Rule of Law, Fisheries, Piracy, Illicit Trades, and Maritime Mixed Migration."
           },
           {
-            tag: 'bigtext',
-            html: 'COUNTRY is also above the regional average in LIST OF ALL ISSUES WHERE COUNTRY RANKS ABOVE 16.'
-          },
-          {
-            tag: 'p',
-            html: 'The greatest remaining challenge for COUNTRY is WORST ISSUE RANKING. COUNTRY scores SCORE in this area, and this is slightly/significantly above/below the regional average of regional average for this score. To further improve upon this score, COUNTRY can SUGGESTION BACKED BY THE SUBSCORES, FOCUSED ON DOMESTIC POLICY. Further progress can be made by SUGGESTION BACKED BY THE SUBSCORES, FOCUSED ON INTERNATIONAL/REGIONAL EFFORT. Through these efforts, COUNTRY can raise its weakest score and work toward comprehensive and lasting maritime security.'
-          },
-          {
-            tag: 'img',
-            src: '../../assets/western-coast/radar-sample.png'
-          },
-          {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
-          },
-          {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+            "tag": "p",
+            "html": "The greatest remaining challenge for Sierra Leone is Maritime Enforcement. Sierra Leone scores 38 in this area, below the regional average of 41. To further             improve upon this score, Sierra Leone can continue to invest in maritime domain awareness and maritime enforcement capacity, so as to combat illicit traffic in cocaine crossing the Atlantic Ocean from South America.. Further progress can be made by formalizing the exclusive economic zone boundaries with Guinea and Liberia, as neither boundary is formally defined by a bilateral agreement.. Through these efforts, Sierra Leone can raise its weakest score and work toward comprehensive and lasting maritime security."
           }
-
-          // ...
-
+        ]
+      },
+      {
+        "title": "Liberia",
+        "menu": "Liberia",
+        "map": {
+          "highlights": [
+            "LBR"
+          ],
+          "iso3": "LBR",
+          "extent": [
+            [-35,
+              0
+            ],
+            [-25,
+              35
+            ]
+          ]
+        },
+        "els": [{
+            "tag": "h1",
+            "text": "Liberia"
+          },
+          {
+            "tag": "p",
+            "html": "Liberia's exclusive economic zone covers roughly 249,734 square kilometers of the Atlantic Ocean.           This gives Liberia the eleventh largest EEZ in sub-Saharan Africa. Meanwhile, Liberia's Maritime Enforcement Score indicates that the country is below the regional average."
+          },
+          {
+            "tag": "radar"
+          },
+          {
+            "tag": "p",
+            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Liberia ranks highest in Piracy. Liberia's score of 88 in this area is high relative to its other issue scores,          due in part to its distance from the piracy and armed robbery hotspots in the Gulf of Guinea and western Indian Ocean.. Liberia can further improve upon this area of relative strength by continuing to contribute to international efforts designed to further reduce piracy in West African waters."
+          },
+          {
+            "tag": "bigtext",
+            "html": "Liberia is also above the regional average in Rule of Law, Coastal Welfare, and Piracy."
+          },
+          {
+            "tag": "p",
+            "html": "The greatest remaining challenge for Liberia is Maritime Enforcement. Liberia scores 20 in this area, below the regional average of 41. To further             improve upon this score, Liberia can developing its coastal patrol assets and naval capability, which rank among the lowest in sub-Saharan Africa.. Further progress can be made by continued participation in multilateral efforts, such as Liberian involvement in Zone F of the Yaounde Code of Conduct.. Through these efforts, Liberia can raise its weakest score and work toward comprehensive and lasting maritime security."
+          }
         ]
       }
+
     ]
   },
   northernGulf: {
@@ -2249,7 +1968,12 @@ var regionsData = {
     },
     load: function(csv, callback) {
       callback('Eastern Coast load csv function callback');
-
+      var layer = '';
+      for (var i = 0; i < 6; i++) {
+        layer += 'card-' + i + '-layer ';
+      }
+      d3.select('.card-eez-layer')
+        .classed(layer, true);
 
     },
     cards: [{ // Card 0
@@ -2263,8 +1987,8 @@ var regionsData = {
           scale: [],
           translate: [],
           extent: [
-            [-20, 0],
-            [-10, 35]
+            [-22, -10],
+            [-5, 40]
           ],
           // highlights: ['CIV', 'GHA', 'TGO', 'BEN', 'NGA'],
           iso3: '',
@@ -2321,349 +2045,204 @@ var regionsData = {
 
         ]
       },
-      { // Card 1
-        title: 'Cote d\'Ivoire',
-        menu: 'Cote d\'Ivoire',
-        metadata: {
-          owner: '',
-          description: ''
-        },
-        map: {
-          scale: [],
-          translate: [],
-          extent: [
-            [-20, 0],
-            [-10, 35]
+      {
+        "title": "Cote d'Ivoire",
+        "menu": "Cote d'Ivoire",
+        "map": {
+          "highlights": [
+            "CIV"
           ],
-          highlights: ['CIV'],
-          iso3: '',
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
-
-          }
+          "iso3": "CIV",
+          "extent": [
+            [-22, -10],
+            [-5,
+              40
+            ]
+          ]
         },
-        els: [{
-            tag: 'h1',
-            text: 'Cote d\'Ivoire'
+        "els": [{
+            "tag": "h1",
+            "text": "Cote d'Ivoire"
           },
           {
-            tag: 'caption',
-            text: '<em>A subheading line on the country\'s greatest strength</em>'
+            "tag": "p",
+            "html": "Cote d'Ivoire's exclusive economic zone covers roughly 176,254 square kilometers of the Gulf of Guinea.           This gives Cote d'Ivoire the seventeenth largest EEZ in sub-Saharan Africa. Meanwhile, Cote d'Ivoire's Maritime Enforcement Score indicates that the country is below the regional average."
           },
           {
-            tag: 'p',
-            html: 'The first paragraph will introduce the country in the context of the region.'
+            "tag": "radar"
           },
           {
-            tag: 'radar'
+            "tag": "p",
+            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Cote d'Ivoire ranks highest in International Cooperation. Cote d'Ivoire's score of 84 in this area is high relative to its other issue scores,          due in part to its participation in five of the seven global agreements counted in the score. Cote d'Ivoire can further improve upon this area of relative strength by signing and ratifying the Port State Measures Agreement."
           },
           {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
+            "tag": "bigtext",
+            "html": "Cote d'Ivoire is also above the regional average in Rule of Law and Maritime Enforcement."
           },
           {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+            "tag": "p",
+            "html": "The greatest remaining challenge for Cote d'Ivoire is Illicit Trades. Cote d'Ivoire scores 9 in this area, above the regional average of 6. To further             improve upon this score, Cote d'Ivoire can continue to invest in maritime domain awareness and maritime enforcement capacity, so as to combat illicit traffic in cocaine crossing the Atlantic Ocean from South America. Cote d'Ivoire also sees considerable trafficking in synthetic drugs, opiates, and wildlife products.. Further progress can be made by working with African, European, and South American governments, as well as anti-wildlife trafficking NGOs.. Through these efforts, Cote d'Ivoire can raise its weakest score and work toward comprehensive and lasting maritime security."
           }
-
-
         ]
       },
-      { // Card 2
-        title: 'Ghana',
-        menu: 'Ghana',
-        metadata: {
-          owner: '',
-          description: ''
-        },
-        map: {
-          scale: [],
-          translate: [],
-          extent: [
-            [-20, 0],
-            [-10, 35]
+      {
+        "title": "Ghana",
+        "menu": "Ghana",
+        "map": {
+          "highlights": [
+            "GHA"
           ],
-          highlights: ['GHA'],
-          iso3: '',
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
-
-          }
+          "iso3": "GHA",
+          "extent": [
+            [-22, -10],
+            [-5,
+              40
+            ]
+          ]
         },
-        els: [{
-            tag: 'h1',
-            text: 'Ghana'
+        "els": [{
+            "tag": "h1",
+            "text": "Ghana"
           },
           {
-            tag: 'caption',
-            text: '<em>A subheading line on the country\'s greatest strength</em>'
+            "tag": "p",
+            "html": "Ghana's exclusive economic zone covers roughly 235,349 square kilometers of the Gulf of Guinea.           This gives Ghana the thirteenth largest EEZ in sub-Saharan Africa. Meanwhile, Ghana's Maritime Enforcement Score indicates that the country is above the regional average."
           },
           {
-            tag: 'p',
-            html: 'The first paragraph will introduce the country in the context of the region.'
+            "tag": "radar"
           },
           {
-            tag: 'radar'
+            "tag": "p",
+            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Ghana ranks highest in International Cooperation. Ghana's score of 92 in this area is high relative to its other issue scores,          due in part to its exemplary participation in major international agreements. In fact, no country in sub-Saharan Africa recorded a higher International Cooperation score.. Ghana can further improve upon this area of relative strength by investing in further regional integration through Zone F of the Yaounde Code of Conduct and advocating for the more widespread adoption of the African Union's Lome Charter."
           },
           {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
+            "tag": "bigtext",
+            "html": "Ghana is also above the regional average in Rule of Law, Maritime Enforcement, Coastal Welfare, Blue Economy, and Fisheries."
           },
           {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+            "tag": "p",
+            "html": "The greatest remaining challenge for Ghana is Illicit Trades. Ghana scores 4 in this area,  about the same as  the regional average of 6. To further             improve upon this score, Ghana can continue to invest in maritime domain awareness and maritime enforcement capacity, so as to combat illicit traffic in cocaine crossing the Atlantic Ocean from South America. Ghana also sees considerable trafficking in synthetic drugs, opiates, and wildlife products, all of which could be addressed by improved port security measures.. Further progress can be made by working with African, European, and South American governments, as well as anti-wildlife trafficking NGOs.. Through these efforts, Ghana can raise its weakest score and work toward comprehensive and lasting maritime security."
           }
-
-
         ]
       },
-      { // Card 3
-        title: 'Togo',
-        menu: 'Togo',
-        metadata: {
-          owner: '',
-          description: ''
-        },
-        map: {
-          scale: [],
-          translate: [],
-          extent: [
-            [-20, 0],
-            [-10, 35]
+      {
+        "title": "Togo",
+        "menu": "Togo",
+        "map": {
+          "highlights": [
+            "TGO"
           ],
-          highlights: ['TGO'],
-          iso3: '',
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
-
-          }
+          "iso3": "TGO",
+          "extent": [
+            [-22, -10],
+            [-5,
+              40
+            ]
+          ]
         },
-        els: [{
-            tag: 'h1',
-            text: 'Togo'
+        "els": [{
+            "tag": "h1",
+            "text": "Togo"
           },
           {
-            tag: 'caption',
-            text: '<em>A subheading line on the country\'s greatest strength</em>'
+            "tag": "p",
+            "html": "Togo's exclusive economic zone covers roughly 12,045 square kilometers of the Gulf of Guinea.           This gives Togo the twenty-eighth largest EEZ in sub-Saharan Africa. Meanwhile, Togo's Maritime Enforcement Score indicates that the country is below the regional average."
           },
           {
-            tag: 'p',
-            html: 'The first paragraph will introduce the country in the context of the region.'
+            "tag": "radar"
           },
           {
-            tag: 'radar'
+            "tag": "p",
+            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Togo ranks highest in Coastal Welfare. Togo's score of 65 in this area is high relative to its other issue scores,          due in part to better-than-average coastal economic opportunities and low threats to coastal physical security.. Togo can further improve upon this area of relative strength by investing more in artisanal fishing opportunities, which are somewhat lower than  the continental average."
           },
           {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
+            "tag": "bigtext",
+            "html": "Togo is also above the regional average in Rule of Law and Maritime Mixed Migration."
           },
           {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+            "tag": "p",
+            "html": "The greatest remaining challenge for Togo is Illicit Trades. Togo scores 13 in this area, above the regional average of 6. To further             improve upon this score, Togo can improve port security and address extensive illicit trades in arms, wildlife, and several kinds of drugs.. Further progress can be made by working with African, European, and South American governments, as well as anti-wildlife trafficking NGOs.. Through these efforts, Togo can raise its weakest score and work toward comprehensive and lasting maritime security."
           }
-
-
         ]
       },
-      { // Card 4
-        title: 'Benin',
-        menu: 'Benin',
-        metadata: {
-          owner: '',
-          description: ''
-        },
-        map: {
-          scale: [],
-          translate: [],
-          extent: [
-            [-20, 0],
-            [-10, 35]
+      {
+        "title": "Benin",
+        "menu": "Benin",
+        "map": {
+          "highlights": [
+            "BEN"
           ],
-          highlights: ['BEN'],
-          iso3: '',
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
-
-          }
+          "iso3": "BEN",
+          "extent": [
+            [-22, -10],
+            [-5,
+              40
+            ]
+          ]
         },
-        els: [{
-            tag: 'h1',
-            text: 'Benin'
+        "els": [{
+            "tag": "h1",
+            "text": "Benin"
           },
           {
-            tag: 'caption',
-            text: '<em>A subheading line on the country\'s greatest strength</em>'
+            "tag": "p",
+            "html": "Benin's exclusive economic zone covers roughly 33,221 square kilometers of the Gulf of Guinea.           This gives Benin the twenty-fourth largest EEZ in sub-Saharan Africa. Meanwhile, Benin's Maritime Enforcement Score indicates that the country is below the regional average."
           },
           {
-            tag: 'p',
-            html: 'The first paragraph will introduce the country in the context of the region.'
+            "tag": "radar"
           },
           {
-            tag: 'radar'
+            "tag": "p",
+            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Benin ranks highest in International Cooperation. Benin's score of 67 in this area is high relative to its other issue scores,          due in part to its participation in most international agreements and the Yaounde Code of Conduct.. Benin can further improve upon this area of relative strength by revisiting its territorial claims, which exceed the twelve nautical mile limit defined by UNCLOS and ratifying the Port State Measures Agreement."
           },
           {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
+            "tag": "bigtext",
+            "html": "Benin is also above the regional average in Rule of Law, Maritime Enforcement, and Maritime Mixed Migration."
           },
           {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+            "tag": "p",
+            "html": "The greatest remaining challenge for Benin is Illicit Trades. Benin scores 3 in this area, below the regional average of 6. To further             improve upon this score, Benin can improve port security and address extensive illicit trades in arms, wildlife, and several kinds of drugs.. Further progress can be made by working with African, European, and South American governments, as well as anti-wildlife trafficking NGOs.. Through these efforts, Benin can raise its weakest score and work toward comprehensive and lasting maritime security."
           }
-
-
         ]
       },
-      { // Card 5
-        title: 'Nigeria',
-        menu: 'Nigeria',
-        metadata: {
-          owner: '',
-          description: ''
-        },
-        map: {
-          scale: [],
-          translate: [],
-          extent: [
-            [-20, 0],
-            [-10, 35]
+      {
+        "title": "Nigeria",
+        "menu": "Nigeria",
+        "map": {
+          "highlights": [
+            "NGA"
           ],
-          highlights: ['NGA'],
-          iso3: '',
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
-
-          }
+          "iso3": "NGA",
+          "extent": [
+            [-22, -10],
+            [-5,
+              40
+            ]
+          ]
         },
-        els: [{
-            tag: 'h1',
-            text: 'Ghana'
+        "els": [{
+            "tag": "h1",
+            "text": "Nigeria"
           },
           {
-            tag: 'caption',
-            text: '<em>A subheading line on the country\'s greatest strength</em>'
+            "tag": "p",
+            "html": "Nigeria's exclusive economic zone covers roughly 217,313 square kilometers of the Gulf of Guinea.           This gives Nigeria the fourteenth largest EEZ in sub-Saharan Africa. Meanwhile, Nigeria's Maritime Enforcement Score indicates that the country is above the regional average."
           },
           {
-            tag: 'p',
-            html: 'The first paragraph will introduce the country in the context of the region.'
+            "tag": "radar"
           },
           {
-            tag: 'radar'
+            "tag": "p",
+            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Nigeria ranks highest in International Cooperation. Nigeria's score of 87 in this area is high relative to its other issue scores,          due in part to its participation in six of the seven global agreements we record and its leadership in regional efforts like the Yaounde Code of Conduct.. Nigeria can further improve upon this area of relative strength by signing the Port State Measures agreement and using its navy, the strongest in the region, to advance regional maritime security goals."
           },
           {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
+            "tag": "bigtext",
+            "html": "Nigeria is also above the regional average in Maritime Enforcement, Blue Economy, and Fisheries."
           },
           {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+            "tag": "p",
+            "html": "The greatest remaining challenge for Nigeria is Piracy. Nigeria scores 0 in this area,  about the same as  the regional average of 30. To further             improve upon this score, Nigeria can maintain its leadership of regional counter-piracy efforts and improve inter-agency coordination against the transnational criminal networks operating in the Niger River Delta.. Further progress can be made by continuing to invest in regional maritime domain awareness efforts through Zone E of the Yaounde Code of Conduct.. Through these efforts, Nigeria can raise its weakest score and work toward comprehensive and lasting maritime security."
           }
-
-
         ]
       }
     ]
@@ -2685,7 +2264,12 @@ var regionsData = {
     },
     load: function(csv, callback) {
       callback('Southern Gulf load csv function callback');
-
+      var layer = '';
+      for (var i = 0; i < 8; i++) {
+        layer += 'card-' + i + '-layer ';
+      }
+      d3.select('.card-eez-layer')
+        .classed(layer, true);
 
     },
     cards: [{ // Card 0
@@ -2756,416 +2340,266 @@ var regionsData = {
           // ...
         ]
       },
-      { // Card 1
-        title: 'Sao Tome and Principe',
-        menu: 'Sao Tome and Principe',
-        metadata: {
-          owner: '',
-          description: ''
-        },
-        map: {
-          scale: [],
-          translate: [],
-          extent: [
-            [0, -5],
-            [10, 25]
-          ],
-          highlights: ['STP'],
-          iso3: '',
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
 
-          }
+      {
+        "title": "Sao Tome and Principe",
+        "menu": "Sao Tome and Principe",
+        "map": {
+          "highlights": [
+            "STP"
+          ],
+          "iso3": "STP",
+          "extent": [
+            [
+              0, -5
+            ],
+            [
+              10,
+              25
+            ]
+          ]
         },
-        els: [{
-            tag: 'h1',
-            text: 'Sao Tome and Principe'
+        "els": [{
+            "tag": "h1",
+            "text": "Sao Tome and Principe"
           },
           {
-            tag: 'caption',
-            text: '<em>A subheading line on the country\'s greatest strength</em>'
+            "tag": "p",
+            "html": "Sao Tome and Principe's exclusive economic zone covers roughly 131,397 square kilometers of the Gulf of Guinea.           This gives Sao Tome and Principe the twentieth largest EEZ in sub-Saharan Africa. Meanwhile, Sao Tome and Principe's Maritime Enforcement Score indicates that the country is below the regional average."
           },
           {
-            tag: 'p',
-            html: 'The first paragraph will introduce the country in the context of the region.'
+            "tag": "radar"
           },
           {
-            tag: 'radar'
+            "tag": "p",
+            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Sao Tome and Principe ranks highest in International Cooperation. Sao Tome and Principe's score of 90 in this area is high relative to its other issue scores,          due in part to its commitment to regional efforts like the Yaounde Code of Conduct and it strong relations with maritime neighbors.. Sao Tome and Principe can further improve upon this area of relative strength by greater participation in global agreements like Part XI of the UN Convention on the Law of the Sea and the United Nations Fish Stocks agreement."
           },
           {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
+            "tag": "bigtext",
+            "html": "Sao Tome and Principe is also above the regional average in Rule of Law, Coastal Welfare, Blue Economy, Illicit Trades, and Maritime Mixed Migration."
           },
           {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+            "tag": "p",
+            "html": "The greatest remaining challenge for Sao Tome and Principe is Piracy. Sao Tome and Principe scores 23 in this area, below the regional average of 32. To further             improve upon this score, Sao Tome and Principe can continue to work with maritime neighbors to boost regional maritime domain awareness, particularly in the waters north of Principe.. Further progress can be made by continuing to participate in multilateral naval training and exercises like African NEMO and Obangame Express.. Through these efforts, Sao Tome and Principe can raise its weakest score and work toward comprehensive and lasting maritime security."
           }
         ]
       },
-      { // Card 2
-        title: 'Cameroon',
-        menu: 'Cameroon',
-        metadata: {
-          owner: '',
-          description: ''
-        },
-        map: {
-          scale: [],
-          translate: [],
-          extent: [
-            [0, -5],
-            [10, 25]
+      {
+        "title": "Cameroon",
+        "menu": "Cameroon",
+        "map": {
+          "highlights": [
+            "CMR"
           ],
-          highlights: ['CMR'],
-          iso3: '',
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
-
-          }
+          "iso3": "CMR",
+          "extent": [
+            [
+              0, -5
+            ],
+            [
+              10,
+              25
+            ]
+          ]
         },
-        els: [{
-            tag: 'h1',
-            text: 'Cameroon'
+        "els": [{
+            "tag": "h1",
+            "text": "Cameroon"
           },
           {
-            tag: 'caption',
-            text: '<em>A subheading line on the country\'s greatest strength</em>'
+            "tag": "p",
+            "html": "Cameroon's exclusive economic zone covers roughly 16,547 square kilometers of the Gulf of Guinea.           This gives Cameroon the twenty-seventh largest EEZ in sub-Saharan Africa. Meanwhile, Cameroon's Maritime Enforcement Score indicates that the country is above the regional average."
           },
           {
-            tag: 'p',
-            html: 'The first paragraph will introduce the country in the context of the region.'
+            "tag": "radar"
           },
           {
-            tag: 'radar'
+            "tag": "p",
+            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Cameroon ranks highest in International Cooperation. Cameroon's score of 86 in this area is high relative to its other issue scores,          due in part to Cameroon's leadership in regional efforts like the Yaounde Code of Conduct and its strong relationships with maritime neighbors.. Cameroon can further improve upon this area of relative strength by ratifying important international agreements. Cameroon is one of only five coastal Gulf of Guinea countries to have not signed CSUA, the Convention for the Suppression of Unlawful Acts against the Safety of Maritime Navigation.  "
           },
           {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
+            "tag": "bigtext",
+            "html": "Cameroon is also above the regional average in Maritime Enforcement."
           },
           {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+            "tag": "p",
+            "html": "The greatest remaining challenge for Cameroon is Illicit Trades. Cameroon scores 8 in this area,  about the same as  the regional average of 44. To further             improve upon this score, Cameroon can improve port security and address extensive illicit trades in arms, wildlife, and several kinds of drugs.. Further progress can be made by working with African, European, and South American governments, as well as anti-wildlife trafficking NGOs.. Through these efforts, Cameroon can raise its weakest score and work toward comprehensive and lasting maritime security."
           }
-          // ...
         ]
       },
-      { // Card 3
-        title: 'Equatorial Guinea',
-        menu: 'Equatorial Guinea',
-        metadata: {
-          owner: '',
-          description: ''
-        },
-        map: {
-          scale: [],
-          translate: [],
-          extent: [
-            [0, -5],
-            [10, 25]
+      {
+        "title": "Equatorial Guinea",
+        "menu": "Equatorial Guinea",
+        "map": {
+          "highlights": [
+            "GNQ"
           ],
-          highlights: ['GNQ'],
-          iso3: '',
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
-
-          }
+          "iso3": "GNQ",
+          "extent": [
+            [
+              0, -5
+            ],
+            [
+              10,
+              25
+            ]
+          ]
         },
-        els: [{
-            tag: 'h1',
-            text: 'Equatorial Guinea'
+        "els": [{
+            "tag": "h1",
+            "text": "Equatorial Guinea"
           },
           {
-            tag: 'caption',
-            text: '<em>A subheading line on the country\'s greatest strength</em>'
+            "tag": "p",
+            "html": "Equatorial Guinea's exclusive economic zone covers roughly 303,509 square kilometers of the Gulf of Guinea.           This gives Equatorial Guinea the tenth largest EEZ in sub-Saharan Africa. Meanwhile, Equatorial Guinea's Maritime Enforcement Score indicates that the country is above the regional average."
           },
           {
-            tag: 'p',
-            html: 'The first paragraph will introduce the country in the context of the region.'
+            "tag": "radar"
           },
           {
-            tag: 'radar'
+            "tag": "p",
+            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Equatorial Guinea ranks highest in Coastal Welfare. Equatorial Guinea's score of 67 in this area is high relative to its other issue scores,          due in part to having exceptionally low rates of homicide and political violence.. Equatorial Guinea can further improve upon this area of relative strength by improving coastal economic opportunities, which are limited beyond the oil and gas sector."
           },
           {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
+            "tag": "bigtext",
+            "html": "Equatorial Guinea is also above the regional average in Maritime Enforcement, Coastal Welfare, Blue Economy, and Illicit Trades."
           },
           {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+            "tag": "p",
+            "html": "The greatest remaining challenge for Equatorial Guinea is Rule of Law. Equatorial Guinea scores 25 in this area,  about the same as  the regional average of 35. To further             improve upon this score, Equatorial Guinea can invest in anti-corruption efforts and increase judicial accountability.. Further progress can be made by eliminating bureaucratic red tape that inhibits smooth international trade and enables bribe-seeking. The World Bank Doing Business Report finds trade is significantly more difficult in Equatorial Guinea than it is elsewhere in the region.. Through these efforts, Equatorial Guinea can raise its weakest score and work toward comprehensive and lasting maritime security."
           }
-
-          // ...
-
         ]
       },
-      { // Card 4
-        title: 'Gabon',
-        menu: 'Gabon',
-        metadata: {
-          owner: '',
-          description: ''
-        },
-        map: {
-          scale: [],
-          translate: [],
-          extent: [
-            [0, -5],
-            [10, 25]
+      {
+        "title": "Gabon",
+        "menu": "Gabon",
+        "map": {
+          "highlights": [
+            "GAB"
           ],
-          highlights: ['GAB'],
-          iso3: '',
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
-
-          }
+          "iso3": "GAB",
+          "extent": [
+            [
+              0, -5
+            ],
+            [
+              10,
+              25
+            ]
+          ]
         },
-        els: [{
-            tag: 'h1',
-            text: 'Gabon'
+        "els": [{
+            "tag": "h1",
+            "text": "Gabon"
           },
           {
-            tag: 'caption',
-            text: '<em>A subheading line on the country\'s greatest strength</em>'
+            "tag": "p",
+            "html": "Gabon's exclusive economic zone covers roughly 202,790 square kilometers of the Gulf of Guinea.           This gives Gabon the sixteenth largest EEZ in sub-Saharan Africa. Meanwhile, Gabon's Maritime Enforcement Score indicates that the country is above the regional average."
           },
           {
-            tag: 'p',
-            html: 'The first paragraph will introduce the country in the context of the region.'
+            "tag": "radar"
           },
           {
-            tag: 'radar'
+            "tag": "p",
+            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Gabon ranks highest in Coastal Welfare. Gabon's score of 73 in this area is high relative to its other issue scores,          due in part to high standards of living. Gabon possesses one of the lowest infant mortality rates and one of the highest Human Development Index scores in Africa.. Gabon can further improve upon this area of relative strength by improving coastal economic opportunities, which are limited beyond the dominant oil and gas sector."
           },
           {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
+            "tag": "bigtext",
+            "html": "Gabon is also above the regional average in Maritime Enforcement, Coastal Welfare, Blue Economy, and Illicit Trades."
           },
           {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+            "tag": "p",
+            "html": "The greatest remaining challenge for Gabon is Rule of Law. Gabon scores 41 in this area, above the regional average of 35. To further             improve upon this score, Gabon can invest in anti-corruption efforts and increase judicial accountability.. Further progress can be made by eliminating bureaucratic red tape that inhibits smooth international trade and enables bribe-seeking. The World Bank Doing Business Report finds trade is significantly more difficult in Gabon than it is elsewhere in the region.. Through these efforts, Gabon can raise its weakest score and work toward comprehensive and lasting maritime security."
           }
-          // ...
         ]
       },
-      { // Card 5
-        title: 'Congo',
-        menu: 'Congo',
-        metadata: {
-          owner: '',
-          description: ''
-        },
-        map: {
-          scale: [],
-          translate: [],
-          extent: [
-            [0, -5],
-            [10, 25]
+      {
+        "title": "Congo",
+        "menu": "Congo",
+        "map": {
+          "highlights": [
+            "COG"
           ],
-          highlights: ['COG'],
-          iso3: '',
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
-
-          }
+          "iso3": "COG",
+          "extent": [
+            [
+              0, -5
+            ],
+            [
+              10,
+              25
+            ]
+          ]
         },
-        els: [{
-            tag: 'h1',
-            text: 'Congo'
+        "els": [{
+            "tag": "h1",
+            "text": "Congo"
           },
           {
-            tag: 'caption',
-            text: '<em>A subheading line on the country\'s greatest strength</em>'
+            "tag": "p",
+            "html": "Congo's exclusive economic zone covers roughly 31,017 square kilometers of the Gulf of Guinea.           This gives Congo the twenty-fifth largest EEZ in sub-Saharan Africa. Meanwhile, Congo's Maritime Enforcement Score indicates that the country is below the regional average."
           },
           {
-            tag: 'p',
-            html: 'The first paragraph will introduce the country in the context of the region.'
+            "tag": "radar"
           },
           {
-            tag: 'radar'
+            "tag": "p",
+            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Congo ranks highest in International Cooperation. Congo's score of 79 in this area is high relative to its other issue scores,          due in part to its strong participation in regional efforts like the Yaounde Code of Conduct and the African Union's Lome Charter.. Congo can further improve upon this area of relative strength by joining the recent wave of African states to sign and ratify the FAO Port State Measures Agreement."
           },
           {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
+            "tag": "bigtext",
+            "html": "Congo is also above the regional average in Blue Economy, Illicit Trades, and Maritime Mixed Migration."
           },
           {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+            "tag": "p",
+            "html": "The greatest remaining challenge for Congo is Rule of Law. Congo scores 26 in this area, below the regional average of 35. To further             improve upon this score, Congo can invest in anti-corruption efforts and increase judicial accountability.. Further progress can be made by eliminating bureaucratic red tape that inhibits smooth international trade and enables bribe-seeking. The World Bank Doing Business Report finds trade is significantly more difficult in Gabon than it is elsewhere in the region.. Through these efforts, Congo can raise its weakest score and work toward comprehensive and lasting maritime security."
           }
-
-          // ...
-
         ]
       },
-      { // Card 6
-        title: 'Democratic Republic of the Congo',
-        menu: 'Democratic Republic of the Congo',
-        metadata: {
-          owner: '',
-          description: ''
-        },
-        map: {
-          scale: [],
-          translate: [],
-          extent: [
-            [0, -5],
-            [10, 25]
+      {
+        "title": "DRC",
+        "menu": "DRC",
+        "map": {
+          "highlights": [
+            "COD"
           ],
-          highlights: ['COD'],
-          iso3: '',
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
-
-          }
+          "iso3": "COD",
+          "extent": [
+            [
+              0, -5
+            ],
+            [
+              10,
+              25
+            ]
+          ]
         },
-        els: [{
-            tag: 'h1',
-            text: 'Democratic Republic of the Congo'
+        "els": [{
+            "tag": "h1",
+            "text": "DRC"
           },
           {
-            tag: 'caption',
-            text: '<em>A subheading line on the country\'s greatest strength</em>'
+            "tag": "p",
+            "html": "DRC's exclusive economic zone covers roughly 1,606 square kilometers of the Gulf of Guinea.           This gives DRC the thirtieth largest EEZ in sub-Saharan Africa. Meanwhile, DRC's Maritime Enforcement Score indicates that the country is below the regional average."
           },
           {
-            tag: 'p',
-            html: 'The first paragraph will introduce the country in the context of the region.'
+            "tag": "radar"
           },
           {
-            tag: 'radar'
+            "tag": "p",
+            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, DRC ranks highest in International Cooperation. DRC's score of 56 in this area is high relative to its other issue scores,          due in part to participation in the Yaounde Code of Conduct and the African Union's Lome Charter.. DRC can further improve upon this area of relative strength by resolving maritime border disagreements with Angola and ratifying and signing more global international agreements on maritime issues."
           },
           {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
+            "tag": "bigtext",
+            "html": "DRC is also above the regional average in Illicit Trades."
           },
           {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+            "tag": "p",
+            "html": "The greatest remaining challenge for DRC is Blue Economy. DRC scores 20 in this area, below the regional average of 44. To further             improve upon this score, DRC can work with Angola to settle maritime boundary disputes, which will improve the country's ability to profit from its fisheries.. Further progress can be made by continuing to invest in port infrastructure at Matadi and Boma.. Through these efforts, DRC can raise its weakest score and work toward comprehensive and lasting maritime security."
           }
         ]
       }
+
     ]
   },
   southernCoast: {
@@ -3185,6 +2619,12 @@ var regionsData = {
     },
     load: function(csv, callback) {
       callback('Eastern Coast load csv function callback');
+      var layer = '';
+      for (var i = 0; i < 5; i++) {
+        layer += 'card-' + i + '-layer ';
+      }
+      d3.select('.card-eez-layer')
+        .classed(layer, true);
 
 
     },
@@ -3258,214 +2698,128 @@ var regionsData = {
 
         ]
       },
-      { // Card 1
-        title: 'Angola',
-        menu: 'Angola',
-        metadata: {
-          owner: '',
-          description: ''
-        },
-        map: {
-          scale: [],
-          translate: [],
-          extent: [
-            [-5, -25],
-            [15, 5]
+
+      {
+        "title": "Angola",
+        "menu": "Angola",
+        "map": {
+          "highlights": [
+            "AGO"
           ],
-          highlights: ['AGO'],
-          iso3: '',
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
-
-          }
+          "iso3": "AGO",
+          "extent": [
+            [-5, -25],
+            [
+              15,
+              5
+            ]
+          ]
         },
-        els: [{
-            tag: 'h1',
-            text: 'Angola'
+        "els": [{
+            "tag": "h1",
+            "text": "Angola"
           },
           {
-            tag: 'caption',
-            text: '<em>A subheading line on the country\'s greatest strength</em>'
+            "tag": "p",
+            "html": "Angola's exclusive economic zone covers roughly 518,433 square kilometers of the Gulf of Guinea.           This gives Angola the ninth largest EEZ in sub-Saharan Africa. Meanwhile, Angola's Maritime Enforcement Score indicates that the country is below the regional average."
           },
           {
-            tag: 'p',
-            html: 'The first paragraph will introduce the country in the context of the region.'
+            "tag": "radar"
           },
           {
-            tag: 'radar'
+            "tag": "p",
+            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Angola ranks highest in Fisheries. Angola's score of 65 in this area is high relative to its other issue scores,          due in part to strong participation in regional fisheries management organizations (RFMOs) and low levels of marine pollution relative to the rest of the region.. Angola can further improve upon this area of relative strength by strengthening domestic fisheries legislation."
           },
           {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
+            "tag": "bigtext",
+            "html": "Angola is also above the regional average in Blue Economy, Fisheries, Illicit Trades, and Maritime Mixed Migration."
           },
           {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+            "tag": "p",
+            "html": "The greatest remaining challenge for Angola is Piracy. Angola scores 23 in this area, below the regional average of 74. To further             improve upon this score, Angola can continue to improve security around ports and oil and gas infrastructure, while also maintaining investments in maritime domain awareness.. Further progress can be made by working with Yaounde Code of Conduct partners to boost regional maritime enforcement capacity.. Through these efforts, Angola can raise its weakest score and work toward comprehensive and lasting maritime security."
           }
-
-          // ...
-
         ]
       },
-      { // Card 2
-        title: 'Namibia',
-        menu: 'Namibia',
-        metadata: {
-          owner: '',
-          description: ''
-        },
-        map: {
-          scale: [],
-          translate: [],
-          extent: [
-            [-5, -25],
-            [15, 5]
+      {
+        "title": "Namibia",
+        "menu": "Namibia",
+        "map": {
+          "highlights": [
+            "NAM"
           ],
-          highlights: ['NAM'],
-          iso3: '',
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
-
-          }
+          "iso3": "NAM",
+          "extent": [
+            [-5, -25],
+            [
+              15,
+              5
+            ]
+          ]
         },
-        els: [{
-            tag: 'h1',
-            text: 'Namibia'
+        "els": [{
+            "tag": "h1",
+            "text": "Namibia"
           },
           {
-            tag: 'caption',
-            text: '<em>A subheading line on the country\'s greatest strength</em>'
+            "tag": "p",
+            "html": "Namibia's exclusive economic zone covers roughly 564,748 square kilometers of the Atlantic Ocean.           This gives Namibia the eighth largest EEZ in sub-Saharan Africa. Meanwhile, Namibia's Maritime Enforcement Score indicates that the country is below the regional average."
           },
           {
-            tag: 'p',
-            html: 'The first paragraph will introduce the country in the context of the region.'
+            "tag": "radar"
           },
           {
-            tag: 'radar'
+            "tag": "p",
+            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Namibia ranks highest in Piracy. Namibia's score of 100 in this area is high relative to its other issue scores,          due in part to the remoteness of the Namibian coast, which provides few safe harbors or available targets for would-be pirates.. Namibia can further improve upon this area of relative strength by improving maritime domain awareness along the long and remote coastline."
           },
           {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
+            "tag": "bigtext",
+            "html": "Namibia is also above the regional average in Rule of Law, Coastal Welfare, Blue Economy, Fisheries, Piracy, Illicit Trades, and Maritime Mixed Migration."
           },
           {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+            "tag": "p",
+            "html": "The greatest remaining challenge for Namibia is Maritime Enforcement. Namibia scores 46 in this area, below the regional average of 55. To further             improve upon this score, Namibia can increase assets available for coastal patrol. Namibia has one of the smallest navies in Africa, despite having one of the larger maritime spaces.. Further progress can be made by increasing integration with regional maritime security efforts led by SADC and the Gulf of Guinea states.. Through these efforts, Namibia can raise its weakest score and work toward comprehensive and lasting maritime security."
           }
-
-          // ...
-
         ]
       },
-      { // Card 3
-        title: 'South Africa',
-        menu: 'South Africa',
-        metadata: {
-          owner: '',
-          description: ''
-        },
-        map: {
-          scale: [],
-          translate: [],
-          extent: [
-            [-5, -25],
-            [15, 5]
+      {
+        "title": "South Africa",
+        "menu": "South Africa",
+        "map": {
+          "highlights": [
+            "ZAF"
           ],
-          highlights: ['ZAF'],
-          iso3: '',
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
-
-          }
+          "iso3": "ZAF",
+          "extent": [
+            [-5, -25],
+            [
+              15,
+              5
+            ]
+          ]
         },
-        els: [{
-            tag: 'h1',
-            text: 'South Africa'
+        "els": [{
+            "tag": "h1",
+            "text": "South Africa"
           },
           {
-            tag: 'caption',
-            text: '<em>A subheading line on the country\'s greatest strength</em>'
+            "tag": "p",
+            "html": "South Africa's exclusive economic zone covers roughly 1,535,538 square kilometers of the Atlantic and Indian oceans.           This gives South Africa the first largest EEZ in sub-Saharan Africa. Meanwhile, South Africa's Maritime Enforcement Score indicates that the country is above the regional average."
           },
           {
-            tag: 'p',
-            html: 'The first paragraph will introduce the country in the context of the region.'
+            "tag": "radar"
           },
           {
-            tag: 'radar'
+            "tag": "p",
+            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, South Africa ranks highest in Piracy. South Africa's score of 100 in this area is high relative to its other issue scores,          due in part to South Africa's extreme distance from piracy hot spots in the Gulf of Guinea and the western Indian Ocean.. South Africa can further improve upon this area of relative strength by renewing commitments to help neighbors fight piracy in potential hot spots like the Mozambique Channel and the southwest Indian Ocean."
           },
           {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
+            "tag": "bigtext",
+            "html": "South Africa is also above the regional average in Rule of Law, Maritime Enforcement, Coastal Welfare, Blue Economy, Fisheries, Piracy, Illicit Trades, and Maritime Mixed Migration."
           },
           {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+            "tag": "p",
+            "html": "The greatest remaining challenge for South Africa is Illicit Trades. South Africa scores 39 in this area,  about the same as  the regional average of 56. To further             improve upon this score, South Africa can improve port security and address extensive illicit trades in arms, contraband goods, and several kinds of drugs.. Further progress can be made by working with African, European, and South American governments, as well as anti-wildlife trafficking NGOs.. Through these efforts, South Africa can raise its weakest score and work toward comprehensive and lasting maritime security."
           }
-
-          // ...
-
         ]
       }
     ]
@@ -3487,6 +2841,12 @@ var regionsData = {
     },
     load: function(csv, callback) {
       callback('West Indian Ocean load csv function callback');
+      var layer = '';
+      for (var i = 0; i < 5; i++) {
+        layer += 'card-' + i + '-layer ';
+      }
+      d3.select('.card-eez-layer')
+        .classed(layer, true);
 
     },
     cards: [{ // Card 0
@@ -3559,284 +2919,177 @@ var regionsData = {
 
         ]
       },
-      { // Card 1
-        title: 'Madagascar',
-        menu: 'Madagascar',
-        metadata: {
-          owner: '',
-          description: ''
-        },
-        map: {
-          scale: [],
-          translate: [],
-          extent: [
-            [24, -22],
-            [36, 15]
+
+      {
+        "title": "Madagascar",
+        "menu": "Madagascar",
+        "map": {
+          "highlights": [
+            "MDG"
           ],
-          highlights: ['MDG'],
-          iso3: '',
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
-
-          }
+          "iso3": "MDG",
+          "extent": [
+            [
+              24, -22
+            ],
+            [
+              36,
+              15
+            ]
+          ]
         },
-        els: [{
-            tag: 'h1',
-            text: 'Madagascar'
+        "els": [{
+            "tag": "h1",
+            "text": "Madagascar"
           },
           {
-            tag: 'caption',
-            text: '<em>A subheading line on the country\'s greatest strength</em>'
+            "tag": "p",
+            "html": "Madagascar's exclusive economic zone covers roughly 1,225,259 square kilometers of the Indian Ocean.           This gives Madagascar the fourth largest EEZ in sub-Saharan Africa. Meanwhile, Madagascar's Maritime Enforcement Score indicates that the country is below the regional average."
           },
           {
-            tag: 'p',
-            html: 'The first paragraph will introduce the country in the context of the region.'
+            "tag": "radar"
           },
           {
-            tag: 'radar'
+            "tag": "p",
+            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Madagascar ranks highest in Piracy. Madagascar's score of 86 in this area is high relative to its other issue scores,          due in part to the elimination of piracy in the Mozambique channel and sharp decline of piracy in the western Indian Ocean.. Madagascar can further improve upon this area of relative strength by renewing commitments to help fight piracy in potential hot spots like the Mozambique Channel and the southwest Indian Ocean."
           },
           {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
+            "tag": "bigtext",
+            "html": "Madagascar is also above the regional average in Coastal Welfare, Fisheries, Piracy, and Maritime Mixed Migration."
           },
           {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+            "tag": "p",
+            "html": "The greatest remaining challenge for Madagascar is Illicit Trades. Madagascar scores 1 in this area, below the regional average of 23. To further             improve upon this score, Madagascar can improve port security and address extensive illicit trades in arms, contraband goods, and several kinds of drugs in transit between Asia and the east African coastline.. Further progress can be made by working with African, European, and Asian governments, as well as anti-wildlife trafficking NGOs.. Through these efforts, Madagascar can raise its weakest score and work toward comprehensive and lasting maritime security."
           }
-
-          // ...
-
         ]
       },
-      { // Card 2
-        title: 'Mauritius',
-        menu: 'Mauritius',
-        metadata: {
-          owner: '',
-          description: ''
-        },
-        map: {
-          scale: [],
-          translate: [],
-          extent: [
-            [24, -22],
-            [36, 15]
+      {
+        "title": "Mauritius",
+        "menu": "Mauritius",
+        "map": {
+          "highlights": [
+            "MUS"
           ],
-          highlights: ['MUS'],
-          iso3: '',
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
-
-          }
+          "iso3": "MUS",
+          "extent": [
+            [
+              24, -22
+            ],
+            [
+              36,
+              15
+            ]
+          ]
         },
-        els: [{
-            tag: 'h1',
-            text: 'Mauritius'
+        "els": [{
+            "tag": "h1",
+            "text": "Mauritius"
           },
           {
-            tag: 'caption',
-            text: '<em>A subheading line on the country\'s greatest strength</em>'
+            "tag": "p",
+            "html": "Mauritius's exclusive economic zone covers roughly 1,284,997 square kilometers of the Indian Ocean.           This gives Mauritius the third largest EEZ in sub-Saharan Africa. Meanwhile, Mauritius's Maritime Enforcement Score indicates that the country is above the regional average."
           },
           {
-            tag: 'p',
-            html: 'The first paragraph will introduce the country in the context of the region.'
+            "tag": "radar"
           },
           {
-            tag: 'radar'
+            "tag": "p",
+            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Mauritius ranks highest in Piracy. Mauritius's score of 99 in this area is high relative to its other issue scores,          due in part to the elimination of piracy in the Mozambique channel and sharp decline of piracy in the western Indian Ocean.. Mauritius can further improve upon this area of relative strength by renewing commitments to help fight piracy in potential hot spots like the Mozambique Channel and the southwest Indian Ocean."
           },
           {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
+            "tag": "bigtext",
+            "html": "Mauritius is also above the regional average in Rule of Law, Maritime Enforcement, Coastal Welfare, Blue Economy, Fisheries, Piracy, Illicit Trades, and Maritime Mixed Migration."
           },
           {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+            "tag": "p",
+            "html": "The greatest remaining challenge for Mauritius is Illicit Trades. Mauritius scores 36 in this area, above the regional average of 23. To further             improve upon this score, Mauritius can improve port security and address extensive illicit trades in arms, contraband goods, and several kinds of drugs in transit between Asia and the east African coastline.. Further progress can be made by working with African, European, and Asian governments, as well as anti-wildlife trafficking NGOs.. Through these efforts, Mauritius can raise its weakest score and work toward comprehensive and lasting maritime security."
           }
-
-          // ...
-
         ]
       },
-      { // Card 3
-        title: 'Seychelles',
-        menu: 'Seychelles',
-        metadata: {
-          owner: '',
-          description: ''
-        },
-        map: {
-          scale: [],
-          translate: [],
-          extent: [
-            [24, -22],
-            [36, 15]
+      {
+        "title": "Seychelles",
+        "menu": "Seychelles",
+        "map": {
+          "highlights": [
+            "SYC"
           ],
-          highlights: ['SYC'],
-          iso3: '',
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
-
-          }
+          "iso3": "SYC",
+          "extent": [
+            [
+              24, -22
+            ],
+            [
+              36,
+              15
+            ]
+          ]
         },
-        els: [{
-            tag: 'h1',
-            text: 'Seychelles'
+        "els": [{
+            "tag": "h1",
+            "text": "Seychelles"
           },
           {
-            tag: 'caption',
-            text: '<em>A subheading line on the country\'s greatest strength</em>'
+            "tag": "p",
+            "html": "Seychelles's exclusive economic zone covers roughly 1,336,559 square kilometers of the Indian Ocean.           This gives Seychelles the second largest EEZ in sub-Saharan Africa. Meanwhile, Seychelles's Maritime Enforcement Score indicates that the country is above the regional average."
           },
           {
-            tag: 'p',
-            html: 'The first paragraph will introduce the country in the context of the region.'
+            "tag": "radar"
           },
           {
-            tag: 'radar'
+            "tag": "p",
+            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Seychelles ranks highest in Piracy. Seychelles's score of 96 in this area is high relative to its other issue scores,          due in part to the elimination of piracy in the Mozambique channel and sharp decline of piracy in the western Indian Ocean.. Seychelles can further improve upon this area of relative strength by renewing commitments to help fight piracy in potential hot spots like the Mozambique Channel and the southwest Indian Ocean."
           },
           {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
+            "tag": "bigtext",
+            "html": "Seychelles is also above the regional average in Rule of Law, Maritime Enforcement, Coastal Welfare, Blue Economy, Fisheries, Piracy, Illicit Trades, and Maritime Mixed Migration."
           },
           {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+            "tag": "p",
+            "html": "The greatest remaining challenge for Seychelles is Illicit Trades. Seychelles scores 44 in this area, above the regional average of 23. To further             improve upon this score, Seychelles can improve port security and address extensive illicit trades in arms, contraband goods, and several kinds of drugs in transit between Asia and the east African coastline.. Further progress can be made by working with African, European, and Asian governments, as well as anti-wildlife trafficking NGOs.. Through these efforts, Seychelles can raise its weakest score and work toward comprehensive and lasting maritime security."
           }
-
-          // ...
-
         ]
       },
-      { // Card 4
-        title: 'Comoros',
-        menu: 'Comoros',
-        metadata: {
-          owner: '',
-          description: ''
-        },
-        map: {
-          scale: [],
-          translate: [],
-          extent: [
-            [24, -22],
-            [36, 15]
+      {
+        "title": "Comoros",
+        "menu": "Comoros",
+        "map": {
+          "highlights": [
+            "COM"
           ],
-          highlights: ['COM'],
-          iso3: '',
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
-
-          }
+          "iso3": "COM",
+          "extent": [
+            [
+              24, -22
+            ],
+            [
+              36,
+              15
+            ]
+          ]
         },
-        els: [{
-            tag: 'h1',
-            text: 'The West Indian Ocean'
+        "els": [{
+            "tag": "h1",
+            "text": "Comoros"
           },
           {
-            tag: 'caption',
-            text: '<em>A subheading line on the country\'s greatest strength</em>'
+            "tag": "p",
+            "html": "Comoros's exclusive economic zone covers roughly 163,752 square kilometers of the Indian Ocean.           This gives Comoros the eighteenth largest EEZ in sub-Saharan Africa. Meanwhile, Comoros's Maritime Enforcement Score indicates that the country is below the regional average."
           },
           {
-            tag: 'p',
-            html: 'The first paragraph will introduce the country in the context of the region.'
+            "tag": "radar"
           },
           {
-            tag: 'radar'
+            "tag": "p",
+            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Comoros ranks highest in Piracy. Comoros's score of 88 in this area is high relative to its other issue scores,          due in part to the elimination of piracy in the Mozambique channel and sharp decline of piracy in the western Indian Ocean.. Comoros can further improve upon this area of relative strength by renewing commitments to help fight piracy in potential hot spots like the Mozambique Channel and the southwest Indian Ocean."
           },
           {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
+            "tag": "bigtext",
+            "html": "Comoros is also above the regional average in Fisheries and Piracy."
           },
           {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+            "tag": "p",
+            "html": "The greatest remaining challenge for Comoros is Illicit Trades. Comoros scores 10 in this area, below the regional average of 23. To further             improve upon this score, Comoros can improve port security and address extensive illicit trades in arms, contraband goods, and several kinds of drugs in transit between Asia and the east African coastline.. Further progress can be made by working with African, European, and Asian governments, as well as anti-wildlife trafficking NGOs.. Through these efforts, Comoros can raise its weakest score and work toward comprehensive and lasting maritime security."
           }
-
-          // ...
-
         ]
       }
     ]
@@ -3858,7 +3111,12 @@ var regionsData = {
     },
     load: function(csv, callback) {
       callback('Eastern Coast load csv function callback');
-
+      var layer = '';
+      for (var i = 0; i < 6; i++) {
+        layer += 'card-' + i + '-layer ';
+      }
+      d3.select('.card-eez-layer')
+        .classed(layer, true);
     },
     cards: [{ // Card 0
         title: 'Africa\'s Eastern Coast',
@@ -3950,461 +3208,232 @@ var regionsData = {
           // ...
         ]
       },
-      { // Card 1
-        title: 'Mozambique',
-        menu: 'Mozambique',
-        metadata: {
-          owner: '',
-          description: ''
-        },
-        map: {
-          scale: [],
-          translate: [],
-          extent: [
-            [5, -18],
-            [25, 35]
-          ],
-          highlights: ['MOZ'],
-          iso3: '',
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
 
-          }
-        },
-        els: [{
-            tag: 'h1',
-            text: 'Mozambique'
-          },
-          {
-            tag: 'caption',
-            text: '<em>An island nation with strong Rule of Law</em>'
-          },
-          {
-            tag: 'p',
-            html: 'Mozambique\'s exclusive economic zone covers roughly 800,561 square kilometers of the northeast Atlantic Ocean \
-                . This gives Cabo Verde the xth largest EEZ in sub-Saharan Africa. \
-                Meanwhile, Cabo Verde\'s Maritime Enforcement Capacity Score indicates Cabo Verde is slightly above \
-                the regional average.'
-          },
-          {
-            tag: 'radar'
-          },
-          {
-            tag: 'p',
-            html: 'Across the nine issues covered by the Stable Seas Maritime Security Index, COUNTRY ranks highest in BEST ISSUE. \
-                COUNTRY’s score of NUMBER in this area is high relative to its other issue scores, due in part to SOMETHING RELEVANT \
-                AND INTERESTING. COUNTRY can further improve upon this area of relative strength by SUGGESTION BACKED BY THE SUBSCORES.'
-          },
-          {
-            tag: 'bigtext',
-            html: 'COUNTRY is also above the regional average in LIST OF ALL ISSUES WHERE COUNTRY RANKS ABOVE 16.'
-          },
-          {
-            tag: 'p',
-            html: 'The greatest remaining challenge for COUNTRY is WORST ISSUE RANKING. COUNTRY scores SCORE in this area, and this is slightly/significantly above/below the regional average of regional average for this score. To further improve upon this score, COUNTRY can SUGGESTION BACKED BY THE SUBSCORES, FOCUSED ON DOMESTIC POLICY. Further progress can be made by SUGGESTION BACKED BY THE SUBSCORES, FOCUSED ON INTERNATIONAL/REGIONAL EFFORT. Through these efforts, COUNTRY can raise its weakest score and work toward comprehensive and lasting maritime security.'
-          },
-          {
-            tag: 'img',
-            src: '../../assets/western-coast/radar-sample.png'
-          },
-          {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
-          },
-          {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
-          }
-
-          // ...
-
+  {
+    "title": "Mozambique",
+    "menu": "Mozambique",
+    "map": {
+      "highlights": [
+        "MOZ"
+      ],
+      "iso3": "MOZ",
+      "extent": [
+        [
+          5,
+          -18
+        ],
+        [
+          25,
+          35
         ]
+      ]
+    },
+    "els": [
+      {
+        "tag": "h1",
+        "text": "Mozambique"
       },
-      { // Card 2
-        title: 'Tanzania',
-        menu: 'Tanzania',
-        metadata: {
-          owner: '',
-          description: ''
-        },
-        map: {
-          scale: [],
-          translate: [],
-          extent: [
-            [5, -18],
-            [25, 35]
-          ],
-          highlights: ['TZA'],
-          iso3: '',
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
-
-          }
-        },
-        els: [{
-            tag: 'h1',
-            text: 'Senegal'
-          },
-          {
-            tag: 'caption',
-            text: '<em>Senegal</em>'
-          },
-          {
-            tag: 'p',
-            html: 'Cabo Verde\'s exclusive economic zone covers roughly 800,561 square kilometers of the northeast Atlantic Ocean \
-                . This gives Cabo Verde the xth largest EEZ in sub-Saharan Africa. \
-                Meanwhile, Cabo Verde\'s Maritime Enforcement Capacity Score indicates Cabo Verde is slightly above \
-                the regional average.'
-          },
-          {
-            tag: 'radar'
-          },
-          {
-            tag: 'p',
-            html: 'Across the nine issues covered by the Stable Seas Maritime Security Index, COUNTRY ranks highest in BEST ISSUE. \
-                COUNTRY’s score of NUMBER in this area is high relative to its other issue scores, due in part to SOMETHING RELEVANT \
-                AND INTERESTING. COUNTRY can further improve upon this area of relative strength by SUGGESTION BACKED BY THE SUBSCORES.'
-          },
-          {
-            tag: 'bigtext',
-            html: 'COUNTRY is also above the regional average in LIST OF ALL ISSUES WHERE COUNTRY RANKS ABOVE 16.'
-          },
-          {
-            tag: 'p',
-            html: 'The greatest remaining challenge for COUNTRY is WORST ISSUE RANKING. COUNTRY scores SCORE in this area, and this is slightly/significantly above/below the regional average of regional average for this score. To further improve upon this score, COUNTRY can SUGGESTION BACKED BY THE SUBSCORES, FOCUSED ON DOMESTIC POLICY. Further progress can be made by SUGGESTION BACKED BY THE SUBSCORES, FOCUSED ON INTERNATIONAL/REGIONAL EFFORT. Through these efforts, COUNTRY can raise its weakest score and work toward comprehensive and lasting maritime security.'
-          },
-          {
-            tag: 'img',
-            src: '../../assets/western-coast/radar-sample.png'
-          },
-          {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
-          },
-          {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
-          }
-
-          // ...
-
-        ]
+      {
+        "tag": "p",
+        "html": "Mozambique's exclusive economic zone covers roughly 578,986 square kilometers of the Indian Ocean.           This gives Mozambique the seventh largest EEZ in sub-Saharan Africa. Meanwhile, Mozambique's Maritime Enforcement Score indicates that the country is below the regional average."
       },
-      { // Card 3
-        title: 'Kenya',
-        menu: 'Kenya',
-        metadata: {
-          owner: '',
-          description: ''
-        },
-        map: {
-          scale: [],
-          translate: [],
-          extent: [
-            [5, -18],
-            [25, 35]
-          ],
-          highlights: ['KEN'],
-          iso3: '',
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
-
-          }
-        },
-        els: [{
-            tag: 'h1',
-            text: 'The Gambia'
-          },
-          {
-            tag: 'caption',
-            text: '<em>Gambia</em>'
-          },
-          {
-            tag: 'p',
-            html: 'Cabo Verde\'s exclusive economic zone covers roughly 800,561 square kilometers of the northeast Atlantic Ocean \
-                . This gives Cabo Verde the xth largest EEZ in sub-Saharan Africa. \
-                Meanwhile, Cabo Verde\'s Maritime Enforcement Capacity Score indicates Cabo Verde is slightly above \
-                the regional average.'
-          },
-          {
-            tag: 'radar'
-          },
-          {
-            tag: 'p',
-            html: 'Across the nine issues covered by the Stable Seas Maritime Security Index, COUNTRY ranks highest in BEST ISSUE. \
-                COUNTRY’s score of NUMBER in this area is high relative to its other issue scores, due in part to SOMETHING RELEVANT \
-                AND INTERESTING. COUNTRY can further improve upon this area of relative strength by SUGGESTION BACKED BY THE SUBSCORES.'
-          },
-          {
-            tag: 'bigtext',
-            html: 'COUNTRY is also above the regional average in LIST OF ALL ISSUES WHERE COUNTRY RANKS ABOVE 16.'
-          },
-          {
-            tag: 'p',
-            html: 'The greatest remaining challenge for COUNTRY is WORST ISSUE RANKING. COUNTRY scores SCORE in this area, and this is slightly/significantly above/below the regional average of regional average for this score. To further improve upon this score, COUNTRY can SUGGESTION BACKED BY THE SUBSCORES, FOCUSED ON DOMESTIC POLICY. Further progress can be made by SUGGESTION BACKED BY THE SUBSCORES, FOCUSED ON INTERNATIONAL/REGIONAL EFFORT. Through these efforts, COUNTRY can raise its weakest score and work toward comprehensive and lasting maritime security.'
-          },
-          {
-            tag: 'img',
-            src: '../../assets/western-coast/radar-sample.png'
-          },
-          {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
-          },
-          {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
-          }
-
-          // ...
-
-        ]
+      {
+        "tag": "radar"
       },
-      { // Card 4
-        title: 'Somalia',
-        menu: 'Somalia',
-        metadata: {
-          owner: '',
-          description: ''
-        },
-        map: {
-          scale: [],
-          translate: [],
-          extent: [
-            [5, -18],
-            [25, 35]
-          ],
-          highlights: ['SOM'],
-          iso3: '',
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
-
-          }
-        },
-        els: [{
-            tag: 'h1',
-            text: 'Guinea-Bissau'
-          },
-          {
-            tag: 'caption',
-            text: '<em>Guinea-Bissau</em>'
-          },
-          {
-            tag: 'p',
-            html: 'Cabo Verde\'s exclusive economic zone covers roughly 800,561 square kilometers of the northeast Atlantic Ocean \
-                . This gives Cabo Verde the xth largest EEZ in sub-Saharan Africa. \
-                Meanwhile, Cabo Verde\'s Maritime Enforcement Capacity Score indicates Cabo Verde is slightly above \
-                the regional average.'
-          },
-          {
-            tag: 'radar'
-          },
-          {
-            tag: 'p',
-            html: 'Across the nine issues covered by the Stable Seas Maritime Security Index, COUNTRY ranks highest in BEST ISSUE. \
-                COUNTRY’s score of NUMBER in this area is high relative to its other issue scores, due in part to SOMETHING RELEVANT \
-                AND INTERESTING. COUNTRY can further improve upon this area of relative strength by SUGGESTION BACKED BY THE SUBSCORES.'
-          },
-          {
-            tag: 'bigtext',
-            html: 'COUNTRY is also above the regional average in LIST OF ALL ISSUES WHERE COUNTRY RANKS ABOVE 16.'
-          },
-          {
-            tag: 'p',
-            html: 'The greatest remaining challenge for COUNTRY is WORST ISSUE RANKING. COUNTRY scores SCORE in this area, and this is slightly/significantly above/below the regional average of regional average for this score. To further improve upon this score, COUNTRY can SUGGESTION BACKED BY THE SUBSCORES, FOCUSED ON DOMESTIC POLICY. Further progress can be made by SUGGESTION BACKED BY THE SUBSCORES, FOCUSED ON INTERNATIONAL/REGIONAL EFFORT. Through these efforts, COUNTRY can raise its weakest score and work toward comprehensive and lasting maritime security.'
-          },
-          {
-            tag: 'img',
-            src: '../../assets/western-coast/radar-sample.png'
-          },
-          {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
-          },
-          {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
-          }
-
-          // ...
-
-        ]
+      {
+        "tag": "p",
+        "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Mozambique ranks highest in Piracy. Mozambique's score of 90 in this area is high relative to its other issue scores,          due in part to the elimination of piracy in the Mozambique channel and sharp decline of piracy in the western Indian Ocean.. Mozambique can further improve upon this area of relative strength by renewing commitments to help fight piracy in potential hot spots like the Mozambique Channel and the southwest Indian Ocean."
       },
-      { // Card 5
-        title: 'Djibouti',
-        menu: 'Djibouti',
-        metadata: {
-          owner: '',
-          description: ''
-        },
-        map: {
-          scale: [],
-          translate: [],
-          extent: [
-            [5, -18],
-            [25, 35]
-          ],
-          highlights: ['DJI'],
-          iso3: '',
-          load: function(index, csv) {
-            var layer = 'card-' + index + '-layer';
-            d3.select('.card-eez-layer')
-              .classed(layer, true);
-          },
-          switch: function(index) {
-
-          }
-        },
-        els: [{
-            tag: 'h1',
-            text: 'Guinea'
-          },
-          {
-            tag: 'caption',
-            text: '<em>Guinea</em>'
-          },
-          {
-            tag: 'p',
-            html: 'Cabo Verde\'s exclusive economic zone covers roughly 800,561 square kilometers of the northeast Atlantic Ocean \
-                . This gives Cabo Verde the xth largest EEZ in sub-Saharan Africa. \
-                Meanwhile, Cabo Verde\'s Maritime Enforcement Capacity Score indicates Cabo Verde is slightly above \
-                the regional average.'
-          },
-          {
-            tag: 'radar'
-          },
-          {
-            tag: 'p',
-            html: 'Across the nine issues covered by the Stable Seas Maritime Security Index, COUNTRY ranks highest in BEST ISSUE. \
-                COUNTRY’s score of NUMBER in this area is high relative to its other issue scores, due in part to SOMETHING RELEVANT \
-                AND INTERESTING. COUNTRY can further improve upon this area of relative strength by SUGGESTION BACKED BY THE SUBSCORES.'
-          },
-          {
-            tag: 'bigtext',
-            html: 'COUNTRY is also above the regional average in LIST OF ALL ISSUES WHERE COUNTRY RANKS ABOVE 16.'
-          },
-          {
-            tag: 'p',
-            html: 'The greatest remaining challenge for COUNTRY is WORST ISSUE RANKING. COUNTRY scores SCORE in this area, and this is slightly/significantly above/below the regional average of regional average for this score. To further improve upon this score, COUNTRY can SUGGESTION BACKED BY THE SUBSCORES, FOCUSED ON DOMESTIC POLICY. Further progress can be made by SUGGESTION BACKED BY THE SUBSCORES, FOCUSED ON INTERNATIONAL/REGIONAL EFFORT. Through these efforts, COUNTRY can raise its weakest score and work toward comprehensive and lasting maritime security.'
-          },
-          {
-            tag: 'img',
-            src: '../../assets/western-coast/radar-sample.png'
-          },
-          {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
-          },
-          {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
-          }
-
-          // ...
-
-        ]
+      {
+        "tag": "bigtext",
+        "html": "Mozambique is also above the regional average in Rule of Law, Blue Economy, Fisheries, Piracy, and Maritime Mixed Migration."
+      },
+      {
+        "tag": "p",
+        "html": "The greatest remaining challenge for Mozambique is Illicit Trades. Mozambique scores 4 in this area, below the regional average of 22. To further             improve upon this score, Mozambique can immediately address port security at major ports where smuggled drugs and wildlife from the interior are packed onto shipping containers for transshipment to distant global markets.. Further progress can be made by working with African, European, and Asian governments, as well as anti-wildlife trafficking NGOs.. Through these efforts, Mozambique can raise its weakest score and work toward comprehensive and lasting maritime security."
       }
     ]
+  },
+  {
+    "title": "Tanzania",
+    "menu": "Tanzania",
+    "map": {
+      "highlights": [
+        "TZA"
+      ],
+      "iso3": "TZA",
+      "extent": [
+        [
+          5,
+          -18
+        ],
+        [
+          25,
+          35
+        ]
+      ]
+    },
+    "els": [
+      {
+        "tag": "h1",
+        "text": "Tanzania"
+      },
+      {
+        "tag": "p",
+        "html": "Tanzania's exclusive economic zone covers roughly  square kilometers of the Indian Ocean.           This gives Tanzania the twelfth largest EEZ in sub-Saharan Africa. Meanwhile, Tanzania's Maritime Enforcement Score indicates that the country is above the regional average."
+      },
+      {
+        "tag": "radar"
+      },
+      {
+        "tag": "p",
+        "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Tanzania ranks highest in Piracy. Tanzania's score of 97 in this area is high relative to its other issue scores,          due in part to the elimination of piracy in the Mozambique channel and sharp decline of piracy in the western Indian Ocean.. Tanzania can further improve upon this area of relative strength by working with neighbors to fight piracy in potential hot spots like the Mozambique Channel and the southwest Indian Ocean."
+      },
+      {
+        "tag": "bigtext",
+        "html": "Tanzania is also above the regional average in Maritime Enforcement, Coastal Welfare, Fisheries, Piracy, and Maritime Mixed Migration."
+      },
+      {
+        "tag": "p",
+        "html": "The greatest remaining challenge for Tanzania is Illicit Trades. Tanzania scores 21 in this area,  about the same as  the regional average of 22. To further             improve upon this score, Tanzania can immediately address port security at major ports where smuggled drugs and wildlife from the interior are packed onto shipping containers for transshipment to distant global markets.. Further progress can be made by working with African, European, and Asian governments, as well as anti-wildlife trafficking NGOs.. Through these efforts, Tanzania can raise its weakest score and work toward comprehensive and lasting maritime security."
+      }
+    ]
+  },
+  {
+    "title": "Kenya",
+    "menu": "Kenya",
+    "map": {
+      "highlights": [
+        "KEN"
+      ],
+      "iso3": "KEN",
+      "extent": [
+        [
+          5,
+          -18
+        ],
+        [
+          25,
+          35
+        ]
+      ]
+    },
+    "els": [
+      {
+        "tag": "h1",
+        "text": "Kenya"
+      },
+      {
+        "tag": "p",
+        "html": "Kenya's exclusive economic zone covers roughly 116,942 square kilometers of the Indian Ocean.           This gives Kenya the twenty-second largest EEZ in sub-Saharan Africa. Meanwhile, Kenya's Maritime Enforcement Score indicates that the country is above the regional average."
+      },
+      {
+        "tag": "radar"
+      },
+      {
+        "tag": "p",
+        "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Kenya ranks highest in Piracy. Kenya's score of 100 in this area is high relative to its other issue scores,          due in part to the elimination of piracy in the Mozambique channel and sharp decline of piracy in the western Indian Ocean.. Kenya can further improve upon this area of relative strength by working with neighbors to fight piracy in potential hot spots like the Mozambique Channel and the southwest Indian Ocean."
+      },
+      {
+        "tag": "bigtext",
+        "html": "Kenya is also above the regional average in Rule of Law, Maritime Enforcement, Fisheries, and Piracy."
+      },
+      {
+        "tag": "p",
+        "html": "The greatest remaining challenge for Kenya is Illicit Trades. Kenya scores 4 in this area,  about the same as  the regional average of 22. To further             improve upon this score, Kenya can immediately address port security at major ports where smuggled drugs and wildlife from the interior are packed onto shipping containers for transshipment to distant global markets.. Further progress can be made by working with African, European, and Asian governments, as well as anti-wildlife trafficking NGOs.. Through these efforts, Kenya can raise its weakest score and work toward comprehensive and lasting maritime security."
+      }
+    ]
+  },
+  {
+    "title": "Somalia",
+    "menu": "Somalia",
+    "map": {
+      "highlights": [
+        "SOM"
+      ],
+      "iso3": "SOM",
+      "extent": [
+        [
+          5,
+          -18
+        ],
+        [
+          25,
+          35
+        ]
+      ]
+    },
+    "els": [
+      {
+        "tag": "h1",
+        "text": "Somalia"
+      },
+      {
+        "tag": "p",
+        "html": "Somalia's exclusive economic zone covers roughly 825,052 square kilometers of the Indian Ocean and the Gulf of Aden.           This gives Somalia the fifth largest EEZ in sub-Saharan Africa. Meanwhile, Somalia's Maritime Enforcement Score indicates that the country is below the regional average."
+      },
+      {
+        "tag": "radar"
+      },
+      {
+        "tag": "p",
+        "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Somalia ranks highest in Piracy. Somalia's score of 70 in this area is high relative to its other issue scores,          due in part to the sharp decline of piracy in the Gulf of Aden and the western Indian Ocean.. Somalia can further improve upon this area of relative strength by working with neighbors to fight piracy in potential hot spots and safeguard against maritime piracy and terrorism in the Red Sea and Gulf of Aden."
+      },
+      {
+        "tag": "bigtext",
+        "html": "Somalia is also above the regional average in ."
+      },
+      {
+        "tag": "p",
+        "html": "The greatest remaining challenge for Somalia is Maritime Enforcement. Somalia scores 19 in this area, below the regional average of 45. To further             improve upon this score, Somalia can work through efforts like the Djibouti Code of Conduct to boost regional maritime situational awareness.. Further progress can be made by improving inter-agency cooperation between regional coast  guards and port police departments.. Through these efforts, Somalia can raise its weakest score and work toward comprehensive and lasting maritime security."
+      }
+    ]
+  },
+  {
+    "title": "Djibouti",
+    "menu": "Djibouti",
+    "map": {
+      "highlights": [
+        "DJI"
+      ],
+      "iso3": "DJI",
+      "extent": [
+        [
+          5,
+          -18
+        ],
+        [
+          25,
+          35
+        ]
+      ]
+    },
+    "els": [
+      {
+        "tag": "h1",
+        "text": "Djibouti"
+      },
+      {
+        "tag": "p",
+        "html": "Djibouti's exclusive economic zone covers roughly 7,459 square kilometers of the Gulf of Aden and the Red Sea.           This gives Djibouti the twenty-ninth largest EEZ in sub-Saharan Africa. Meanwhile, Djibouti's Maritime Enforcement Score indicates that the country is above the regional average."
+      },
+      {
+        "tag": "radar"
+      },
+      {
+        "tag": "p",
+        "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Djibouti ranks highest in Piracy. Djibouti's score of 74 in this area is high relative to its other issue scores,          due in part to the sharp decline of piracy in the Gulf of Aden and the western Indian Ocean.. Djibouti can further improve upon this area of relative strength by working with neighbors to fight piracy in potential hot spots and safeguard against maritime piracy and terrorism in the Red Sea and Gulf of Aden."
+      },
+      {
+        "tag": "bigtext",
+        "html": "Djibouti is also above the regional average in Maritime Enforcement, Coastal Welfare, and Illicit Trades."
+      },
+      {
+        "tag": "p",
+        "html": "The greatest remaining challenge for Djibouti is Rule of Law. Djibouti scores 37 in this area,  about the same as  the regional average of 42. To further             improve upon this score, Djibouti can invest in anti-corruption efforts and increase judicial accountability.. Further progress can be made by eliminating bureaucratic red tape that inhibits smooth international trade and enables bribe-seeking. The World Bank Doing Business Report finds trade is significantly more difficult in Djibouti than it is elsewhere in the region.. Through these efforts, Djibouti can raise its weakest score and work toward comprehensive and lasting maritime security."
+      }
+    ]
+  }
+]
   }
 }
