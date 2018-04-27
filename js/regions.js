@@ -271,7 +271,7 @@ $('#content-holder').on('click', '.table-expand', function () {
 
           var regionsLink = regionsMainNav.append('a')
             .attr('href', function () {
-              return './' + regionsPath;
+              return '../' + regionsPath;
             });
 
           var regionsDiv = regionsLink.append('div')
@@ -852,6 +852,8 @@ function buildOverviewIndexTable ( obj, container, cardIndex, elIndex ) {
     .append('p')
     .text('Expand to see more...');
 }
+
+
 
 var cardRadarData = [];
 function buildRadar ( obj, container, cardIndex, elIndex ) {

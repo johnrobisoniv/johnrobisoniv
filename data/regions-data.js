@@ -1,1411 +1,1744 @@
 var radarData = {
-  "AGO": [{
-    "value": 17,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 06,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 17,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 89,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 75,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 34,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 1,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 30,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 50,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "GNQ": [{
-    "value": 68,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 89,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 43,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 2,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 37,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 63,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 68,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 10,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 17,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "BEN": [{
-    "value": 6,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 40,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 96,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 84,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 61,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 76,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 78,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 63,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 61,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "NGA": [{
-    "value": 1,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 85,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 65,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 75,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 04,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 34,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 45,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 96,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 95,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "MUS": [{
-    "value": 51,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 35,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 93,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 45,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 1,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 72,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 33,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 10,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 69,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "africa": [{
-    "value": 16,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 9,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 85,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 08,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 26,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 31,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 92,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 68,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 93,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "NAM": [{
-    "value": 27,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 35,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 90,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 24,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 44,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 76,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 70,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 14,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 73,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "GNB": [{
-    "value": 47,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 19,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 93,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 96,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 61,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 33,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 67,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 23,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 28,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "westernCoast": [{
-    "value": 99,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 22,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 12,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 66,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 2,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 30,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 16,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 12,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 42,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "CIV": [{
-    "value": 50,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 38,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 60,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 61,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 20,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 29,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 13,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 41,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 28,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "COG": [{
-    "value": 48,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 02,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 71,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 97,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 14,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 85,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 13,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 1,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 15,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "SLE": [{
-    "value": 60,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 69,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 7,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 10,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 0,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 26,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 45,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 98,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 76,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "southernGulf": [{
-    "value": 3,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 30,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 54,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 16,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 73,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 18,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 55,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 20,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 25,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "COM": [{
-    "value": 57,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 95,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 61,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 55,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 87,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 83,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 22,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 38,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 96,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "CMR": [{
-    "value": 61,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 40,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 2,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 91,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 71,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 16,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 94,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 32,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 47,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "CPV": [{
-    "value": 28,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 77,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 1,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 45,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 46,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 60,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 88,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 5,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 16,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "LBR": [{
-    "value": 36,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 61,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 35,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 41,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 48,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 98,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 92,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 27,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 78,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "northernGulf": [{
-    "value": 12,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 50,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 8,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 95,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 85,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 28,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 36,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 77,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 70,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "SOM": [{
-    "value": 95,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 83,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 25,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 64,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 52,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 69,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 33,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 57,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 21,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "MDG": [{
-    "value": 87,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 55,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 15,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 06,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 23,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 48,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 29,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 2,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 23,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "TZA": [{
-    "value": 86,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 56,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 78,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 31,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 14,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 54,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 0,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 46,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 54,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "SEN": [{
-    "value": 92,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 57,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 71,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 39,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 82,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 95,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 95,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 31,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 42,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "GAB": [{
-    "value": 27,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 3,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 18,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 84,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 41,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 52,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 93,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 75,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 65,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "MOZ": [{
-    "value": 31,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 13,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 60,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 39,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 98,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 81,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 33,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 81,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 95,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "GMB": [{
-    "value": 55,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 61,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 77,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 85,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 90,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 71,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 64,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 76,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 4,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "STP": [{
-    "value": 72,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 61,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 40,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 40,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 7,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 29,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 74,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 22,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 89,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "DJI": [{
-    "value": 53,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 8,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 80,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 33,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 28,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 68,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 75,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 17,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 29,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "GIN": [{
-    "value": 20,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 27,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 2,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 58,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 16,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 77,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 18,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 57,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 99,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "SYC": [{
-    "value": 0,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 4,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 82,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 84,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 50,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 7,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 1,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 50,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 22,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "KEN": [{
-    "value": 46,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 35,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 21,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 16,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 92,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 52,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 79,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 55,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 73,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "easternCoast": [{
-    "value": 19,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 75,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 35,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 46,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 74,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 28,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 4,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 2,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 65,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "ZAF": [{
-    "value": 54,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 68,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 43,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 76,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 29,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 59,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 77,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 72,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 14,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "GHA": [{
-    "value": 76,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 1,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 38,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 14,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 7,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 19,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 41,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 73,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 5,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "southernCoast": [{
-    "value": 13,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 54,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 90,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 58,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 2,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 9,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 6,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 96,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 76,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "TGO": [{
-    "value": 76,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 44,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 82,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 99,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 23,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 18,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 43,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 44,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 84,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "westIndianOcean": [{
-    "value": 74,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 82,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 79,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 3,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 39,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 33,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 75,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 13,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 71,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "COD": [{
-    "value": 52,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 32,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 58,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 80,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 45,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 52,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 18,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 33,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 96,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }],
-  "overview": [{
-    "value": 52,
-    "axis": "Rule of Law",
-    "color": '#6E497E'
-  }, {
-    "value": 32,
-    "axis": "International Cooperation",
-    "color": '#3CB2C1'
-  }, {
-    "value": 58,
-    "axis": "Maritime Enforcement",
-    "color": '#354EA1'
-  }, {
-    "value": 80,
-    "axis": "Coastal Welfare",
-    "color": '#B89E42'
-  }, {
-    "value": 45,
-    "axis": "Blue Economy",
-    "color": '#307ABD'
-  }, {
-    "value": 52,
-    "axis": "Fisheries",
-    "color": '#06A89D'
-  }, {
-    "value": 18,
-    "axis": "Piracy",
-    "color": '#B6782A'
-  }, {
-    "value": 33,
-    "axis": "Illicit Trades",
-    "color": '#098895'
-  }, {
-    "value": 96,
-    "axis": "Maritime Mixed Migration",
-    "color": '#AA9872'
-  }]
-} // end radarData
+  "AGO": [
+    {
+      "value": 62,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 26,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 46,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 55,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 65,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 23,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 57,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 47,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 60,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "BEN": [
+    {
+      "value": 67,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 62,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 63,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 38,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 47,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 24,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 3,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 54,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 57,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "CIV": [
+    {
+      "value": 84,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 53,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 53,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 43,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 51,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 68,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 9,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 52,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 44,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "CMR": [
+    {
+      "value": 86,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 31,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 56,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 44,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 37,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 35,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 8,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 79,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 49,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "COD": [
+    {
+      "value": 56,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 22,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 46,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 20,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 24,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 39,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 41,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 36,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 48,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "COG": [
+    {
+      "value": 79,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 26,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 66,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 49,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 40,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 27,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 35,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 46,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 61,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "COM": [
+    {
+      "value": 52,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 42,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 65,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 39,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 68,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 88,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 10,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 31,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 44,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "CPV": [
+    {
+      "value": 87,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 76,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 75,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 61,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 69,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 98,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 40,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 57,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 76,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "DJI": [
+    {
+      "value": 52,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 37,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 67,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 42,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 44,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 74,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 54,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 55,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 41,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "GAB": [
+    {
+      "value": 75,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 41,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 73,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 51,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 50,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 42,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 62,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 59,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 52,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "GHA": [
+    {
+      "value": 92,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 64,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 75,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 48,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 69,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 24,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 4,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 64,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 51,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "GIN": [
+    {
+      "value": 92,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 40,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 61,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 25,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 48,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 78,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 10,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 38,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 41,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "GMB": [
+    {
+      "value": 82,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 40,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 66,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 44,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 43,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 94,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 39,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 39,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 55,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "GNB": [
+    {
+      "value": 79,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 34,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 61,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 39,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 50,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 89,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 41,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 28,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 57,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "GNQ": [
+    {
+      "value": 69,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 25,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 67,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 51,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 44,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 27,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 52,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 60,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 55,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "KEN": [
+    {
+      "value": 67,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 50,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 50,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 28,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 71,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 100,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 4,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 65,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 56,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "LBR": [
+    {
+      "value": 70,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 45,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 68,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 35,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 31,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 88,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 26,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 20,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 51,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "MDG": [
+    {
+      "value": 62,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 45,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 74,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 39,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 76,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 86,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 1,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 38,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 64,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "MOZ": [
+    {
+      "value": 83,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 53,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 55,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 47,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 76,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 90,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 4,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 34,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 57,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "MUS": [
+    {
+      "value": 67,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 71,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 85,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 57,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 64,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 99,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 36,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 66,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 64,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "NAM": [
+    {
+      "value": 83,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 70,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 70,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 49,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 73,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 100,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 73,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 46,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 69,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "NGA": [
+    {
+      "value": 87,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 45,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 32,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 56,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 68,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 0,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 2,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 85,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 45,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "SEN": [
+    {
+      "value": 92,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 68,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 69,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 45,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 70,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 93,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 5,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 69,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 48,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "SLE": [
+    {
+      "value": 79,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 50,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 66,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 38,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 72,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 82,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 42,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 38,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 59,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "SOM": [
+    {
+      "value": 26,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 26,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 25,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 28,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 62,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 70,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 29,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 19,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 26,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "STP": [
+    {
+      "value": 90,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 68,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 75,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 50,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 63,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 23,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 65,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 39,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 59,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "SYC": [
+    {
+      "value": 67,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 65,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 87,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 60,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 76,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 96,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 44,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 52,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 69,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "TGO": [
+    {
+      "value": 70,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 50,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 65,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 30,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 37,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 35,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 13,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 49,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 58,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "TZA": [
+    {
+      "value": 74,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 45,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 73,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 44,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 80,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 97,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 21,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 49,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 60,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "ZAF": [
+    {
+      "value": 83,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 62,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 68,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 52,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 86,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 100,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 39,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 74,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 63,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "africa": [
+    {
+      "value": 74,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 48,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 63,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 44,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 59,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 66,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 29,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 50,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 55,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "easternCoast": [
+    {
+      "value": 60,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 42,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 54,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 38,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 67,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 86,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 22,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 45,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 48,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "northernGulf": [
+    {
+      "value": 80,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 55,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 58,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 43,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 55,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 30,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 6,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 61,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 51,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "southernCoast": [
+    {
+      "value": 76,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 53,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 61,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 52,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 75,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 74,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 56,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 55,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 64,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "southernGulf": [
+    {
+      "value": 76,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 35,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 64,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 44,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 43,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 32,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 44,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 53,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 54,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "westernCoast": [
+    {
+      "value": 83,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 50,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 67,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 41,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 55,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 89,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 29,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 41,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 55,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ],
+  "westIndianOcean": [
+    {
+      "value": 62,
+      "axis": "International Cooperation",
+      "color": "#3CB2C1"
+    },
+    {
+      "value": 56,
+      "axis": "Rule of Law",
+      "color": "#6E497E"
+    },
+    {
+      "value": 78,
+      "axis": "Coastal Welfare",
+      "color": "#B89E42"
+    },
+    {
+      "value": 49,
+      "axis": "Blue Economy",
+      "color": "#307ABD"
+    },
+    {
+      "value": 71,
+      "axis": "Fisheries",
+      "color": "#06A89D"
+    },
+    {
+      "value": 92,
+      "axis": "Piracy",
+      "color": "#B6782A"
+    },
+    {
+      "value": 23,
+      "axis": "Illicit Trades",
+      "color": "#098895"
+    },
+    {
+      "value": 47,
+      "axis": "Maritime Enforcement",
+      "color": "#354EA1"
+    },
+    {
+      "value": 60,
+      "axis": "Maritime Mixed Migration",
+      "color": "#896F33"
+    }
+  ]
+};
 
 var regionsData = {
   overview: {
@@ -1502,35 +1835,19 @@ var regionsData = {
         },
         {
           tag: 'p',
-          html: 'The first paragraph will introduce the country in the context of the region and lorem ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. '
+          html: 'This section of the Stable Seas site is designed to guide the user through regional overviews of the Stable Seas Maritime Security Index. The site can be navigated by two menus. Clicking on the regions in the header will bring the user to an overview of the region compared to the rest of the continent. Clicking on the regions in the floating menu will bring up the same comparison with further links to the countries in the region. Clicking on the countries will bring up their country pages.'
         },
         {
           tag: 'radar'
         },
         {
-          tag: 'video',
-          videoId: 'AXQHK213mFA',
-          thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
+          tag: 'p',
+          html: 'The radar plot above is used to describe each region’s strengths and weaknesses, as measured by the Stable Seas Maritime Security Index. Each of the nine issues areas are on the outside of the plot. Higher scores in a particular issue area are indicated by points farther from the center. Lower scores are closer to the center, which represents a score of zero. In all issue areas, higher scores are indicative of more success in that area, whether that is combating illicit activity or strengthening international cooperation.'
         },
-        {
-          tag: 'caption',
-          text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-        },
-        {
-          tag: 'h2',
-          html: 'Country 1\'s Strengths'
-        },
+
         {
           tag: 'p',
-          html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-        },
-        {
-          tag: 'h2',
-          html: 'Challenges Facing Country 1'
-        },
-        {
-          tag: 'p',
-          html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+          html: 'As the radar plot shows, sub-Saharan Africa overall does exceptionally well in international cooperation and coastal welfare but faces challenges in the development of the blue economy and combating illicit trades. Please refer to the subject pages to learn more about each issue area.'
         }
       ]
     }]
@@ -1599,56 +1916,18 @@ var regionsData = {
           },
           {
             tag: 'p',
-            html: 'Cabo Verde\'s exclusive economic zone covers roughly 800,561 square kilometers of the northeast Atlantic Ocean \
-              . This gives Cabo Verde the xth largest EEZ in sub-Saharan Africa. \
-              Meanwhile, Cabo Verde\'s Maritime Enforcement Capacity Score indicates Cabo Verde is slightly above \
-              the regional average.'
+            html: 'The Western Coast region ranges from Senegal and Cabo Verde in the north to Liberia in the south. Compared to the rest of the continent, this region scores especially well in international cooperation and piracy. However, this region faces significant challenges in maritime enforcement.'
           },
           {
             tag: 'radar'
           },
           {
             tag: 'p',
-            html: 'Across the nine issues covered by the Stable Seas Maritime Security Index, COUNTRY ranks highest in BEST ISSUE. \
-              COUNTRY’s score of NUMBER in this area is high relative to its other issue scores, due in part to SOMETHING RELEVANT \
-              AND INTERESTING. COUNTRY can further improve upon this area of relative strength by SUGGESTION BACKED BY THE SUBSCORES.'
-          },
-          {
-            tag: 'bigtext',
-            html: 'COUNTRY is also above the regional average in LIST OF ALL ISSUES WHERE COUNTRY RANKS ABOVE 16.'
+            html: 'High scores for the Western Coast region in international cooperation are due to the high level of participation in international agreements, such as UNCLOS and the UN Fish Stocks Agreement, as well as demonstrated commitment to regional security strategies through information sharing networks and participation in naval cooperation exercises. The region also benefits from a lack of violations or disputes of maritime boundaries. In terms of piracy, the Western Coast enjoys significant distance from the target-rich environment of the Gulf of Guinea.'
           },
           {
             tag: 'p',
-            html: 'The greatest remaining challenge for COUNTRY is WORST ISSUE RANKING. COUNTRY scores SCORE in this area, and this is slightly/significantly above/below the regional average of regional average for this score. To further improve upon this score, COUNTRY can SUGGESTION BACKED BY THE SUBSCORES, FOCUSED ON DOMESTIC POLICY. Further progress can be made by SUGGESTION BACKED BY THE SUBSCORES, FOCUSED ON INTERNATIONAL/REGIONAL EFFORT. Through these efforts, COUNTRY can raise its weakest score and work toward comprehensive and lasting maritime security.'
-          },
-          {
-            tag: 'img',
-            src: '../../assets/western-coast/radar-sample.png'
-          },
-          {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
-          },
-          {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+            html: 'Maritime enforcement is key to the continued development of the blue economy. The Western Coast would benefit from increasing investments in their naval capability and coastal patrol assets in order to fully take advantage of their regional security strategies and promote the blue economy.'
           }
           // ...
         ]
@@ -2011,35 +2290,18 @@ var regionsData = {
           },
           {
             tag: 'p',
-            html: 'The first paragraph will introduce the country in the context of the region.'
+            html: 'The Northern Gulf of Guinea region is defined by Cote d’Ivoire to the west and Nigeria to the east. Compared to overall scores for sub-Saharan Africa, this region outperforms on international cooperation, rule of law, and maritime enforcement. However, these states struggle to combat piracy and armed robbery as well as illicit trades.'
           },
           {
             tag: 'radar'
           },
           {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
-          },
-          {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
+            tag: 'p',
+            html: 'Like the Western Coast, this region’s high level of performance on international cooperation is linked to the level of participation in international agreements. High scores for rule of law are generally due to relatively higher levels of inclusion. The region also performs well on maritime enforcement, partially thanks to Nigeria, which has the continent’s largest fleet of vessels capable of coastal patrol, and the existence of a well-established network of information sharing.'
           },
           {
             tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+            html: 'The greatest maritime security threats to this region are piracy and armed robbery and illicit trades. These countries must continue to cooperate to catch criminal actors at sea and hold them accountable through the legal finish of trial and sentencing.'
           }
 
 
@@ -2307,35 +2569,20 @@ var regionsData = {
           },
           {
             tag: 'p',
-            html: 'The first paragraph will introduce the country in the context of the region.'
+            html: 'The Southern Gulf of Guinea region comprises the Central African states from Cameroon south to the Democratic Republic of the Congo. This region faces some of the most serious challenges to maritime security in sub-Saharan Africa, especially in the areas of rule of law, fisheries, and piracy. However, the region is relatively well-prepared to confront these threats with high scores in maritime enforcement. The region also scores better than average on combating illicit trades.'
           },
           {
             tag: 'radar'
           },
-          {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
-          },
-          {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
+
           {
             tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
+            html: 'The robust network of Maritime Operations Centers and high level of information sharing in the region leads to relatively high scores for maritime enforcement, though these states lack the same vessel counts as their northern neighbors. The region benefits from a relatively low level of illicit trade activity, which is partially a result of inconvenient geography for drug traffickers from South America to Europe.'
           },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
+
           {
             tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+            html: 'In order to best address the challenges of piracy and poor fisheries, states in the Southern Gulf of Guinea should focus their efforts on a third challenge: rule of law. The development and enforcement of legal mechanisms to address criminal activity at sea through an accountable judiciary will reduce illicit activity and ensuing fines could also fund further maritime enforcement.'
           }
           // ...
         ]
@@ -2663,35 +2910,20 @@ var regionsData = {
           },
           {
             tag: 'p',
-            html: 'The first paragraph will introduce the country in the context of the region.'
+            html: 'The Southern Coast region consists of Angola, Namibia, and South Africa. These states outperform the rest of sub-Saharan Africa in a number of areas, including: fisheries, maritime mixed migration, illicit trades, and the blue economy. International cooperation is a relative weakness.'
           },
           {
             tag: 'radar'
           },
-          {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
-          },
-          {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
+
           {
             tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
+            html: 'High scores in these issue areas reflect their interconnectedness. Healthy fisheries, supported by effective management and enforcement capacity, encourage the development of the blue economy which in turn discourages maritime mixed migration. A strong blue economy is also linked to lower levels of illicit trades. This region is good example of how support to one pillar of maritime security can have positive spillover effects on other issue areas.'
           },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
+
           {
             tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+            html: 'The region’s greatest remaining challenge is international cooperation. Not all of these states have signed and ratified the Port State Measure Agreement or the Convention for the Suppression of Unlawful Acts Against the Safety of Maritime Navigation and there remains an unresolved maritime boundary dispute. There could also be increased commitment to the implementation of regional security strategies.'
           }
 
           // ...
@@ -2884,35 +3116,20 @@ var regionsData = {
           },
           {
             tag: 'p',
-            html: 'The first paragraph will introduce the country in the context of the region.'
+            html: 'The island nations of the Western Indian Ocean are members of this region. In general, these countries excel in coastal welfare, rule of law, and piracy compared to the rest of Africa, but they face challenges in maritime enforcement, illicit trades, and international cooperation.'
           },
           {
             tag: 'radar'
           },
-          {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
-          },
-          {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
+
           {
             tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
+            html: 'This region enjoys a high level of coastal welfare thanks to an overall lack of violent conflict and widespread economic security. These countries also score well on rule of law with particularly low levels of corruption. In terms of piracy, this region benefits from its location far from target-rich oil and gas infrastructure and major shipping lanes.'
           },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
+
           {
             tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+            html: 'The remaining challenges of these states are interconnected and should be addressed holistically. While these island nations are geographically vulnerable to illicit trades, improvements in maritime enforcement capacity could help reduce these activities. Further participation and implementation of regional security strategies would not only reinforce improvements in maritime enforcement but also strengthen international cooperation. '
           }
 
           // ...
@@ -3154,286 +3371,238 @@ var regionsData = {
           },
           {
             tag: 'p',
-            html: 'The eastern coast is strategically situated on the Indian Ocean.  \
-              jThis gives Cabo Verde the xth largest EEZ in sub-Saharan Africa. \
-              Meanwhile, Cabo Verde\'s Maritime Enforcement Capacity Score indicates Cabo Verde is slightly above \
-              the regional average.'
+            html: 'The Eastern Coast region runs from Somalia south to Mozambique. As a whole, the region’s strengths compared to the rest of sub-Saharan Africa are in combating piracy and armed robbery as well as supporting healthy fisheries. Remaining maritime security challenges include international cooperation, coastal welfare, blue economy, and maritime mixed migration.'
           },
           {
             tag: 'radar'
           },
           {
             tag: 'p',
-            html: 'Across the nine issues covered by the Stable Seas Maritime Security Index, COUNTRY ranks highest in BEST ISSUE. \
-              COUNTRY’s score of NUMBER in this area is high relative to its other issue scores, due in part to SOMETHING RELEVANT \
-              AND INTERESTING. COUNTRY can further improve upon this area of relative strength by SUGGESTION BACKED BY THE SUBSCORES.'
-          },
-          {
-            tag: 'bigtext',
-            html: 'COUNTRY is also above the regional average in LIST OF ALL ISSUES WHERE COUNTRY RANKS ABOVE 16.'
+            html: 'While Somalia gained significant notoriety over the last decade for piracy, the frequency of these incidents has dropped precipitously, resulting in a relatively high piracy score for the region. In addition, most these countries have an exceptionally high standard for domestic fisheries legislation. All of them are active participants in the appropriate Regional Fisheries Management Organizations (RFMOs). These factors help explain the particularly healthy fisheries of the Western Indian Ocean.'
           },
           {
             tag: 'p',
-            html: 'The greatest remaining challenge for COUNTRY is WORST ISSUE RANKING. COUNTRY scores SCORE in this area, and this is slightly/significantly above/below the regional average of regional average for this score. To further improve upon this score, COUNTRY can SUGGESTION BACKED BY THE SUBSCORES, FOCUSED ON DOMESTIC POLICY. Further progress can be made by SUGGESTION BACKED BY THE SUBSCORES, FOCUSED ON INTERNATIONAL/REGIONAL EFFORT. Through these efforts, COUNTRY can raise its weakest score and work toward comprehensive and lasting maritime security.'
-          },
-          {
-            tag: 'img',
-            src: '../../assets/western-coast/radar-sample.png'
-          },
-          {
-            tag: 'video',
-            videoId: 'AXQHK213mFA',
-            thumb: '../../assets/overview/stable-seas-main-video-thumb.png'
-          },
-          {
-            tag: 'caption',
-            text: '<em>Do we want videos in this ? Well we can have them anyway ...</em>'
-          },
-          {
-            tag: 'h2',
-            html: 'Country 1\'s Strengths'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the country\'s strengths, and where it might serve as an example elsewhere in Africa.'
-          },
-          {
-            tag: 'h2',
-            html: 'Challenges Facing Country 1'
-          },
-          {
-            tag: 'p',
-            html: 'A paragraph on the nature of the subject country\'s weaknesses, and where it might learn some lessons on how to improve.'
+            html: 'There is room for improvement in maritime security in this region. International cooperation could be supported by increased commitments to operationalizing regional security strategies. Coastal welfare can be improved by dealing with internal conflicts as well as developing the blue economy to support economic security. These strategies may also reduce maritime mixed migration.'
           }
           // ...
         ]
       },
 
-  {
-    "title": "Mozambique",
-    "menu": "Mozambique",
-    "map": {
-      "highlights": [
-        "MOZ"
-      ],
-      "iso3": "MOZ",
-      "extent": [
-        [
-          5,
-          -18
-        ],
-        [
-          25,
-          35
+      {
+        "title": "Mozambique",
+        "menu": "Mozambique",
+        "map": {
+          "highlights": [
+            "MOZ"
+          ],
+          "iso3": "MOZ",
+          "extent": [
+            [
+              5, -18
+            ],
+            [
+              25,
+              35
+            ]
+          ]
+        },
+        "els": [{
+            "tag": "h1",
+            "text": "Mozambique"
+          },
+          {
+            "tag": "p",
+            "html": "Mozambique's exclusive economic zone covers roughly 578,986 square kilometers of the Indian Ocean.           This gives Mozambique the seventh largest EEZ in sub-Saharan Africa. Meanwhile, Mozambique's Maritime Enforcement Score indicates that the country is below the regional average."
+          },
+          {
+            "tag": "radar"
+          },
+          {
+            "tag": "p",
+            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Mozambique ranks highest in Piracy. Mozambique's score of 90 in this area is high relative to its other issue scores,          due in part to the elimination of piracy in the Mozambique channel and sharp decline of piracy in the western Indian Ocean.. Mozambique can further improve upon this area of relative strength by renewing commitments to help fight piracy in potential hot spots like the Mozambique Channel and the southwest Indian Ocean."
+          },
+          {
+            "tag": "bigtext",
+            "html": "Mozambique is also above the regional average in Rule of Law, Blue Economy, Fisheries, Piracy, and Maritime Mixed Migration."
+          },
+          {
+            "tag": "p",
+            "html": "The greatest remaining challenge for Mozambique is Illicit Trades. Mozambique scores 4 in this area, below the regional average of 22. To further             improve upon this score, Mozambique can immediately address port security at major ports where smuggled drugs and wildlife from the interior are packed onto shipping containers for transshipment to distant global markets.. Further progress can be made by working with African, European, and Asian governments, as well as anti-wildlife trafficking NGOs.. Through these efforts, Mozambique can raise its weakest score and work toward comprehensive and lasting maritime security."
+          }
         ]
-      ]
-    },
-    "els": [
-      {
-        "tag": "h1",
-        "text": "Mozambique"
       },
       {
-        "tag": "p",
-        "html": "Mozambique's exclusive economic zone covers roughly 578,986 square kilometers of the Indian Ocean.           This gives Mozambique the seventh largest EEZ in sub-Saharan Africa. Meanwhile, Mozambique's Maritime Enforcement Score indicates that the country is below the regional average."
+        "title": "Tanzania",
+        "menu": "Tanzania",
+        "map": {
+          "highlights": [
+            "TZA"
+          ],
+          "iso3": "TZA",
+          "extent": [
+            [
+              5, -18
+            ],
+            [
+              25,
+              35
+            ]
+          ]
+        },
+        "els": [{
+            "tag": "h1",
+            "text": "Tanzania"
+          },
+          {
+            "tag": "p",
+            "html": "Tanzania's exclusive economic zone covers roughly  square kilometers of the Indian Ocean.           This gives Tanzania the twelfth largest EEZ in sub-Saharan Africa. Meanwhile, Tanzania's Maritime Enforcement Score indicates that the country is above the regional average."
+          },
+          {
+            "tag": "radar"
+          },
+          {
+            "tag": "p",
+            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Tanzania ranks highest in Piracy. Tanzania's score of 97 in this area is high relative to its other issue scores,          due in part to the elimination of piracy in the Mozambique channel and sharp decline of piracy in the western Indian Ocean.. Tanzania can further improve upon this area of relative strength by working with neighbors to fight piracy in potential hot spots like the Mozambique Channel and the southwest Indian Ocean."
+          },
+          {
+            "tag": "bigtext",
+            "html": "Tanzania is also above the regional average in Maritime Enforcement, Coastal Welfare, Fisheries, Piracy, and Maritime Mixed Migration."
+          },
+          {
+            "tag": "p",
+            "html": "The greatest remaining challenge for Tanzania is Illicit Trades. Tanzania scores 21 in this area,  about the same as  the regional average of 22. To further             improve upon this score, Tanzania can immediately address port security at major ports where smuggled drugs and wildlife from the interior are packed onto shipping containers for transshipment to distant global markets.. Further progress can be made by working with African, European, and Asian governments, as well as anti-wildlife trafficking NGOs.. Through these efforts, Tanzania can raise its weakest score and work toward comprehensive and lasting maritime security."
+          }
+        ]
       },
       {
-        "tag": "radar"
+        "title": "Kenya",
+        "menu": "Kenya",
+        "map": {
+          "highlights": [
+            "KEN"
+          ],
+          "iso3": "KEN",
+          "extent": [
+            [
+              5, -18
+            ],
+            [
+              25,
+              35
+            ]
+          ]
+        },
+        "els": [{
+            "tag": "h1",
+            "text": "Kenya"
+          },
+          {
+            "tag": "p",
+            "html": "Kenya's exclusive economic zone covers roughly 116,942 square kilometers of the Indian Ocean.           This gives Kenya the twenty-second largest EEZ in sub-Saharan Africa. Meanwhile, Kenya's Maritime Enforcement Score indicates that the country is above the regional average."
+          },
+          {
+            "tag": "radar"
+          },
+          {
+            "tag": "p",
+            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Kenya ranks highest in Piracy. Kenya's score of 100 in this area is high relative to its other issue scores,          due in part to the elimination of piracy in the Mozambique channel and sharp decline of piracy in the western Indian Ocean.. Kenya can further improve upon this area of relative strength by working with neighbors to fight piracy in potential hot spots like the Mozambique Channel and the southwest Indian Ocean."
+          },
+          {
+            "tag": "bigtext",
+            "html": "Kenya is also above the regional average in Rule of Law, Maritime Enforcement, Fisheries, and Piracy."
+          },
+          {
+            "tag": "p",
+            "html": "The greatest remaining challenge for Kenya is Illicit Trades. Kenya scores 4 in this area,  about the same as  the regional average of 22. To further             improve upon this score, Kenya can immediately address port security at major ports where smuggled drugs and wildlife from the interior are packed onto shipping containers for transshipment to distant global markets.. Further progress can be made by working with African, European, and Asian governments, as well as anti-wildlife trafficking NGOs.. Through these efforts, Kenya can raise its weakest score and work toward comprehensive and lasting maritime security."
+          }
+        ]
       },
       {
-        "tag": "p",
-        "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Mozambique ranks highest in Piracy. Mozambique's score of 90 in this area is high relative to its other issue scores,          due in part to the elimination of piracy in the Mozambique channel and sharp decline of piracy in the western Indian Ocean.. Mozambique can further improve upon this area of relative strength by renewing commitments to help fight piracy in potential hot spots like the Mozambique Channel and the southwest Indian Ocean."
+        "title": "Somalia",
+        "menu": "Somalia",
+        "map": {
+          "highlights": [
+            "SOM"
+          ],
+          "iso3": "SOM",
+          "extent": [
+            [
+              5, -18
+            ],
+            [
+              25,
+              35
+            ]
+          ]
+        },
+        "els": [{
+            "tag": "h1",
+            "text": "Somalia"
+          },
+          {
+            "tag": "p",
+            "html": "Somalia's exclusive economic zone covers roughly 825,052 square kilometers of the Indian Ocean and the Gulf of Aden.           This gives Somalia the fifth largest EEZ in sub-Saharan Africa. Meanwhile, Somalia's Maritime Enforcement Score indicates that the country is below the regional average."
+          },
+          {
+            "tag": "radar"
+          },
+          {
+            "tag": "p",
+            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Somalia ranks highest in Piracy. Somalia's score of 70 in this area is high relative to its other issue scores,          due in part to the sharp decline of piracy in the Gulf of Aden and the western Indian Ocean.. Somalia can further improve upon this area of relative strength by working with neighbors to fight piracy in potential hot spots and safeguard against maritime piracy and terrorism in the Red Sea and Gulf of Aden."
+          },
+          {
+            "tag": "bigtext",
+            "html": "Somalia is also above the regional average in ."
+          },
+          {
+            "tag": "p",
+            "html": "The greatest remaining challenge for Somalia is Maritime Enforcement. Somalia scores 19 in this area, below the regional average of 45. To further             improve upon this score, Somalia can work through efforts like the Djibouti Code of Conduct to boost regional maritime situational awareness.. Further progress can be made by improving inter-agency cooperation between regional coast  guards and port police departments.. Through these efforts, Somalia can raise its weakest score and work toward comprehensive and lasting maritime security."
+          }
+        ]
       },
       {
-        "tag": "bigtext",
-        "html": "Mozambique is also above the regional average in Rule of Law, Blue Economy, Fisheries, Piracy, and Maritime Mixed Migration."
-      },
-      {
-        "tag": "p",
-        "html": "The greatest remaining challenge for Mozambique is Illicit Trades. Mozambique scores 4 in this area, below the regional average of 22. To further             improve upon this score, Mozambique can immediately address port security at major ports where smuggled drugs and wildlife from the interior are packed onto shipping containers for transshipment to distant global markets.. Further progress can be made by working with African, European, and Asian governments, as well as anti-wildlife trafficking NGOs.. Through these efforts, Mozambique can raise its weakest score and work toward comprehensive and lasting maritime security."
+        "title": "Djibouti",
+        "menu": "Djibouti",
+        "map": {
+          "highlights": [
+            "DJI"
+          ],
+          "iso3": "DJI",
+          "extent": [
+            [
+              5, -18
+            ],
+            [
+              25,
+              35
+            ]
+          ]
+        },
+        "els": [{
+            "tag": "h1",
+            "text": "Djibouti"
+          },
+          {
+            "tag": "p",
+            "html": "Djibouti's exclusive economic zone covers roughly 7,459 square kilometers of the Gulf of Aden and the Red Sea.           This gives Djibouti the twenty-ninth largest EEZ in sub-Saharan Africa. Meanwhile, Djibouti's Maritime Enforcement Score indicates that the country is above the regional average."
+          },
+          {
+            "tag": "radar"
+          },
+          {
+            "tag": "p",
+            "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Djibouti ranks highest in Piracy. Djibouti's score of 74 in this area is high relative to its other issue scores,          due in part to the sharp decline of piracy in the Gulf of Aden and the western Indian Ocean.. Djibouti can further improve upon this area of relative strength by working with neighbors to fight piracy in potential hot spots and safeguard against maritime piracy and terrorism in the Red Sea and Gulf of Aden."
+          },
+          {
+            "tag": "bigtext",
+            "html": "Djibouti is also above the regional average in Maritime Enforcement, Coastal Welfare, and Illicit Trades."
+          },
+          {
+            "tag": "p",
+            "html": "The greatest remaining challenge for Djibouti is Rule of Law. Djibouti scores 37 in this area,  about the same as  the regional average of 42. To further             improve upon this score, Djibouti can invest in anti-corruption efforts and increase judicial accountability.. Further progress can be made by eliminating bureaucratic red tape that inhibits smooth international trade and enables bribe-seeking. The World Bank Doing Business Report finds trade is significantly more difficult in Djibouti than it is elsewhere in the region.. Through these efforts, Djibouti can raise its weakest score and work toward comprehensive and lasting maritime security."
+          }
+        ]
       }
     ]
-  },
-  {
-    "title": "Tanzania",
-    "menu": "Tanzania",
-    "map": {
-      "highlights": [
-        "TZA"
-      ],
-      "iso3": "TZA",
-      "extent": [
-        [
-          5,
-          -18
-        ],
-        [
-          25,
-          35
-        ]
-      ]
-    },
-    "els": [
-      {
-        "tag": "h1",
-        "text": "Tanzania"
-      },
-      {
-        "tag": "p",
-        "html": "Tanzania's exclusive economic zone covers roughly  square kilometers of the Indian Ocean.           This gives Tanzania the twelfth largest EEZ in sub-Saharan Africa. Meanwhile, Tanzania's Maritime Enforcement Score indicates that the country is above the regional average."
-      },
-      {
-        "tag": "radar"
-      },
-      {
-        "tag": "p",
-        "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Tanzania ranks highest in Piracy. Tanzania's score of 97 in this area is high relative to its other issue scores,          due in part to the elimination of piracy in the Mozambique channel and sharp decline of piracy in the western Indian Ocean.. Tanzania can further improve upon this area of relative strength by working with neighbors to fight piracy in potential hot spots like the Mozambique Channel and the southwest Indian Ocean."
-      },
-      {
-        "tag": "bigtext",
-        "html": "Tanzania is also above the regional average in Maritime Enforcement, Coastal Welfare, Fisheries, Piracy, and Maritime Mixed Migration."
-      },
-      {
-        "tag": "p",
-        "html": "The greatest remaining challenge for Tanzania is Illicit Trades. Tanzania scores 21 in this area,  about the same as  the regional average of 22. To further             improve upon this score, Tanzania can immediately address port security at major ports where smuggled drugs and wildlife from the interior are packed onto shipping containers for transshipment to distant global markets.. Further progress can be made by working with African, European, and Asian governments, as well as anti-wildlife trafficking NGOs.. Through these efforts, Tanzania can raise its weakest score and work toward comprehensive and lasting maritime security."
-      }
-    ]
-  },
-  {
-    "title": "Kenya",
-    "menu": "Kenya",
-    "map": {
-      "highlights": [
-        "KEN"
-      ],
-      "iso3": "KEN",
-      "extent": [
-        [
-          5,
-          -18
-        ],
-        [
-          25,
-          35
-        ]
-      ]
-    },
-    "els": [
-      {
-        "tag": "h1",
-        "text": "Kenya"
-      },
-      {
-        "tag": "p",
-        "html": "Kenya's exclusive economic zone covers roughly 116,942 square kilometers of the Indian Ocean.           This gives Kenya the twenty-second largest EEZ in sub-Saharan Africa. Meanwhile, Kenya's Maritime Enforcement Score indicates that the country is above the regional average."
-      },
-      {
-        "tag": "radar"
-      },
-      {
-        "tag": "p",
-        "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Kenya ranks highest in Piracy. Kenya's score of 100 in this area is high relative to its other issue scores,          due in part to the elimination of piracy in the Mozambique channel and sharp decline of piracy in the western Indian Ocean.. Kenya can further improve upon this area of relative strength by working with neighbors to fight piracy in potential hot spots like the Mozambique Channel and the southwest Indian Ocean."
-      },
-      {
-        "tag": "bigtext",
-        "html": "Kenya is also above the regional average in Rule of Law, Maritime Enforcement, Fisheries, and Piracy."
-      },
-      {
-        "tag": "p",
-        "html": "The greatest remaining challenge for Kenya is Illicit Trades. Kenya scores 4 in this area,  about the same as  the regional average of 22. To further             improve upon this score, Kenya can immediately address port security at major ports where smuggled drugs and wildlife from the interior are packed onto shipping containers for transshipment to distant global markets.. Further progress can be made by working with African, European, and Asian governments, as well as anti-wildlife trafficking NGOs.. Through these efforts, Kenya can raise its weakest score and work toward comprehensive and lasting maritime security."
-      }
-    ]
-  },
-  {
-    "title": "Somalia",
-    "menu": "Somalia",
-    "map": {
-      "highlights": [
-        "SOM"
-      ],
-      "iso3": "SOM",
-      "extent": [
-        [
-          5,
-          -18
-        ],
-        [
-          25,
-          35
-        ]
-      ]
-    },
-    "els": [
-      {
-        "tag": "h1",
-        "text": "Somalia"
-      },
-      {
-        "tag": "p",
-        "html": "Somalia's exclusive economic zone covers roughly 825,052 square kilometers of the Indian Ocean and the Gulf of Aden.           This gives Somalia the fifth largest EEZ in sub-Saharan Africa. Meanwhile, Somalia's Maritime Enforcement Score indicates that the country is below the regional average."
-      },
-      {
-        "tag": "radar"
-      },
-      {
-        "tag": "p",
-        "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Somalia ranks highest in Piracy. Somalia's score of 70 in this area is high relative to its other issue scores,          due in part to the sharp decline of piracy in the Gulf of Aden and the western Indian Ocean.. Somalia can further improve upon this area of relative strength by working with neighbors to fight piracy in potential hot spots and safeguard against maritime piracy and terrorism in the Red Sea and Gulf of Aden."
-      },
-      {
-        "tag": "bigtext",
-        "html": "Somalia is also above the regional average in ."
-      },
-      {
-        "tag": "p",
-        "html": "The greatest remaining challenge for Somalia is Maritime Enforcement. Somalia scores 19 in this area, below the regional average of 45. To further             improve upon this score, Somalia can work through efforts like the Djibouti Code of Conduct to boost regional maritime situational awareness.. Further progress can be made by improving inter-agency cooperation between regional coast  guards and port police departments.. Through these efforts, Somalia can raise its weakest score and work toward comprehensive and lasting maritime security."
-      }
-    ]
-  },
-  {
-    "title": "Djibouti",
-    "menu": "Djibouti",
-    "map": {
-      "highlights": [
-        "DJI"
-      ],
-      "iso3": "DJI",
-      "extent": [
-        [
-          5,
-          -18
-        ],
-        [
-          25,
-          35
-        ]
-      ]
-    },
-    "els": [
-      {
-        "tag": "h1",
-        "text": "Djibouti"
-      },
-      {
-        "tag": "p",
-        "html": "Djibouti's exclusive economic zone covers roughly 7,459 square kilometers of the Gulf of Aden and the Red Sea.           This gives Djibouti the twenty-ninth largest EEZ in sub-Saharan Africa. Meanwhile, Djibouti's Maritime Enforcement Score indicates that the country is above the regional average."
-      },
-      {
-        "tag": "radar"
-      },
-      {
-        "tag": "p",
-        "html": "Across the nine issues covered by the Stable Seas Maritime Security Index, Djibouti ranks highest in Piracy. Djibouti's score of 74 in this area is high relative to its other issue scores,          due in part to the sharp decline of piracy in the Gulf of Aden and the western Indian Ocean.. Djibouti can further improve upon this area of relative strength by working with neighbors to fight piracy in potential hot spots and safeguard against maritime piracy and terrorism in the Red Sea and Gulf of Aden."
-      },
-      {
-        "tag": "bigtext",
-        "html": "Djibouti is also above the regional average in Maritime Enforcement, Coastal Welfare, and Illicit Trades."
-      },
-      {
-        "tag": "p",
-        "html": "The greatest remaining challenge for Djibouti is Rule of Law. Djibouti scores 37 in this area,  about the same as  the regional average of 42. To further             improve upon this score, Djibouti can invest in anti-corruption efforts and increase judicial accountability.. Further progress can be made by eliminating bureaucratic red tape that inhibits smooth international trade and enables bribe-seeking. The World Bank Doing Business Report finds trade is significantly more difficult in Djibouti than it is elsewhere in the region.. Through these efforts, Djibouti can raise its weakest score and work toward comprehensive and lasting maritime security."
-      }
-    ]
-  }
-]
   }
 }
