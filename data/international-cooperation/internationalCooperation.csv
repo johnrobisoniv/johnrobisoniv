@@ -1,34 +1,34 @@
 country,iso3,SSI_RANK,SSI_FINAL,international-cooperation-index,ic_agreements,disputes,disputes-with,port-state-measures,port-state-measures-ratified,ECOWAS,ECCAS,yaounde,djibouti,lome
 Angola,AGO,20,0.490126905,0.62,0.62,TRUE,DRC,1,0,0,1,1,0,1
-Benin,BEN,27,0.4592792029,0.72,0.9,FALSE,,1,0,1,0,3,0,1
-Cote d'Ivoire,CIV,18,0.5085200334,0.84,0.76,FALSE,,0,0,1,0,4,0,1
-Cameroon,CMR,25,0.4714257177,0.86,0.57,FALSE,,0,0,0,1,2,0,0
-DRC,COD,29,0.3685434168,0.56,0.43,TRUE,Angola,0,0,0,1,1,0,1
-Congo,COG,24,0.4761275469,0.79,0.62,FALSE,,0,0,0,1,1,0,1
+Benin,BEN,27,0.459279203,0.72,0.9,FALSE,,1,0,1,0,3,0,1
+Cote d'Ivoire,CIV,18,0.508520033,0.84,0.76,FALSE,,0,0,1,0,4,0,1
+Cameroon,CMR,25,0.471425718,0.86,0.57,FALSE,,0,0,0,1,2,0,0
+DRC,COD,29,0.368543417,0.56,0.43,TRUE,Angola,0,0,0,1,1,0,1
+Congo,COG,24,0.476127547,0.79,0.62,FALSE,,0,0,0,1,1,0,1
 Comoros,COM,21,0.488154703,0.52,0.57,TRUE,France,0,0,0,0,6,1,1
-Cabo Verde,CPV,1,0.7110351183,0.87,0.86,TRUE,France,1,1,1,0,5,0,1
+Cabo Verde,CPV,1,0.711035118,0.87,0.86,FALSE,,1,1,1,0,5,0,1
 Djibouti,DJI,17,0.519448662,0.57,0.71,TRUE,Eritrea and Somalia,0,0,0,0,6,1,1
-Gabon,GAB,10,0.5597258799,0.75,0.76,TRUE,Equatorial Guinea,1,0,0,1,2,0,1
-Ghana,GHA,14,0.5447041186,0.92,1,FALSE,Cote d'Ivoire,1,1,1,0,4,0,1
-Guinea,GIN,23,0.4804675213,0.92,1,FALSE,,1,1,1,0,4,0,1
+Gabon,GAB,10,0.55972588,0.75,0.76,TRUE,Equatorial Guinea,1,0,0,1,2,0,1
+Ghana,GHA,14,0.544704119,0.92,1,FALSE,Cote d'Ivoire,1,1,1,0,4,0,1
+Guinea,GIN,23,0.480467521,0.92,1,FALSE,,1,1,1,0,4,0,1
 The Gambia,GMB,11,0.558995121,0.82,0.71,FALSE,,1,1,1,0,5,0,0
-Guinea-Bissau,GNB,16,0.5296173006,0.79,0.62,FALSE,,0,0,1,0,5,0,0
-Equatorial Guinea,GNQ,19,0.4997853804,0.69,0.57,TRUE,Gabon,0,0,0,1,2,0,0
-Kenya,KEN,13,0.5458448128,0.67,1,TRUE,Somalia,1,0,0,0,6,1,1
-Liberia,LBR,22,0.4825642607,0.7,0.86,FALSE,,0,0,1,0,4,0,1
+Guinea-Bissau,GNB,16,0.529617301,0.79,0.62,FALSE,,0,0,1,0,5,0,0
+Equatorial Guinea,GNQ,19,0.49978538,0.69,0.57,TRUE,Gabon,0,0,0,1,2,0,0
+Kenya,KEN,13,0.545844813,0.67,1,TRUE,Somalia,1,0,0,0,6,1,1
+Liberia,LBR,22,0.482564261,0.7,0.86,FALSE,,0,0,1,0,4,0,1
 Madagascar,MDG,15,0.538422647,0.62,0.86,TRUE,France,1,1,0,0,6,1,1
-Mozambique,MOZ,12,0.5548385542,0.83,1,FALSE,,1,1,0,0,6,1,0
-Mauritus,MUS,5,0.6756409784,0.83,1,FALSE,,1,1,0,0,6,1,0
-Namibia,NAM,2,0.7025909926,0.83,1,FALSE,,0,0,0,0,,0,0
-Nigeria,NGA,26,0.4658652976,0.87,0.86,FALSE,,0,0,1,0,3,0,1
-Senegal,SEN,6,0.6198442159,0.92,1,FALSE,,1,1,1,0,5,0,1
-Sierra Leone,SLE,9,0.5832834853,0.79,0.62,FALSE,,1,0,1,0,4,0,1
-Somalia,SOM,30,0.3456019379,0.26,0.29,TRUE,Djibouti and Yemen,1,1,0,0,6,1,1
-Sao Tome and Principe,STP,8,0.5925240784,0.9,0.71,FALSE,,1,1,0,1,2,0,1
+Mozambique,MOZ,12,0.554838554,0.83,1,FALSE,,1,1,0,0,6,1,0
+Mauritus,MUS,5,0.675640978,0.83,1,FALSE,,1,1,0,0,6,1,0
+Namibia,NAM,2,0.702590993,0.83,1,FALSE,,0,0,0,0,,0,0
+Nigeria,NGA,26,0.465865298,0.87,0.86,FALSE,,0,0,1,0,3,0,1
+Senegal,SEN,6,0.619844216,0.92,1,FALSE,,1,1,1,0,5,0,1
+Sierra Leone,SLE,9,0.583283485,0.79,0.62,FALSE,,1,0,1,0,4,0,1
+Somalia,SOM,30,0.345601938,0.26,0.29,TRUE,Djibouti and Yemen,1,1,0,0,6,1,1
+Sao Tome and Principe,STP,8,0.592524078,0.9,0.71,FALSE,,1,1,0,1,2,0,1
 Seychelles,SYC,4,0.685140651,0.83,1,FALSE,,1,1,0,0,6,1,1
-Togo,TGO,28,0.4524106256,0.7,0.86,FALSE,,1,1,1,0,3,0,1
-Tanzania,TZA,7,0.6029491316,0.74,0.71,FALSE,,0,0,0,0,6,1,1
-South Africa,ZAF,3,0.6973205843,0.83,1,FALSE,,1,1,0,0,6,1,0
+Togo,TGO,28,0.452410626,0.7,0.86,FALSE,,1,1,1,0,3,0,1
+Tanzania,TZA,7,0.602949132,0.74,0.71,FALSE,,0,0,0,0,6,1,1
+South Africa,ZAF,3,0.697320584,0.83,1,FALSE,,1,1,0,0,6,1,0
 UAE,ARE,,,,,,,,,0,0,6,1,0
 Burundi,BDI,,,,,,,,,0,1,,0,1
 Burkina Faso,BFA,,,,,,,,,1,0,4,0,1
@@ -46,3 +46,9 @@ Sudan,SDN,,,,,,,,,0,0,,0,1
 Chad,TCD,,,,,,,,,0,1,,0,1
 Tunisia,TUN,,,,,,,,,0,0,,0,1
 Yemen,YEM,,,,,,,,,0,0,6,1,0
+Egypt,EGY,,,,,,,,,,,6,1,
+Eritrea,ERI,,,,,,,,,,,6,1,
+Ethiopia,ETH,,,,,,,,,,,6,1,
+France,FRA,,,,,,,,,,,6,1,
+Oman,OMN,,,,,,,,,,,6,1,
+Sudan,SDN,,,,,,,,,,,6,1,

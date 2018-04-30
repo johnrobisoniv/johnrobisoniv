@@ -55,14 +55,18 @@ var overviewData = {
         description: 'This will be the title card that introduces the website.'
       },
       map: {
+        type: 'continuous',
         scale: [],
         classes: 'card-eez-layer',
         translate: [],
         highlights: [],
         tooltip: true,
+        legend: 'Stable Seas Maritime Security Index Score',
         tooltipHTML: function(tooltipVal) {
-          return 'Relative strength: <br />' + issueAreaData[issueArea]
-            .metadata.countryData[tooltipVal].Strength;
+          var score = Math.round(issueAreaData[issueArea]
+            .metadata.countryData[tooltipVal].Average * 100);
+          updatePointer(score);
+          return 'Average of scores: <br />' + score;
         },
         load: function(index, csv) { // ### *** This only should be for the first card ...
           // Class EEZ with card-0-layer to enable switch() method
@@ -71,79 +75,81 @@ var overviewData = {
             .classed(layer, true);
         },
         switch: function(index) {
-          var target = 'card-' + index + '-layer';
+          choropleth(index, 1, 'Average')
 
-          var vals = issueAreaData[issueArea].metadata.countryData;
-          var i = 0;
-
-
-          for (iso in vals) {
-            var issue = vals[iso].strength;
-
-            // opportunity to ### refactor
-            d3.selectAll('.country.' + iso)
-              .classed('active', true)
-              // .on('mouseenter', function () {
-              //   //??
-              // })
-              // .on('mouseleave', function () {
-              //   // ??
-              // })
-              .attr('data-ia', issue)
-              .on('mouseenter', function () {
-                var ia = d3.select(this).attr('data-ia');
-                var isoLocal = d3.select(this).attr('data-iso3');
-                console.log(isoLocal);
-
-                  d3.select(this)
-                    .style('fill', function () {
-                    return d3.interpolateLab('white',issueAreaData[ia].metadata.color)(1);
-                  });
-              })
-              .on('mouseleave', function () {
-                var ia = d3.select(this).attr('data-ia');
-
-                d3.select(this)
-                  .style('fill', function () {
-                    return d3.interpolateLab('white',issueAreaData[ia].metadata.color)(0.7);
-
-                  });
-              })
-              .transition().delay(10 * i)
-              .style('fill', function() {
-                return d3.interpolateLab('white',issueAreaData[issue].metadata.color)(0.7);
-              })
-              ;
-
-            d3.selectAll('.eez.' + iso)
-              .classed('active', true)
-          //    .style('stroke-width', '4px')
-              .attr('data-ia', issue)
-              .on('mouseenter', function () {
-                var ia = d3.select(this).attr('data-ia');
-
-                  d3.select(this)
-                    .style('fill', function () {
-                    return d3.interpolateLab('white',issueAreaData[ia].metadata.color)(1);
-                  });
-              })
-              .on('mouseleave', function () {
-                var ia = d3.select(this).attr('data-ia');
-
-                d3.select(this)
-                  .style('fill', function () {
-                    return d3.interpolateLab('white',issueAreaData[ia].metadata.color)(0.7);
-
-                  });
-              })
-              .transition().delay(10 * i)
-              .style('fill', function() {
-                return issueAreaData[issue]
-                  .metadata.color;
-              })
-              .style('opacity', '0.2');
-            i++;
-          }
+          // var target = 'card-' + index + '-layer';
+          //
+          // var vals = issueAreaData[issueArea].metadata.countryData;
+          // var i = 0;
+          //
+          //
+          // for (iso in vals) {
+          //   var issue = vals[iso].strength;
+          //
+          //   // opportunity to ### refactor
+          //   d3.selectAll('.country.' + iso)
+          //     .classed('active', true)
+          //     // .on('mouseenter', function () {
+          //     //   //??
+          //     // })
+          //     // .on('mouseleave', function () {
+          //     //   // ??
+          //     // })
+          //     .attr('data-ia', issue)
+          //     .on('mouseenter', function () {
+          //       var ia = d3.select(this).attr('data-ia');
+          //       var isoLocal = d3.select(this).attr('data-iso3');
+          //       console.log(isoLocal);
+          //
+          //         d3.select(this)
+          //           .style('fill', function () {
+          //           return d3.interpolateLab('white',issueAreaData[ia].metadata.color)(1);
+          //         });
+          //     })
+          //     .on('mouseleave', function () {
+          //       var ia = d3.select(this).attr('data-ia');
+          //
+          //       d3.select(this)
+          //         .style('fill', function () {
+          //           return d3.interpolateLab('white',issueAreaData[ia].metadata.color)(0.7);
+          //
+          //         });
+          //     })
+          //     .transition().delay(10 * i)
+          //     .style('fill', function() {
+          //       return d3.interpolateLab('white',issueAreaData[issue].metadata.color)(0.7);
+          //     })
+          //     ;
+          //
+          //   d3.selectAll('.eez.' + iso)
+          //     .classed('active', true)
+          // //    .style('stroke-width', '4px')
+          //     .attr('data-ia', issue)
+          //     .on('mouseenter', function () {
+          //       var ia = d3.select(this).attr('data-ia');
+          //
+          //         d3.select(this)
+          //           .style('fill', function () {
+          //           return d3.interpolateLab('white',issueAreaData[ia].metadata.color)(1);
+          //         });
+          //     })
+          //     .on('mouseleave', function () {
+          //       var ia = d3.select(this).attr('data-ia');
+          //
+          //       d3.select(this)
+          //         .style('fill', function () {
+          //           return d3.interpolateLab('white',issueAreaData[ia].metadata.color)(0.7);
+          //
+          //         });
+          //     })
+          //     .transition().delay(10 * i)
+          //     .style('fill', function() {
+          //       return issueAreaData[issue]
+          //         .metadata.color;
+          //     })
+          //     .style('opacity', '0.2');
+          //   i++;
+          // }
 
 
           // var target = 'card-' + index + '-layer';
@@ -203,8 +209,10 @@ var overviewData = {
           html: 'The Stable Seas Maritime Security Index is a new effort to measure and map nine facets of good maritime governance: 1) international cooperation, 2) the rule of law, 3) maritime enforcement capacity, 4) coastal welfare, 5) development of the blue economy, 6) fisheries, 7) piracy and armed robbery at sea, 8) illicit maritime trades, and 9) maritime mixed migration. By bringing these nine issues into one comprehensive analysis, we can better understand how they intersect to affect maritime security. This improved understanding can then inform stronger maritime security policy.'
         },
         {
-          tag: 'p',
-          html: '<em>***Image of issue area cloud here***</em>'
+          tag: 'img',
+          src: '../../assets/overview/issue_areas_graphic.png',
+          alt: 'Stable Seas issue areas: International Cooperation, Rule of Law, Maritime Enforcement, Coastal Welfare, Blue Economy, Fisheries, Piracy & Armed Robbery, Illicit Trade, Maritime Mixed Migration.',
+        //  caption: 'Special protection unit in Berbera, Somaliland.<br />Photo: Jean-Pierre Larroque, OEF.'
         },
         // {
         //   tag: 'video',
@@ -221,7 +229,7 @@ var overviewData = {
         },
         {
           tag: 'p',
-          html: 'This interactive data feature is organized around the nine core themes that emerge in the region’s major maritime security strategies, including the Yaounde Code of Conduct, Djibouti Code of Conduct, Lome Charter, and African Integrated Maritime Strategy (AIMS) 2050. We are creating these measures to support progress toward their objectives. Scores reflect publicly available data, as well as extensive collaboration with African militaries and governments, international organizations, African and Western non-governmental organizations, and other stakeholders with an intimate understanding of the African maritime security environment.'
+          html: 'Scores reflect publicly available data, as well as extensive collaboration with African militaries and governments, international organizations, African and Western non-governmental organizations, and other stakeholders with an intimate understanding of the African maritime security environment.'
         },
         {
           tag: 'p',
@@ -833,6 +841,7 @@ var overviewData = {
         scale: [],
         classes: 'card-eez-layer',
         tooltip: true,
+        legend: 'Stable Seas Maritime Security Index Score',
         tooltipHTML: function (iso) {
         //  console.log(iso);
           var val = issueAreaData[issueArea].metadata.countryData[iso].Average;

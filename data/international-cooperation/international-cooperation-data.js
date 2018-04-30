@@ -63,35 +63,41 @@ var internationalCooperationData = {
         //   legendContent: '<em>Highlighted countries are party to all parts of UNCLOS, including Part XI.'
         // },
         {
+          tag: 'blockquote',
+          html: '“We must continue in good spirit of partnership and alliances to support our continent and ensure that trade can advance freely. No one nation can deal with the challenges that we face in the world today. The ocean is so vast that a united effort is required to make sure that our oceans are safe.”',
+          source: 'Rear Adm. B.K. Mhlana, Fleet Flag Officer<br />South African Navy<sup>20</sup>',
+          link: 'http://www.navy.mil/submit/display.asp?story_id=99689' // What about internal references?
+        },
+        {
           tag: 'p',
           html: 'The effects of maritime instability in sub-Saharan Africa ripple around the world and make international cooperation a prerequisite for a secure African maritime domain. States must engage with their neighbors and foreign entities that use their waters to protect freedom of navigation and marine resources as well as counter regional security threats. The international cooperation score measures participation in and commitment to multilateral efforts that facilitate maritime security and governance.'
         },
-
         {
-          tag: 'p',
-          html: 'International cooperation is strongly linked to a stronger rule of law and greater maritime enforcement capacity. In countries with high international cooperation scores, maritime mixed migration is relatively low.'
+          tag: 'img',
+          src: '../../assets/international-cooperation/international cooperation-coin-cloud.png',
+          alt: 'Pie graph' // ###ks have to put x img here
+          //caption: 'al estimate.'
         },
+
+        // {
+        //   tag: 'p',
+        //   html: 'International cooperation is strongly linked to a stronger rule of law and greater maritime enforcement capacity. In countries with high international cooperation scores, maritime mixed migration is relatively low.'
+        // },
         // {
         //   tag: 'p',
         //   html: '*** An image here? Would fill the space nicely ***'
         // },
-        {
-          tag: 'img',
-          src: '../../assets/maritime-enforcement/cameroon-coast-guard.jpg',
-          alt: 'Cameroon Coast Guard',
-          caption: 'Centre for Multinational Coordination (CMC) in Douala, Cameroon. Photo by Jean-Pierre Larroque, OEF.'
-          // from http://www.ghananewsagency.org/social/ghana-and-u-s-maritime-forces-complete-combined-operation-73501
-        },
         // {
         //   tag: 'img',
-        //   src: '../../assets/international-cooperation/maritime_zones_eez.png', // ### need image path and in assets/international-cooperation/
-        //   alt: 'The legal definition definition of \'exclusive economic zone\' was established under UNCLOS.',
-        //   caption: 'The legal definition definition of \'exclusive economic zone\' was established under UNCLOS.'
+        //   src: '../../assets/maritime-enforcement/cameroon-coast-guard.jpg',
+        //   alt: 'Cameroon Coast Guard',
+        //   caption: 'Centre for Multinational Coordination (CMC) in Douala, Cameroon. Photo by Jean-Pierre Larroque, OEF.'
+        //   // from http://www.ghananewsagency.org/social/ghana-and-u-s-maritime-forces-complete-combined-operation-73501
         // },
-        {
-          tag: 'p',
-          html: 'This section is divided into five parts. The first will discuss global legal efforts, including seven multilateral treaties related to the maritime domain. The second will highlight the 2050 Africa’s Integrated Maritime Strategy (AIMS 2050) and Lomé Charter as examples of continental coordination. Next, we compare two regional maritime security strategies: the Yaoundé Code of Conduct (West and Central Africa) and the Jeddah Amendment to the Djibouti Code of Conduct (East Africa and the Arabian Peninsula). The fourth part highlights disputes of maritime boundaries as impediments to governance will follow. The final section will conclude with a discussion of our methodology.'
-        },
+        // {
+        //   tag: 'p',
+        //   html: 'This section is divided into five parts. The first will discuss global legal efforts, including seven multilateral treaties related to the maritime domain. The second will highlight the 2050 Africa’s Integrated Maritime Strategy (AIMS 2050) and Lomé Charter as examples of continental coordination. Next, we compare two regional maritime security strategies: the Yaoundé Code of Conduct (West and Central Africa) and the Jeddah Amendment to the Djibouti Code of Conduct (East Africa and the Arabian Peninsula). The fourth part highlights disputes of maritime boundaries as impediments to governance will follow. The final section will conclude with a discussion of our methodology.'
+        // },
         // {
         //   tag: 'p',
         //   html: 'The main ramification of UNCLOS for sub-Saharan Africa was economic. Suddenly, African nations had a legal framework within which they could assert their rights to govern and share in the profits of the resources off of their shores. Potential financial gains for African states from the taxation of maritime resources continue to be massive, but equally significant is the assertion of sovereignty to govern these resources in a manner which protects the long-term economic, environmental, and security interests of their people.'
@@ -109,6 +115,10 @@ var internationalCooperationData = {
             {
               org: '<sup>2</sup> Peter Kerins, “Somali Perspectives on Piracy and Illegal Fishing,” Oceans Beyond Piracy,',
               url: 'http://oceansbeyondpiracy.org/publications/somali-perspectives-piracy-and-illegal-fishing'
+            },
+            {
+              org: '<sup>20</sup> David Rider, “Exercise Cutlass Express 2015,” <em>Maritime Security Review</em>, 21 November 2014,',
+              url: 'http://www.marsecreview.com/2014/11/exercise-cutlass-express-2015/'
             }
           ]
         }
@@ -165,7 +175,7 @@ var internationalCooperationData = {
         },
         {
           tag: 'caption',
-          text: 'XXXXXXXXXXX'
+          text: 'Regional coordination requires strong international law'
         },
         {
           tag: 'p',
@@ -176,12 +186,12 @@ var internationalCooperationData = {
           html: 'UNCLOS enshrines state practice as international law, with particular regard to the freedom of navigation and maritime boundaries of 12 nautical miles for the territorial sea and 200 nautical miles for the Exclusive Economic Zone. Part XI lays down principles for the responsible exploitation of the seabed. The UN Fish Stocks Agreement establishes rules for the coordinated management of international fisheries. SUA criminalizes threats to the shipping industry and seafarers. CTOT establishes protocols for three transnational organized crimes present in the maritime space: trafficking in persons, smuggling of migrants, and trafficking in arms. The Convention against Illicit Traffic in Narcotic Drugs and Psychotropic Substances establishes an international legal framework for combating international drug trafficking and money laundering, a particular issue of concern to African coasts that have become major transshipment points in the global narcotics trade.'
         },
         {
-          tag: 'p',
-          html: '*** image here? ***'
+          tag: 'h3',
+          html: 'Progress through the PMSA'
         },
         {
           tag: 'p',
-          html: 'The 2009 PSMA is the most recent global treaty to address a maritime crime. It counters illegal, unreported, and unregulated fishing (IUU) through the application of a new legal regime to fishing vessels docking at foreign ports. Ports of participating states can now inspect foreign fishing vessels, request documentation, and even deny service to suspect vessels. This agreement is a huge step towards combating one of the African continent’s most intractable problems, yet only half of sub-Saharan African states have ratified it. However, the agreement is quickly gaining traction. Kenya, Djibouti, and Namibia all ratified the PSMA in late 2017.'
+          html: 'The 2009 Port State Measures Agreement counters illegal, unreported, and unregulated fishing (IUU) through the application of a new legal regime to fishing vessels docking at foreign ports. Ports of participating states can now inspect foreign fishing vessels, request documentation, and even deny service to suspect vessels. This agreement is a huge step towards combating one of the African continent’s most intractable problems, yet only half of sub-Saharan African states have ratified it. However, the agreement is quickly gaining traction. Kenya, Djibouti, and Namibia all ratified the PSMA in late 2017.'
         },
         {
           tag: 'links',
@@ -405,8 +415,8 @@ var internationalCooperationData = {
     //   ] // end of els array
     // },
     { // Card 2
-      title: 'Who has signed the Lome Charter?',
-      menu: 'AU Efforts',
+      title: 'Continental coordination',
+      menu: 'Continental Coordination',
       metadata: {
         owner: 'Jay Benson',
         description: 'Move to comprehensive continental strategy.'
@@ -417,15 +427,15 @@ var internationalCooperationData = {
         classes: '',
         highlights: [],
         tooltip: true,
-        legend: 'Signatories of Lome Charter',
+        legend: 'Signatories of Lomé Charter',
         tooltipHTML: function(iso) {
 
           var lome = issueAreaData[issueArea].metadata.countryData[iso].lome;
           if (lome > 0 ) {
-            return "Signatory of the Lome Charter";
+            return "Signatory of the Lomé Charter";
 
           } else {
-            return "Not a signatory of the Lome Charter";
+            return "Not a signatory of the Lomé Charter";
           }
         },
         load: function(index, csv) { // ### *** This only should be for the first card ...
@@ -441,7 +451,7 @@ var internationalCooperationData = {
       },
       els: [{
           tag: 'h1',
-          text: 'Who has signed the Lome Charter?',
+          text: 'Continental Coordination',
         },
         {
           tag: 'caption',
@@ -494,8 +504,8 @@ var internationalCooperationData = {
       ] // end of els array
     },
     { // Card 3
-      title: 'Yaoundé Process and the Djibouti Code',
-      menu: 'Yaoundé & Djibouti',
+      title: 'Regional Strategies',
+      menu: 'Regional Strategies',
       metadata: {
         owner: 'Jay Benson',
         description: 'How the zones and regional centers are set up, describe patrols and success.'
@@ -507,7 +517,7 @@ var internationalCooperationData = {
         translate: [],
         highlights: [],
         tooltip: true,
-        categories: ['Yaounde Zone A', 'Yaounde Zone D', 'Yaounde Zone E', 'Yaounde Zone F', 'Yaounde Zone G', 'Djibouti Code of Conduct (*)'],
+        categories: ['Yaoundé Zone A', 'Yaoundé Zone D', 'Yaoundé Zone E', 'Yaoundé Zone F', 'Yaoundé Zone G', 'Djibouti Code of Conduct (*)'],
         tooltipHTML: function(iso) {
           var zone = issueAreaData[issueArea].metadata.countryData[iso];
           // leverage some map.legend array? replace switch statement with
@@ -516,19 +526,19 @@ var internationalCooperationData = {
 
           switch (zone.yaounde) {
             case 1:
-              return "Yaounde Zone A";
+              return "Yaoundé Zone A";
               break;
             case 2:
-              return "Yaounde Zone D";
+              return "Yaoundé Zone D";
               break;
             case 3:
-              return "Yaounde Zone E";
+              return "Yaoundé Zone E";
               break;
             case 4:
-              return "Yaounde Zone F";
+              return "Yaoundé Zone F";
               break;
             case 5:
-              return "Yaounde Zone G";
+              return "Yaoundé Zone G";
               break;
             case 6:
               return "Party to Djibouti Code of Conduct";
@@ -646,7 +656,7 @@ var internationalCooperationData = {
       },
       els: [{
           tag: 'h1',
-          text: 'Yaoundé Process and Djibouti Code',
+          text: 'Regional Strategies',
         },
         {
           tag: 'caption',
@@ -698,10 +708,10 @@ var internationalCooperationData = {
           tag: 'p',
           html: 'Most of the difficulties presented by this change of scope are due to the DCoC’s origin as a response to piracy. The urgency of the situation meant that signatory states were eager to cooperate to address the pressing security threat, but there may not be sufficient political will to pivot toward a broader framework for cooperative maritime governance. Due to the urgent nature of its formation, the DCoC is not rooted in existing regional organizations. This means DCoC efforts cannot utilize the leverage the broader resources of such organizations. '
         },
-        {
-          tag: 'p',
-          html: 'Across the African continent, regional efforts are being made to cooperate to improve maritime security. The Yaounde Code of Conduct establishes a comprehensive framework to address maritime security, but it has not been fully developed in each participating state. The Jeddah Amendment to the Djibouti Code of Conduct builds on an existing framework to counter a specific maritime threat, but it remains to be seen if it can successfully expand to counter a broader range of threats. '
-        }
+        // {
+        //   tag: 'p',
+        //   html: 'Across the African continent, regional efforts are being made to cooperate to improve maritime security. The Yaounde Code of Conduct establishes a comprehensive framework to address maritime security, but it has not been fully developed in each participating state. The Jeddah Amendment to the Djibouti Code of Conduct builds on an existing framework to counter a specific maritime threat, but it remains to be seen if it can successfully expand to counter a broader range of threats. '
+        // }
 
         // {
         //   tag: 'p',
@@ -779,7 +789,7 @@ var internationalCooperationData = {
             issueAreaData[issueArea].cards[activeCard].map.disputes = rows;
 
             var disputes = mapg.append('g')
-              .classed('card-layer maritime-disputes ' + layer, true);
+              .classed('card-layer maritime-disputes invisible ' + layer, true);
 
             disputes.selectAll('rect')
               .data(rows).enter()
@@ -911,6 +921,13 @@ var internationalCooperationData = {
         {
           tag: 'p',
           html: 'UNCLOS defines the territorial sea as extending 12 nautical miles from shore and the exclusive economic zones (EEZs) as extending 200 nautical miles beyond the baseline. Despite the appearance of clarity, there are a number of maritime boundary disputes in sub-Saharan Africa, many of which are not currently being adjudicated in the legal bodies established to resolve such disputes.'
+        },
+
+        {
+          tag: 'img',
+          src: '../../assets/international-cooperation/maritime_zones_eez.png', // ### need image path and in assets/international-cooperation/
+          alt: 'The legal definition definition of \'exclusive economic zone\' was established under UNCLOS.',
+          caption: 'The legal definition definition of \'exclusive economic zone\' was established under UNCLOS.'
         },
         {
           tag: 'h3',
@@ -1519,12 +1536,24 @@ var internationalCooperationData = {
           html: 'International cooperation is measured with three equally weighted components: participation in relevant international agreements, regional security strategies, and maritime boundary violations or disputes.'
         },
         {
+          tag: 'h3',
+          html: 'Global Agreements'
+        },
+        {
           tag: 'p',
           html: 'The first component reflects the signing and ratification of seven global maritime legal agreements: the United Nations Convention on the Law of the Sea (UNCLOS), UNCLOS Part XI, the UN Fish Stocks Agreement, the Convention for the Suppression of Unlawful Acts against Safety of Maritime Navigation (SUA), the UN Food and Agriculture Organization Port State Measures Agreement (PSMA), the UN Convention against Transnational Organized Crime (CTOT), and the UN Convention against Illicit Traffic in Narcotic Drugs and Psychotropic Substances. States that have signed and ratified all of these agreements receive the maximum value for this part of the international cooperation score. States that have signed but are not party to an agreement receive one third of the score for that agreement.'
         },
         {
+          tag: 'h3',
+          html: 'Regional Strategies'
+        },
+        {
           tag: 'p',
           html: 'Regional security strategies are measured as the mean of two inputs: membership and material commitment. States receive the maximum membership score if they are party to all relevant maritime security agreements in their subregion (i.e. the Yaoundé Code of Conduct, Djibouti Code of Conduct, and SADC maritime security strategy). The material commitment component gauges the tangible outcomes of the security strategies, with states involved in better-developed strategies earning higher scores than those participating in strategies that have yet to result in significant material commitments.'
+        },
+        {
+          tag: 'h3',
+          html: 'Boundary Violations and Disputes'
         },
         {
           tag: 'p',
