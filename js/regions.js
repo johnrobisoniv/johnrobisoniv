@@ -10,6 +10,129 @@
   var cIndex;
   // Included Countries
   var includedCountries = ['AGO','BEN','CMR','CPV','COM','COG','DJI','COD','GNQ','GAB','GMB','GHA','GIN','GNB','CIV','KEN','LBR','MDG','MUS','MOZ','NAM','NGA','STP','SEN','SYC','SLE','SOM','ZAF','TZA','TGO'];
+  // Regional Card Path Mappings
+  var countryPaths = {
+  "AGO": {
+    "region": "southernCoast",
+    "index": 1
+  },
+  "BEN": {
+    "region": "northernGulf",
+    "index": 4
+  },
+  "CMR": {
+    "region": "southernGulf",
+    "index": 2
+  },
+  "CPV": {
+    "region": "westernCoast",
+    "index": 1
+  },
+  "COM": {
+    "region": "westIndianOcean",
+    "index": 4
+  },
+  "COG": {
+    "region": "southernGulf",
+    "index": 5
+  },
+  "DJI": {
+    "region": "easternCoast",
+    "index": 5
+  },
+  "COD": {
+    "region": "southernGulf",
+    "index": 6
+  },
+  "GNQ": {
+    "region": "southernGulf",
+    "index": 3
+  },
+  "GAB": {
+    "region": "southernGulf",
+    "index": 4
+  },
+  "GMB": {
+    "region": "westernCoast",
+    "index": 3
+  },
+  "GHA": {
+    "region": "northernGulf",
+    "index": 2
+  },
+  "GIN": {
+    "region": "westernCoast",
+    "index": 5
+  },
+  "GNB": {
+    "region": "westernCoast",
+    "index": 4
+  },
+  "CIV": {
+    "region": "northernGulf",
+    "index": 1
+  },
+  "KEN": {
+    "region": "easternCoast",
+    "index": 3
+  },
+  "LBR": {
+    "region": "westernCoast",
+    "index": 7
+  },
+  "MDG": {
+    "region": "westIndianOcean",
+    "index": 1
+  },
+  "MUS": {
+    "region": "westIndianOcean",
+    "index": 2
+  },
+  "MOZ": {
+    "region": "easternCoast",
+    "index": 1
+  },
+  "NAM": {
+    "region": "southernCoast",
+    "index": 2
+  },
+  "NGA": {
+    "region": "northernGulf",
+    "index": 5
+  },
+  "STP": {
+    "region": "southernGulf",
+    "index": 1
+  },
+  "SEN": {
+    "region": "westernCoast",
+    "index": 2
+  },
+  "SYC": {
+    "region": "westIndianOcean",
+    "index": 3
+  },
+  "SLE": {
+    "region": "westernCoast",
+    "index": 6
+  },
+  "SOM": {
+    "region": "easternCoast",
+    "index": 4
+  },
+  "ZAF": {
+    "region": "southernCoast",
+    "index": 3
+  },
+  "TZA": {
+    "region": "easternCoast",
+    "index": 2
+  },
+  "TGO": {
+    "region": "northernGulf",
+    "index": 3
+  }
+  }
 
   // Color variables
   // var colorBrew = d3.scaleOrdinal(d3.schemeCategory20);// I don't think we need this any more...
@@ -341,7 +464,7 @@ $('#content-holder').on('click', '.table-expand', function () {
                  })
               .on('click', function () { switchCard(parseInt(this.getAttribute('data-card'))); }); // ### click handler menu item ...
           }
-          console.log(card);
+          // console.log(card);
           // Load map data...
           var mapDataPath = card.map.path;
           if (card.map.load) {card.map.load(cardIndex, mapDataPath);}
@@ -895,7 +1018,7 @@ function buildRadar ( obj, container, cardIndex, elIndex ) {
   }
 //<<<<<<< HEAD
 
-  console.log(cardRadarData);
+  // console.log(cardRadarData);
 //=======
 //  console.log(cardRadarData, 'hi there you');
 
@@ -918,7 +1041,7 @@ function buildRadar ( obj, container, cardIndex, elIndex ) {
     height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
     // var color = d3.scaleOrdinal() // setup color for lines
     //     .range(["#EDC951", "#CC333F", "#00A0B0"]);
-    console.log(color);
+    // console.log(color);
     var radarChartOptions = {
         w: width,
         h: height,
@@ -932,7 +1055,7 @@ function buildRadar ( obj, container, cardIndex, elIndex ) {
         formatValue: '.2', // value will be displayed as: xx
     };
     //Call function to draw the Radar chart
-    console.log('hiiiiiiii', chartIndex, cardRadarData, radarChartOptions);
+    // console.log('hiiiiiiii', chartIndex, cardRadarData, radarChartOptions);
     RadarChart(".radarChart-" + chartIndex, cardRadarData, radarChartOptions);
 
     var aspect = width / height,
@@ -1041,21 +1164,8 @@ function buildMap (json) {  // ### Need some way to attach EEZ layer to specific
               .classed('invisible', true);
           })
           .on('click', function (d) {
-            //console.log(d3.geoBounds(d));
-
-          //  console.log(d);
-          //  console.log(path.bounds(d));
+            loadCountryCard(d3.select(this).attr('data-iso3'))
           });
-        // .on('mouseenter', pulse)
-        // .on('mousemove', function(d) {
-        //     var mouse = d3.mouse(map.node()).map(function(d) {  // map. ???
-        //         return parseInt(d);
-        //     })
-        //   })
-        // .on('mouseout', function() {
-        //     unpulse();
-        // });
-
 
       // Countries
 
@@ -1084,12 +1194,10 @@ function buildMap (json) {  // ### Need some way to attach EEZ layer to specific
             })  // This is where we could add a class to included countries...
           .attr("d", path)
           .attr('title', function (d) {
-            //console.log(d);
-        //    console.log( d.properties.SOVEREIGNT);
-
               return d.properties.SOVEREIGNT;
-
-
+          })
+          .attr('data-iso3', function (d) {
+            return d.properties.ISO_A3_EH;
           })
           .on('mouseenter', function (d) {
             //console.log(d);
@@ -1106,60 +1214,7 @@ function buildMap (json) {  // ### Need some way to attach EEZ layer to specific
 
           })
           .on('click', function (d) {
-            console.log(d);
-            //console.log(d3.geoBounds(d));
-
-          //   if ($.inArray(d.properties.ISO_A3_EH, includedCountries) != -1) {
-          //     var coords = path.bounds(d);
-          //     var tooltip = d3.select('div.tooltip');
-          //
-          //     tooltip.style('left', function () {return coords[0][0] - 100 + 'px';})
-          //       .style('top', function () {return coords[0][1] - 90 + 'px';})
-          //       .classed('hidden', false);
-          //
-          //     var idx = regionsData.overview.metadata.indexData
-          //       .filter(  function( obj ) {
-          //         return obj.iso3 == d.properties.ISO_A3_EH;
-          //       })[0];
-          //
-          //     tooltip.select('h1')
-          //       .text(idx.country);
-          //     var left = d3.select('.left').html('');
-          //     var right = d3.select('.right').html('');
-          //
-          // //    console.log(idx);
-          //     for (var key in idx) {
-          //       if (key != 'country' && key != 'iso3') {
-          //         var i = Object.keys(idx).indexOf(key);
-          //         if (i < 6) {
-          //           left.append('p')
-          //             .text(key + ': ' + idx[key]);
-          //         } else {
-          //           right.append('p')
-          //             .text(key + ' ' + idx[key]);
-          //         }
-          //       }
-          //     }
-          //   } else {d3.select('div.tooltip').classed('hidden', true);}
-
-
-
-
-              // Once we want to get the svg D3 graphic in, start here:
-            // var svgTool = d3.select('svg.tool'),
-            //   margin = {top: 20, right: 20, bottom: 30, left: 40},
-            //   width = +svg.attr('width'),
-            //   height = +svg.attr('height');
-            //
-            // var x = d3.scaleBand().rangeRound([0, width]),
-            //   y = d3.scaleBand().rangeRound([height,0]);
-            //
-            // var g = svg.append("g")
-            //   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-            //console.log(idx);
-
-
+            loadCountryCard(d3.select(this).attr('data-iso3'));
           });
 
           var wSaharaCoords = [[-8.67, 27.67],[-13.17,27.67]];
@@ -1170,28 +1225,6 @@ function buildMap (json) {  // ### Need some way to attach EEZ layer to specific
             .attr('y2', function () { return projection(wSaharaCoords[1])[1]; })
             .attr('stroke-dasharray', '2,2')
             .classed('w-sahara-line', true);
-
-          // The OLD Tooltip Code... this didn't work.
-        // .on('mousemove', function(d) {    // ### We should only be attaching this event listener to .included countries!!
-        //     var mouse = d3.mouse(map.node()).map(function(d) {
-        //         return parseInt(d);
-        //     });
-        //     // console.log(d);
-        //     tooltip.classed('hidden', false)
-        //         .attr('transform', function (d) {
-        //   //        console.log(d);
-        //           //return 'translate(' + path.centroid(d) + ')';
-        //         })
-        //         // .attr('style', 'left:' + (mouse[0]) +
-        //         //         'px; top:' + (mouse[1] + 5) + 'px')
-        //         .html(function () {
-        //     //      console.log(d);
-        //           return d.properties.NAME;
-        //         });
-        // })
-        // .on('mouseout', function() {
-        //     tooltip.classed('hidden', true);
-        // });
 
         labels.selectAll('.label')
           .data(countries).enter()
@@ -1225,6 +1258,25 @@ function buildMap (json) {  // ### Need some way to attach EEZ layer to specific
 }
 
 // Interactivity functions
+function loadCountryCard (iso3) {
+  if (includedCountries.includes(iso3)) {
+    var country = countryPaths[iso3];
+    //console.log(countryPaths[iso3]);
+    if (region == country.region) {
+      switchCard(country.index);
+    } else {
+      var path = regionsData[country.region].metadata.path;
+      var href = '../regions/' + path + '#' + country.index;
+      // console.log(href);
+      window.location.href = href;
+    }
+
+  }
+
+
+}
+
+
 function switchCard ( target ) {
   // First, remove highlighted menu item
 
@@ -1263,7 +1315,7 @@ function switchCard ( target ) {
   d3.selectAll('.card-' + target + '-layer')
     .classed('invisible', false);
 
-    console.log('t', target);
+    // console.log('t', target);
   if (mapObj.switch) {mapObj.switch(target);} // ### This has to be on every card - no 'if' statement needed??
 
   // And turn on target card's data layers

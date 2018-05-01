@@ -1637,7 +1637,7 @@ Array.prototype.contains = function(needle) {
   return false;
 }
 
-function choropleth(cardIndex, order, key) {
+function choropleth(cardIndex, order, key, animated) {
 
   var target = 'card-' + cardIndex + '-layer';
   var vals = issueAreaData[issueArea].metadata.countryData;
@@ -1676,16 +1676,28 @@ function choropleth(cardIndex, order, key) {
           val = val / 100;
         }
 
-        highlightedEEZ.classed('active', true)
-          .transition()
-          .delay(i * 10)
-          .style('fill', function() {
-            if (order == -1) {
-              return rampColor(1 - val);
-            } else {
-              return rampColor(val);
-            }
-          });
+        if (animated) {
+          highlightedEEZ.classed('active', true)
+            .transition()
+            .delay(i * 10)
+            .style('fill', function() {
+              if (order == -1) {
+                return rampColor(1 - val);
+              } else {
+                return rampColor(val);
+              }
+            });
+        } else {
+          highlightedEEZ.classed('active', true)
+            .style('fill', function() {
+              if (order == -1) {
+                return rampColor(1 - val);
+              } else {
+                return rampColor(val);
+              }
+            });
+        }
+
 
         d3.selectAll('.country.' + iso3)
           .attr('data-val', val);

@@ -66,7 +66,7 @@ var overviewData = {
           var score = Math.round(issueAreaData[issueArea]
             .metadata.countryData[tooltipVal].Average * 100);
           updatePointer(score);
-          return 'Average of scores: <br />' + score;
+          return 'Average score:<br />' + score + ' / 100';
         },
         load: function(index, csv) { // ### *** This only should be for the first card ...
           // Class EEZ with card-0-layer to enable switch() method
@@ -75,120 +75,8 @@ var overviewData = {
             .classed(layer, true);
         },
         switch: function(index) {
-          choropleth(index, 1, 'Average')
+          choropleth(index, 1, 'Average', false)
 
-          // var target = 'card-' + index + '-layer';
-          //
-          // var vals = issueAreaData[issueArea].metadata.countryData;
-          // var i = 0;
-          //
-          //
-          // for (iso in vals) {
-          //   var issue = vals[iso].strength;
-          //
-          //   // opportunity to ### refactor
-          //   d3.selectAll('.country.' + iso)
-          //     .classed('active', true)
-          //     // .on('mouseenter', function () {
-          //     //   //??
-          //     // })
-          //     // .on('mouseleave', function () {
-          //     //   // ??
-          //     // })
-          //     .attr('data-ia', issue)
-          //     .on('mouseenter', function () {
-          //       var ia = d3.select(this).attr('data-ia');
-          //       var isoLocal = d3.select(this).attr('data-iso3');
-          //       console.log(isoLocal);
-          //
-          //         d3.select(this)
-          //           .style('fill', function () {
-          //           return d3.interpolateLab('white',issueAreaData[ia].metadata.color)(1);
-          //         });
-          //     })
-          //     .on('mouseleave', function () {
-          //       var ia = d3.select(this).attr('data-ia');
-          //
-          //       d3.select(this)
-          //         .style('fill', function () {
-          //           return d3.interpolateLab('white',issueAreaData[ia].metadata.color)(0.7);
-          //
-          //         });
-          //     })
-          //     .transition().delay(10 * i)
-          //     .style('fill', function() {
-          //       return d3.interpolateLab('white',issueAreaData[issue].metadata.color)(0.7);
-          //     })
-          //     ;
-          //
-          //   d3.selectAll('.eez.' + iso)
-          //     .classed('active', true)
-          // //    .style('stroke-width', '4px')
-          //     .attr('data-ia', issue)
-          //     .on('mouseenter', function () {
-          //       var ia = d3.select(this).attr('data-ia');
-          //
-          //         d3.select(this)
-          //           .style('fill', function () {
-          //           return d3.interpolateLab('white',issueAreaData[ia].metadata.color)(1);
-          //         });
-          //     })
-          //     .on('mouseleave', function () {
-          //       var ia = d3.select(this).attr('data-ia');
-          //
-          //       d3.select(this)
-          //         .style('fill', function () {
-          //           return d3.interpolateLab('white',issueAreaData[ia].metadata.color)(0.7);
-          //
-          //         });
-          //     })
-          //     .transition().delay(10 * i)
-          //     .style('fill', function() {
-          //       return issueAreaData[issue]
-          //         .metadata.color;
-          //     })
-          //     .style('opacity', '0.2');
-          //   i++;
-          // }
-
-
-          // var target = 'card-' + index + '-layer';
-          // var vals = issueAreaData[issueArea].metadata.countryData;
-          // var i = 1;
-          // for (iso in vals) {
-          //   d3.selectAll('.country.' + iso)
-          //   .classed('active', true)
-          //   .transition().delay(10 * i)
-          //   .style('fill', rampColor(0.5))
-          //   .style('stroke', rampColor(1));
-          //
-          //   d3.selectAll('.eez.' + iso)
-          //     .classed('active', true)
-          //     .transition().delay(i * 10)
-          //     .style('stroke', rampColor(1));
-          //
-          //   i++;
-          // }
-
-          // vals.forEach(function(val, i) {
-          //
-          //   d3.selectAll('.country.' + val.iso3)
-          //     .classed('active', true)
-          //     .transition().delay(10 * i)
-          //     .style('fill', rampColor(0.5))
-          //     .style('stroke', rampColor(1));
-          //
-          //   d3.selectAll('.eez.' + val.iso3)
-          //     .classed('active', true)
-          //     .transition().delay(i * 10)
-          //     .style('stroke', rampColor(1));
-          //  function () {
-          //   return d3.interpolateLab('white', color)(0.5);
-          // });
-          // });
-
-          d3.select('.' + target)
-            .classed('invisible', false);
         }
       },
       els: [{
@@ -199,11 +87,7 @@ var overviewData = {
           tag: 'caption',
           text: '<em>A new effort to measure and map maritime security in sub-Saharan Africa</em>'
         },
-        // {
-        //   tag: 'legend',
-        //   text: 'Map Legend',
-        //   legendContent: '<em>The 30 shaded countries and EEZs will be included in the inaugural Stable Seas Maritime Security Index</em>'
-        // },
+
         {
           tag: 'p',
           html: 'The Stable Seas Maritime Security Index is a new effort to measure and map nine facets of good maritime governance: 1) international cooperation, 2) the rule of law, 3) maritime enforcement capacity, 4) coastal welfare, 5) development of the blue economy, 6) fisheries, 7) piracy and armed robbery at sea, 8) illicit maritime trades, and 9) maritime mixed migration. By bringing these nine issues into one comprehensive analysis, we can better understand how they intersect to affect maritime security. This improved understanding can then inform stronger maritime security policy.'
@@ -212,17 +96,7 @@ var overviewData = {
           tag: 'img',
           src: '../../assets/overview/issue_areas_graphic.png',
           alt: 'Stable Seas issue areas: International Cooperation, Rule of Law, Maritime Enforcement, Coastal Welfare, Blue Economy, Fisheries, Piracy & Armed Robbery, Illicit Trade, Maritime Mixed Migration.',
-        //  caption: 'Special protection unit in Berbera, Somaliland.<br />Photo: Jean-Pierre Larroque, OEF.'
         },
-        // {
-        //   tag: 'video',
-        //   videoId: 'AXQHK213mFA',
-        //   thumb: '../../assets/overview/stable-seas-main-video-thumb.png' // ###
-        // },
-        // {
-        //   tag: 'caption',
-        //   text: '<em>Introducing the Stable Seas Maritime Security Index.</em>'
-        // },
         {
           tag: 'p',
           html: 'The inaugural edition of our report covers the 30 exclusive economic zones (EEZs) that envelop sub-Saharan Africa from the mid-Atlantic to the Gulf of Aden. Countries in this region face unique maritime security challenges and overcoming them will require international coordination and careful consideration of the interdependencies linking these maritime threats. This site highlights these linkages by combining quantitative measures with important case studies from across the region.'
@@ -235,125 +109,8 @@ var overviewData = {
           tag: 'p',
           html: 'Please browse the site by using the colored toolbar across the top of the screen to view different issue areas. The blue toggle button at the top of the page will allow you to view information country-by-country, rather than issue-by-issue.'
         }
-        // { tag: 'overviewIndexTable',
-        //   col: 'weakness'
-        // },
-        // { tag: 'caption',
-        //   text: 'Note: This table lists the issue area on which each country receives its lowest regional ranking.'
-        // },
-        // { tag: 'p',
-        //   html: 'The measures presented here reflect the best available information about complex and under-reported issues occurring in expansive remote areas. Some issue scores necessarily reflect best-faith estimates rather than exact and verifiable figures. More technical details about the Stable Seas Maritime Security Index can be found in our <a href="https//www.stableseas.org../../data" target="_blank">technical notes</a>'
-        // },
-        ///###Add Link to data and documentation page
       ] // end of els array
     },
-    // { // Card 1
-    //   title: 'A Substantial Challenge',
-    //   menu: 'A Substantial Challenge',
-    //   metadata: {
-    //     owner: 'Curtis Bell',
-    //     description: 'Introduce the mission in greater detail, talking specifically about how maritime security must be approached as a multi-faceted problem and how it relates to peace.'
-    //   },
-    //   map: {
-    //     scale: [],
-    //     classes: 'card-eez-layer',
-    //     translate: [],
-    //     tooltip: true,
-    //     tooltipHTML: function(tooltipVal) {
-    //       var val = issueAreaData[issueArea]
-    //         .metadata.countryData[tooltipVal]["Weakness Djibouti"];
-    //       if (val != 0) {
-    //         return 'Greatest Weakness: <br />' + val;
-    //       } else {
-    //         return null;
-    //       }
-    //     },
-    //     load: function(index, csv) { // ### *** This only should be for the first card ...
-    //       var layer = 'card-' + index + '-layer';
-    //       d3.select('.card-eez-layer')
-    //         .classed(layer, true);
-    //     },
-    //     switch: function(index) {
-    //       // color countries categorically based on data in csv
-    //       var target = 'card-' + index + '-layer';
-    //
-    //       var vals = issueAreaData[issueArea].metadata.countryData;
-    //       //  choropleth(index, 'index', 1);
-    //         console.log('v', vals);
-    //       var i = 0;
-    //       for (iso in vals) {
-    //         var issue = vals[iso].weaknessDjibouti;
-    //         if (issue != 0) {
-    //           console.log(iso, issue);
-    //           // opportunity to ### refactor
-    //           d3.selectAll('.country.' + iso)
-    //             .classed('active', true)
-    //             // .on('mouseenter', function () {
-    //             //   //??
-    //             // })
-    //             // .on('mouseleave', function () {
-    //             //   // ??
-    //             // })
-    //             .transition().delay(10 * i)
-    //             .style('fill', function() {
-    //               return issueAreaData[issue]
-    //                 .metadata.color;
-    //             });
-    //
-    //           d3.selectAll('.eez.' + iso)
-    //             .classed('active', true)
-    //         //    .style('stroke-width', '4px')
-    //             .transition().delay(10 * i)
-    //             .style('fill', function() {
-    //               return issueAreaData[issue]
-    //                 .metadata.color;
-    //             })
-    //             .style('opacity', '0.2');
-    //           i++;
-    //         }
-    //
-    //       }
-    //
-    //       d3.select('.' + target)
-    //         .classed('invisible', false);
-    //     }
-    //   },
-    //   els: [{
-    //       tag: 'h1',
-    //       text: 'Indian Ocean Overview',
-    //     },
-    //     {
-    //       tag: 'caption',
-    //       text: 'Piracy has declined, but challenges remain'
-    //     },
-    //     // {
-    //     //   tag: 'legend',
-    //     //   text: 'Map Legend',
-    //     //   legendContent: '<div class="brew-20 legend-entries light">Sub-Saharan members of the Djibouti Code of Conduct</div><br /><div class="brew-10 legend-entries light">Sub-Saharan members of the Yaoundé Code of Conduct</div>'
-    //     // },
-    //     {
-    //       tag: 'p',
-    //       html: 'Weak maritime governance drives governments and criminals into very different patterns of behavior. Most efforts to increase maritime security focus mainly on addressing a fairly narrow problem like <a class="piracy inline" href="../../piracy">piracy</a> or <a class="fisheries inline" href="../../fisheries#1">illegal fishing.</a> On the other hand, the ease with which criminal networks can operate in these spaces allows them to shift their activities to dodge such efforts. A counter-piracy mandate can disincentivize hijackings, but it can also drive criminals into trafficking and smuggling activities that narrowly avoid these mandates.'
-    //     },
-    //     {
-    //       tag: 'img',
-    //       src: '../../assets/overview/issue_areas_graphic.png', // This should be on the Stable Seas Deck - comments
-    //     },
-    //
-    //     {
-    //       tag: 'bigtext',
-    //       html: 'At 11.4 million square kilometers, sub-Saharan Africa\'s EEZs are larger than the total land area of Europe.'
-    //     },
-    //     {
-    //       tag: 'p',
-    //       html: 'To achieve sustainable maritime security, then, it is necessary to adopt a more holistic approach. By measuring and mapping these threats, the Stable Seas Maritime Security Index will allow analysts to answer questions like:'
-    //     },
-    //     {
-    //       tag: 'ul',
-    //       rows: ['What kinds of maritime crimes are substitutes, and which are complementary? Can addressing one threat lead to an increase in another threat?', 'What kinds of crimes are adequately solved by international agreements, and which require significant investments in surveillance and maritime domain awareness?', 'What have some countries done to address maritime security threats? What “lessons learned” might be adapted for the maritime spaces of other countries?']
-    //     }
-    //   ] // end of els array
-    // },
     { // Card 2
       title: 'Indian Ocean Overview',
       menu: 'Indian Ocean Overview',
@@ -362,95 +119,29 @@ var overviewData = {
         description: 'Introduces the maritime threat and crime environment in east Africa.'
       },
       map: {
+        type: 'continuous',
         scale: [],
         classes: 'card-eez-layer',
         translate: [],
         highlights: [],
+        tooltip: true,
         extent: [[0, -65],
           [140, 42]],
-        tooltip: true,
+        legend: 'Stable Seas Maritime Security Index Score',
         tooltipHTML: function(tooltipVal) {
-          var val = issueAreaData[issueArea]
-            .metadata.countryData[tooltipVal]["Weakness Djibouti"];
-          if (val != 0) {
-            return 'Relative Weakness: <br />' + val;
-          } else {
-            return null;
-          }
-
+          var score = Math.round(issueAreaData[issueArea]
+            .metadata.countryData[tooltipVal].Average * 100);
+          updatePointer(score);
+          return 'Average score:<br />' + score + ' / 100';
         },
         load: function(index, csv) { // ### *** This only should be for the first card ...
+          // Class EEZ with card-0-layer to enable switch() method
           var layer = 'card-' + index + '-layer';
           d3.select('.card-eez-layer')
             .classed(layer, true);
         },
         switch: function(index) {
-          // color countries categorically based on data in csv
-          var target = 'card-' + index + '-layer';
-
-          var vals = issueAreaData[issueArea].metadata.countryData;
-          //  choropleth(index, 'index', 1);
-          //  console.log('v', vals);
-          var i = 0;
-
-          for (iso in vals) {
-            var issue = vals[iso].weaknessDjibouti;
-
-            if (issue != 0) {
-            //  console.log(iso, issue);
-              // opportunity to ### refactor
-              d3.selectAll('.country.' + iso)
-                .classed('active', true)
-                // .on('mouseenter', function () {
-                //   //??
-                // })
-                // .on('mouseleave', function () {
-                //   // ??
-                // })
-                .transition().delay(10 * i)
-                .style('fill', function() {
-                  return issueAreaData[issue]
-                    .metadata.color;
-                });
-
-              d3.selectAll('.eez.' + iso)
-                .classed('active', true)
-            //    .style('stroke-width', '4px')
-                .transition().delay(10 * i)
-                .style('fill', function() {
-                  return issueAreaData[issue]
-                    .metadata.color;
-                })
-                .style('opacity', '0.2');
-              i++;
-            }
-
-          }
-
-          d3.select('.' + target)
-            .classed('invisible', false);
-          // // Just DCoC members ###
-          // var selector = 'ia1c' + index;
-          // var jeddah = issueAreaData[issueArea].metadata.countryData;
-          //
-          // jeddah.forEach(function(country, i) {
-          //
-          //   if (country.ia1c2 != 0) {
-          //     d3.selectAll('.eez.' + country.iso3)
-          //       .classed('active', true)
-          //       .transition()
-          //       .delay(i * 10)
-          //       .style('stroke', colorBrew[2][1]);
-          //
-          //     d3.selectAll('.country.' + country.iso3)
-          //       .classed('active', true)
-          //       .transition()
-          //       .delay(i * 10)
-          //       .style('fill', colorBrew[2][0])
-          //       .style('stroke', colorBrew[2][1]);
-          //   }
-          //
-          // });
+          choropleth(index, 1, 'Average', false)
         }
       },
       els: [{
@@ -461,11 +152,6 @@ var overviewData = {
           tag: 'caption',
           text: 'Piracy has declined but challenges remain'
         },
-        // {
-        //   tag: 'legend',
-        //   text: 'Map Legend',
-        //   legendContent: '<div class="brew-20 legend-entries light">Sub-Saharan members of the Djibouti Code of Conduct</div>'
-        // },
         {
           tag: 'p',
           html: 'Africa’s share of the Indian Ocean Basin includes the Gulf of Aden, the waters off the Horn of Africa, the vast expanse of the Western Indian Ocean, and the Mozambique Channel. The issues facing coastal countries in this region are as diverse and complex as the geographies of these maritime spaces. The ten sub-Saharan governments with territorial waters in this area coordinate through regional efforts like the Djibouti Code of Conduct and the Indian Ocean Tuna Commission, among others.'
@@ -519,93 +205,29 @@ var overviewData = {
         description: 'This card introduces Yaounde and major issues in these states.'
       },
       map: {
+        type: 'continuous',
         scale: [],
         classes: 'card-eez-layer',
         translate: [],
         highlights: [],
+        tooltip: true,
         extent: [[-25, -45],
           [110, 32]],
-        tooltip: true,
+        legend: 'Stable Seas Maritime Security Index Score',
         tooltipHTML: function(tooltipVal) {
-          var val = issueAreaData[issueArea]
-            .metadata.countryData[tooltipVal]["Weakness Yaounde"];
-          if (val != 0) {
-            return 'Relative Weakness: <br />' + val;
-          } else {
-            return null;
-          }
-
+          var score = Math.round(issueAreaData[issueArea]
+            .metadata.countryData[tooltipVal].Average * 100);
+          updatePointer(score);
+          return 'Average score:<br />' + score + ' / 100';
         },
         load: function(index, csv) { // ### *** This only should be for the first card ...
+          // Class EEZ with card-0-layer to enable switch() method
           var layer = 'card-' + index + '-layer';
           d3.select('.card-eez-layer')
             .classed(layer, true);
         },
         switch: function(index) {
-          // color countries categorically based on data in csv
-          var target = 'card-' + index + '-layer';
-
-          var vals = issueAreaData[issueArea].metadata.countryData;
-          //  choropleth(index, 'index', 1);
-          //  console.log('v', vals);
-          var i = 0;
-          for (iso in vals) {
-            var issue = vals[iso].weaknessYaounde;
-            if (issue != 0) {
-              console.log(iso, issue);
-              // opportunity to ### refactor
-              d3.selectAll('.country.' + iso)
-                .classed('active', true)
-                // .on('mouseenter', function () {
-                //   //??
-                // })
-                // .on('mouseleave', function () {
-                //   // ??
-                // })
-                .transition().delay(10 * i)
-                .style('fill', function() {
-                  return issueAreaData[issue]
-                    .metadata.color;
-                });
-
-              d3.selectAll('.eez.' + iso)
-                .classed('active', true)
-            //    .style('stroke-width', '4px')
-                .transition().delay(10 * i)
-                .style('fill', function() {
-                  return issueAreaData[issue]
-                    .metadata.color;
-                })
-                .style('opacity', '0.2');
-              i++;
-            }
-
-          }
-
-          d3.select('.' + target)
-            .classed('invisible', false);
-          // // Just DCoC members ###
-          // var selector = 'ia1c' + index;
-          // var jeddah = issueAreaData[issueArea].metadata.countryData;
-          //
-          // jeddah.forEach(function(country, i) {
-          //
-          //   if (country.ia1c2 != 0) {
-          //     d3.selectAll('.eez.' + country.iso3)
-          //       .classed('active', true)
-          //       .transition()
-          //       .delay(i * 10)
-          //       .style('stroke', colorBrew[2][1]);
-          //
-          //     d3.selectAll('.country.' + country.iso3)
-          //       .classed('active', true)
-          //       .transition()
-          //       .delay(i * 10)
-          //       .style('fill', colorBrew[2][0])
-          //       .style('stroke', colorBrew[2][1]);
-          //   }
-          //
-          // });
+          choropleth(index, 1, 'Average', false)
         }
       },
       els: [{

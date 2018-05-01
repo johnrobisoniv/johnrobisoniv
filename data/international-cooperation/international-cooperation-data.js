@@ -78,6 +78,18 @@ var internationalCooperationData = {
           alt: 'Pie graph' // ###ks have to put x img here
           //caption: 'al estimate.'
         },
+        {
+          tag: 'p',
+          html: 'We find the international cooperation score to be strongly linked to a stronger rule of law and greater maritime enforcement capacity. This is not surprising; sound domestic political institutions are necessary for meaningful participation in regional and global legal efforts. Countries that participate in global and regional efforts are more likely to partake in multilateral initiatives to share information, build regional maritime domain awareness, and improve a country’s maritime enforcement capacity.'
+        },
+        {
+          tag: 'p',
+          html: 'Strong international cooperation scores are also linked to better maritime mixed migration scores. This suggests the same countries that participate in global maritime legal agreements are also better at reducing the vulnerability of migrants to human trafficking and various forms of exploitation.'
+        },
+        {
+          tag: 'p',
+          html: 'This section is divided into five parts. The first will discuss global legal efforts, including seven multilateral treaties related to the maritime domain. The second will highlight the 2050 Africa’s Integrated Maritime Strategy (AIMS 2050) and Lomé Charter as examples of continental coordination. Next, we compare two regional maritime security strategies: the Yaoundé Code of Conduct (West and Central Africa) and the Jeddah Amendment to the Djibouti Code of Conduct (East Africa and the Arabian Peninsula). The fourth part highlights disputes of maritime boundaries as impediments to governance. The final section concludes with a discussion of our methodology.'
+        },
 
         // {
         //   tag: 'p',
@@ -187,7 +199,7 @@ var internationalCooperationData = {
         },
         {
           tag: 'h3',
-          html: 'Progress through the PMSA'
+          html: 'Progress through the PSMA'
         },
         {
           tag: 'p',
@@ -1492,9 +1504,9 @@ var internationalCooperationData = {
     //     //###Insert Map and Graphics
     //   ] // end of els array
     // },
-    { // Card 7
-      title: 'Methodology',
-      menu: 'Methodology',
+    { // Card 5
+      title: 'Data and Methods',
+      menu: 'Data and Methods',
       metadata: {
         owner: 'Curtis Bell',
         description: 'Card will provide basic methodology info.'
@@ -1529,7 +1541,7 @@ var internationalCooperationData = {
       els: [
         {
           tag: 'h1',
-          text: 'Methodology',
+          text: 'Data and Methods',
         },
         {
           tag: 'p',

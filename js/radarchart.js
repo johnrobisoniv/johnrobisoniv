@@ -29,7 +29,7 @@ function RadarChart(id, data, options) {
     };
 
     //Put all of the options into a variable called cfg
-    console.log('options', options.color);
+    // console.log('options', options.color);
     if ('undefined' !== typeof options) {
         for (var i in options) {
             if ('undefined' !== typeof options[i]) {
@@ -201,7 +201,7 @@ function RadarChart(id, data, options) {
             return radarLine(d);
         })
         .style("fill", function(d, i) {
-            console.log('iiii', i,cfg.color);
+            // console.log('iiii', i,cfg.color);
             return cfg.color[i];
         })
         .style("fill-opacity", cfg.opacityArea)
@@ -255,7 +255,7 @@ function RadarChart(id, data, options) {
           // for (k in j) {
           //   console.log('k',k);
           // }
-          console.log('circles!', d, i, j, cfg.color[1]);
+          // console.log('circles!', d, i, j, cfg.color[1]);
             return cfg.color[1];
         }
       )
