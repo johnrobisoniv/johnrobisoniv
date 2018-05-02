@@ -541,7 +541,7 @@ function loadRegions(data, card) { // where data = data.js format ... so it's an
           d3.select('#map-menu')
             .append('a')
             .attr('href', function() {
-              return './' + md.path;
+              return '../' + md.path;
             })
             .classed(key, true)
             .on('mouseenter', function() {
