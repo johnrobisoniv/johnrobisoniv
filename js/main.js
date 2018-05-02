@@ -688,6 +688,9 @@ function buildEl(obj, container, cardIndex, elIndex) { // Function to build elem
       break;
     case 'd3':
       break;
+    case 'svg':
+      buildSVG(obj, container, cardIndex, elIndex);
+      break;
     default:
       console.log('One of the els objects did not match our switch statement in the buildEl() function.')
   }
@@ -900,6 +903,17 @@ function buildVideo(obj, container, elIndex) {
 
 }
 
+
+function buildSVG(obj, container, cardIndex, elIndex) {
+  console.log("SVG!!!", obj);
+  var selector = '#' + container;
+  var table = d3.select(selector)
+    .append('svg')
+    .attr('id', obj.id)
+    .classed('col-xs-12', true)
+    .style('height', width / 4);
+
+}
 function buildImg(obj, container, cardIndex, elIndex) {
 
   var selector = '#' + container;
@@ -921,6 +935,16 @@ function buildImg(obj, container, cardIndex, elIndex) {
     .classed('img-responsive', true)
     .attr('src', obj.src)
     .attr('alt', obj.alt);
+    // .attr('onclick', function (d) {
+    //   var src = d3.select(this).attr('src');
+    //   var gif = src.includes('gif')
+    //
+    //   if (gif) {
+    //     return "this.src = " + src;
+    //   } else {
+    //     return null
+    //   }
+    // });
 
   d3.select(selector)
     .append('div')

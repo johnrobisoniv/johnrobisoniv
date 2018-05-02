@@ -1017,12 +1017,12 @@ div.navy-and-maritime-law-enforcement {
 
 .coastal {
   fill: #BEA347;
-  opacity: 0.2;
+  /* opacity: 0.2; */
 }
 
 .nationwide {
   fill: #255aa8;
-  opacity: 0.1;
+  /* opacity: 0.5; */
 }
 
 /* ia6c3 - Blue Economy: Ports */

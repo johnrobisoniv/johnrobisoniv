@@ -24,19 +24,20 @@ var coastalWelfareData = {
   load: function(csv, callback) {
 
     // Not sure why loadIAcsv() isn't working here...
-    var md = issueAreaData[issueArea].metadata;
-    d3.csv(csv, function(vals) {
-      vals.forEach(function(d) {
-        for (key in d) {
-          if (isNaN(d[key]) != true) {
-            // Convert all numbers (floats and ints) to proper data type
-            d[key] = +d[key];
-          }
-        }
-        md.countryData[d.iso3] = d;
-      });
-      callback('internationalCooperation load csv function callback');
-    });
+    loadIAcsv(csv, callback);
+    // var md = issueAreaData[issueArea].metadata;
+    // d3.csv(csv, function(vals) {
+    //   vals.forEach(function(d) {
+    //     for (key in d) {
+    //       if (isNaN(d[key]) != true) {
+    //         // Convert all numbers (floats and ints) to proper data type
+    //         d[key] = +d[key];
+    //       }
+    //     }
+    //     md.countryData[d.iso3] = d;
+    //   });
+    //   callback('internationalCooperation load csv function callback');
+    // });
 
   },
   cards: [
@@ -86,7 +87,7 @@ var coastalWelfareData = {
         },
         {
           tag: 'img',
-          src: '../../assets/coastal-welfare/coastal_welfare_loop-01.png', // This should be on the Stable Seas Deck - comments
+          src: '../../assets/coastal-welfare/coastal-welfare-coin-cloud.png', // This should be on the Stable Seas Deck - comments
         },
         {
           tag: 'p',
@@ -113,19 +114,25 @@ var coastalWelfareData = {
         description: 'How maritime crime funds violent non-state actors'
       },
       map: {
+        type: 'continuous',
         scale: [],
         classes: '',
         translate: [],
-        extent: [
-          [5, 20],
-          [111, -41]
-        ],
+        // extent: [
+        //   [5, 20],
+        //   [111, -41]
+        // ],
         path: '../../data/coastal-welfare/lethal-incidents.csv',
         highlights: [],
-        tooltip: false,
-        units: {
-          text: 'xo units',
-          multiplier: 100
+        tooltip: true,
+        legend: 'Physical Security Score',
+        tooltipHTML: function(iso) {
+
+          var tooltipVal = issueAreaData[issueArea].metadata.countryData[iso]['physical_security'];
+          tooltipVal = Math.round(tooltipVal * 100);
+          updatePointer(tooltipVal);
+          return "Physical Security Score:<br />" + tooltipVal + " / 100";
+
         },
         load: function(index, file) {
 
@@ -150,19 +157,26 @@ var coastalWelfareData = {
               .attr('cy', function(d) {
                 return projection([d.lon, d.lat])[1];
               })
-              .attr('r', '3px')
+              .attr('r', '2px')
               .attr('class', function(d) {
-                return d.type;
+                return 'nationwide'
               });
 
           });
 
+          classEEZ(layer);
+
+          // Add legend item for violent incident
 
         },
         switch: function(index) {
           var layer = 'card-' + index + '-layer';
           d3.select('.' + layer)
             .classed('invisible', false);
+
+          choropleth(index, 1, 'physical_security');
+
+          // Reveal legend item for violent incident
         }
       },
       els: [{
@@ -183,13 +197,14 @@ var coastalWelfareData = {
           html: 'Sub-Saharan Africa is among the most war-torn regions of the world. In 2016, 10 of the 30 countries in the Stable Seas Maritime Security Index were affected by civil war. A total of 1,039 armed clashes occurred in these states; 256 incidents occurred within 50 kilometers of the coast and in the vicinity of key coastal towns, ports, and other critical maritime infrastructure.'
         },
         {
-          tag: 'img', // Add graph ###
-          src: '../../assets/coastal-welfare/coastal_welfare_conflict_events.png',
-        },
-        {
           tag: 'p',
           html: 'Armed conflict and maritime crime are linked in a cycle that perpetuates violence and insecurity. Civil war and other physically violent conflicts facilitate and drive illicit maritime activities. Active conflict creates the conditions illicit networks need to flourish: low government penetration and weak control of insurgent territories, poor rule of law, proliferation of arms, and additional networks that can be tapped into to support illicit activities.'
         },
+        {
+          tag: 'img',
+          src: '../../assets/coastal-welfare/coastal_welfare_loop-01.png', // This should be on the Stable Seas Deck - comments
+        },
+
         {
           tag: 'p',
           html: 'Moreover, war is a great market opportunity for illicit activities. Maritime arms trade and human smuggling are especially profitable in environments affected by civil war due to the demand for arms and the volume of refugees fleeing the violence.'
@@ -230,13 +245,13 @@ var coastalWelfareData = {
         path: '',
         highlights: [],
         tooltip: true,
-        legend: 'Artisanal Fishing Opportunities Score',
+        legend: 'Economic Security Score',
         tooltipHTML: function (iso3) {
-          var tooltipVal = issueAreaData[issueArea].metadata.countryData[iso3].artisanalFishing;
-          tooltipVal = tooltipVal * 100;
+          var tooltipVal = issueAreaData[issueArea].metadata.countryData[iso3].economic;
+          tooltipVal = Math.round(tooltipVal * 100);
           updatePointer(tooltipVal);
 
-          return "Artisanal Fishing Opportunities:<br />" + tooltipVal + " / 100<br />(Source: Ocean Health Index)";
+          return "Economic Security Score:<br />" + tooltipVal + " / 100<br />";
         },
         load: function(index, file) {
           var layer = 'card-' + index + '-layer';
@@ -246,7 +261,7 @@ var coastalWelfareData = {
         switch: function(index) {
           //  switchMainIndex(index);
 
-          choropleth(index, 1, 'artisanalFishing');
+          choropleth(index, 1, 'economic');
           // var artisanalFishing = issueAreaData[issueArea].metadata.countryData;
           //
           // var values = [];
@@ -274,7 +289,7 @@ var coastalWelfareData = {
         },
         {
           tag: 'caption',
-          text: '***DO WE need updated data from Curtis for choropleth<br />How maritime crime hurts local economies??'
+          text: 'How maritime crime hurts local economies'
         },
         // {
         //   tag: 'legend',
@@ -299,21 +314,21 @@ var coastalWelfareData = {
           tag: 'p',
           html: 'While poor coastal economic welfare enables maritime crimes, maritime crimes also disrupt local economies. Large injections of capital acquired through illicit means have effects similar to those of the “resource curse.” Large illicit capital inflows, such as ransom payments, lead to inflation. Inflation in turn undermines local manufacturing industries and exports. The service industry booms, and imports grow. While advantageous in the short term, this effect undermines long-term development and fosters dependency on the illicit sectors.'
         },
-        {
-          tag: 'blockquote',
-          html: '"Ransom revenues appear to largely fuel investment in services, real estate, finance or criminal sectors. Little appears to go into pastoral or export sectors."',
-          source: 'Authors Steven Oliver, Ryan Jablonski, and Justin V. Hastings<br />The Tortuga Disease<sup>4</sup>',
-          link: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2233959' // What about internal references?
-        },
+        // {
+        //   tag: 'blockquote',
+        //   html: '"Ransom revenues appear to largely fuel investment in services, real estate, finance or criminal sectors. Little appears to go into pastoral or export sectors."',
+        //   source: 'Authors Steven Oliver, Ryan Jablonski, and Justin V. Hastings<br />The Tortuga Disease<sup>4</sup>',
+        //   link: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2233959' // What about internal references?
+        // },
         {
           tag: 'p',
           html: 'The result of these dynamics is a feedback loop between poor coastal welfare and illicit maritime activity. As the illicit maritime economy develops to the detriment of the legitimate economy, workers are increasingly drawn to participate in the illicit economy.'
         },
         // Insert graph of Change in export volumes ###
-        {
-          tag: 'img',
-          src: '../../assets/coastal-welfare/change_export_volumes.jpg',
-        },
+        // {
+        //   tag: 'img',
+        //   src: '../../assets/coastal-welfare/change_export_volumes.jpg',
+        // },
         // {
         //   tag: 'p',
         //   html: 'As a result of the effects of ransom revenues on the economy, employment opportunities in manufacturing, agriculture, and other export industries decrease. As unemployment and poverty rise, people start seeing more opportunity in the illicit economy.'
@@ -676,8 +691,8 @@ var coastalWelfareData = {
     //   ] // end of els array
     // },
     { // Card 3
-    title: 'Methodology',
-    menu: 'Methodology',
+    title: 'Data and Methods',
+    menu: 'Data and Methods',
     metadata: {
       owner: 'Curtis Bell',
       description: 'Methods.'
@@ -710,7 +725,11 @@ var coastalWelfareData = {
     },
     els: [
     { tag: 'h1',
-      text: 'Methodology'
+      text: 'Data and Methods'
+    },
+    {
+      tag: 'caption',
+      text: 'How we created the Coastal Welfare score'
     },
     // { tag: 'legend',
     //   text: 'Map Legend',

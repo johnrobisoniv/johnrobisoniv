@@ -229,13 +229,13 @@ var piracyData = {
 
     //  console.log(rolled);
 
-      var svg = d3.select('#map-svg'),
-        radius = Math.min(width, height) / 10;
+      var svg = d3.select('#piracy-incidents-svg'),
+        radius = Math.min(width, height) / 4;
     //    console.log('r', radius);
 
       var pieG = svg.append("g")
-        .classed('pie-g gog-incidents-pie map-overlay invisible', true)
-        .attr("transform", "translate(" + ((width / 2) - 500) + "," + ((height / 2) + 100) + ")");
+        .classed('pie-g gog-incidents-pie ', true)
+        .attr("transform", "translate(" + (radius) + "," + (radius) + ")");
 
       var pie = d3.pie()
         .sort(null)
@@ -274,9 +274,9 @@ var piracyData = {
           d3.select(this)
             .style('stroke', 'white')
             .style('stroke-width', '3px');
-
-          d3.select('#pie-label-' + i)
-            .classed('invisible', false);
+          //
+          // d3.select('#pie-label-' + i)
+          //   .classed('invisible', false);
 
           d3.selectAll('.incident-' + d.data.key.split(' ')[0].toLowerCase())
             .moveToFront()
@@ -304,11 +304,12 @@ var piracyData = {
 
         });
 
-      arc.append("text")
+      svg.append("g")
+        .append('text')
         .attr('id', function (d, i) {
           return 'pie-label-' + i;
         })
-        .classed('pie-segment-label invisible', true)
+        .classed('pie-segment-label ', true)
         .attr("transform", function(d) {
           console.log('label', labelPie.centroid(d));
           var pos = labelPie.centroid(d);
@@ -321,19 +322,19 @@ var piracyData = {
           return d.data.key;
         });
 
-      var pieChartLabel = pieG.append('text')
-        .attr('id', 'gog-incidents-pie-label')
-        .classed('pie-chart-label', true)
-        .attr('transform', 'translate(' + (radius * -1) + ',' + (radius * -1 - 30) +')');
-
-        pieChartLabel.append('tspan')
-          .attr('x', 0)
-          .attr('dy', '0em')
-          .text('Piracy Incidents');
-        pieChartLabel.append('tspan')
-          .attr('x', 0)
-          .attr('dy', '1.5em')
-          .text('by Type');
+      // var pieChartLabel = pieG.append('text')
+      //   .attr('id', 'gog-incidents-pie-label')
+      //   .classed('pie-chart-label', true)
+      //   .attr('transform', 'translate(' + (radius * -1) + ',' + (radius * -1 - 30) +')');
+      //
+      //   pieChartLabel.append('tspan')
+      //     .attr('x', 0)
+      //     .attr('dy', '0em')
+      //     .text('Piracy Incidents');
+      //   pieChartLabel.append('tspan')
+      //     .attr('x', 0)
+      //     .attr('dy', '1.5em')
+      //     .text('by Type');
 
     });
 
@@ -402,8 +403,14 @@ var piracyData = {
           html: 'Though terrorism is a growing concern in some regions, the most significant challenge to effective maritime governance and security across sub-Saharan Africa is piracy and armed robbery at sea. Piracy and armed robbery are distinguished by geography. Attacks beyond a state’s territorial sea are classified as piracy, those within are armed robbery. In either case, these crimes endanger seafarers, threaten commerce, fund violent actors, and enable transnational criminal networks. The piracy and armed robbery score measures a country’s proximity to piracy and armed robbery incidents using data from Oceans Beyond Piracy’s annual State of Piracy report.'
         },
         {
-          tag: 'caption',
-          text: '*** Can we find a picture to put here?? ***'
+          tag: 'h2',
+          text: 'Piracy & Armed Robbery and related issues'
+        },
+        {
+          tag: 'img',
+          src: '../../assets/piracy/piracy-coin-cloud.png',
+          alt: 'Coin Cloud - Piracy and related issues ' // ###ks have to put x img here
+          //caption: 'al estimate.'
         },
         {
           tag: 'p',
@@ -570,14 +577,25 @@ var piracyData = {
         description: 'Feature Somali Waters report, talk about recent uptick in Somali piracy.'
       },
       map: {
-        //  type: 'continuous',
+        type: 'continuous',
         path: '../../data/piracy/piracy-2017-incidents.csv',
         scale: [],
         classes: '',
         translate: [],
+        tooltip: true,
+        legend: 'Piracy and Armed Robbery Score',
+        tooltipHTML: function(iso) {
+
+          var tooltipVal = issueAreaData[issueArea].metadata.countryData[iso].index;
+          updatePointer(tooltipVal);
+          return "Piracy and Armed Robbery:<br />" + tooltipVal + " / 100";
+
+        },
         load: function(index, file) { // ### *** This only should be for the first card ...
           var layer = 'card-' + index + '-layer';
           d3.select('.piracy-incidents')
+            .classed(layer, true);
+          d3.select('.card-eez-layer')
             .classed(layer, true);
         },
         switch: function(index) {
@@ -594,8 +612,18 @@ var piracyData = {
           text: 'Three Models of Piracy'
         },
         {
+          tag: 'caption',
+          text: 'Kidnapping, robbery, hijacking'
+        },
+        {
           tag: 'p',
           html: 'As with other crimes perpetrated at sea, piracy and armed robbery are challenging to address. This is compounded by disincentives to reporting that have led to massive underreporting, such that the scope of the problem is not fully understood. Regardless of the true scale of piracy and armed robbery at sea, there are three dominant models for successful attacks.'
+        },
+        {
+          tag: 'img',
+          src: '../../assets/piracy/piracy_models-01.png',
+          alt: 'Models of maritime piracy' // ###ks have to put x img here
+          //caption: 'al estimate.'
         },
         {
           tag: 'h3',
@@ -810,20 +838,20 @@ var piracyData = {
           d3.selectAll('.card' + index + '-layer')
             .classed('invisible', false)
 
-          setTimeout( function () {
-            d3.select('.gog-incidents-pie')
-            .classed('invisible', false);
-          }, 1500);
+          // setTimeout( function () {
+          //   d3.select('.gog-incidents-pie')
+          //   .classed('invisible', false);
+          // }, 1500);
 
         }
       },
       els: [{
           tag: 'h1',
-          text: 'The New Hotspot',
+          text: 'Gulf of Guinea',
         },
         {
           tag: 'caption',
-          text: 'Piracy and Armed Robbery in the Gulf of Guinea'
+          text: 'The Global Hotspot for Piracy, Armed Robbery, and Extractives Crime'
         },
         // {
         //   tag: 'legend',
@@ -833,6 +861,14 @@ var piracyData = {
         {
           tag: 'p',
           html: 'The Gulf of Guinea has earned its reputation for being the most dangerous area of transit in the world for seafarers. Since 2013, attacks in West Africa have occurred at much higher frequency than in East Africa. There were 100 estimated attacks in the Gulf of Guinea in 2013 compared to 23 off the Somali coast. In 2016, 95 attacks were reported in the Gulf of Guinea compared to 27 attacks in the Horn of Africa. This difference is particularly significant in terms of the human cost. Nearly 1,400 more seafarers were subjected to attacks in the Gulf of Guinea than off the coast of Somalia.3 While the number of attacks has remained high in recent years, the model of piracy has gradually shifted.'
+        },
+        {
+          tag: 'h2',
+          html:'Piracy Incidents by type, Gulf of Guinea'
+        },
+        {
+          tag: 'svg',
+          id: 'piracy-incidents-svg'
         },
         // {
         //   tag: 'img',
@@ -846,6 +882,12 @@ var piracyData = {
         //   tag: 'img',
         //   src: '../../assets/piracy/piracy_incidents_west_africa-01.png', // This should be on the Stable Seas Deck - comments
         // },
+        {
+          tag: 'img',
+          src: '../../assets/piracy/hijacking_oil_theft_model-01.png',
+          alt: 'The Hijacking for cargo theft model' // ###ks have to put x img here
+          //caption: 'al estimate.'
+        },
         {
           tag: 'p',
           html: 'In 2014, there were 5 incidents of hijacking for cargo theft and 15 kidnap for ransom attacks. By 2016, hijacking for cargo theft incidents had dropped by 80 percent while kidnap for ransom attacks rose by nearly 30 percent from 2015. Though captured crew members spend relatively little time in captivity compared to East Africa, the high turnover of hostages and the frequency of armed attacks results in a high level of violence.'
@@ -1099,10 +1141,10 @@ var piracyData = {
           tag: 'h1',
           text: 'The Horn of Africa and the Bab el-Mandeb',
         },
-        {
-          tag: 'caption',
-          text: '*** This all needs to be written / filled in ***'
-        },
+        // {
+        //   tag: 'caption',
+        //   text: '*** This all needs to be written / filled in ***'
+        // },
         // {
         //   tag: 'legend',
         //   text: 'Map Legend',
@@ -1119,6 +1161,12 @@ var piracyData = {
         {
           tag: 'p',
           html: 'Though down from its peak, piracy remains a threat around the Horn of Africa. Maritime terrorism is an emerging hazard.'
+        },
+        {
+        //  gif: true,
+          tag: 'img',
+      //    videoId: 'iOrjS1qmNDk',
+          src: '../../assets/piracy/bab-al-mandeb-attacks.gif'
         },
         {
           tag: 'p',
@@ -1201,8 +1249,8 @@ var piracyData = {
       ] // end of els array
     },
     { // Card 6
-      title: 'Methodology',
-      menu: 'Methodology',
+      title: 'Data and Methods',
+      menu: 'Data and Methods',
       metadata: {
         owner: 'Curtis Bell',
         description: 'Card will provide basic methodology info.'
@@ -1240,7 +1288,11 @@ var piracyData = {
       },
       els: [{
           tag: 'h1',
-          text: 'Methodology',
+          text: 'Data and Methods',
+        },
+        {
+          tag: 'caption',
+          text: 'How we created the Piracy and Armed Robbery score'
         },
         {
           tag: 'p',
@@ -1302,11 +1354,7 @@ var piracyData = {
         {
           tag: 'p',
           html: 'More details about all of these scores are available on our data page.'
-        },
-        {
-          tag: 'p',
-          html: 'More technical details are provided in the data documentation available for download.'
-        }, // ### add link to data downloads page
+        }
 
       ] // end of els array
     }

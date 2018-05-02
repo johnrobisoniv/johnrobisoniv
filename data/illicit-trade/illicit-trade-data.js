@@ -112,6 +112,16 @@ var illicitTradeData = {
           html: 'Sub-Saharan Africa has become an important consumer economy for contraband, but these scores also reflect the fact that many African ports have become preferred transshipment hubs for traffickers across a range of illicit economy sectors. This is evident in the global narcotics trade, with East Africa becoming the single largest conduit for heroin from Afghanistan to countries throughout the world. West Africa, too, is playing a leading role in the transshipment of cocaine from South America to Europe.<sup>3</sup>'
         }, //###above two paragraphs flagged for significant review
         {
+          tag: 'img',
+          src: '../../assets/piracy/illicit-trade-coin-cloud.png',
+          alt: 'Coin Cloud - Illicit Trade and related issues ' // ###ks have to put x img here
+          //caption: 'al estimate.'
+        },
+        {
+          tag: 'p',
+          html: 'Countries with more severe illicit trades tend to have weaker blue economies and greater problems with maritime mixed migration. These correlations reveal that transnational smugglers of goods also smuggle vulnerable people and undermine the legitimate coastal economy.'
+        },
+        {
           tag: 'links',
           items: [{
               org: '<sup>1</sup> Robert J. Kelly, Jess Maghan, and Joseph D. Serio, <em>Illicit Trafficking: A Reference Handbook</em> (Santa Barbara, California: ABC-CLIO, 2005).'
@@ -128,8 +138,8 @@ var illicitTradeData = {
       ] // end of els array
     },
     { // Card 1
-      title: 'Opiates & Heroin',
-      menu: 'Opiates & Heroin',
+      title: 'Narcotics Globalized',
+      menu: 'Narcotics Globalized',
       metadata: {
         owner: 'John Filitz',
         description: 'Focuses on Indian Ocean routes to / from China.'
@@ -432,7 +442,7 @@ var illicitTradeData = {
         },
         {
           tag: 'img',
-          src: '../../assets/illicit-trade/cocaine-trafficking-west-Africa.png', // This should be on the Stable Seas Deck - comments
+          src: '../../assets/illicit-trade/cocaine-trafficking-west-africa.png', // This should be on the Stable Seas Deck - comments
         },
         {
           tag: 'p',
@@ -757,62 +767,6 @@ var illicitTradeData = {
           // Load flow map layer
           var layer = 'card-' + index + '-layer';
           classEEZ(layer);
-          // d3.csv(csv, function(vals) {
-          //   vals.forEach(function(d, i) {
-          //     d.lat = +d.lat;
-          //     d.lon = +d.lon;
-          //   });
-          //
-          //   var wildlife = mapg.append('g')
-          //     .classed('card-layer invisible wildlife-ports ' + layer, true);
-          //
-          //   wildlife.selectAll('.wildlife-port')
-          //     .data(vals).enter()
-          //     .append('circle')
-          //     .attr('cx', function(d) {
-          //       return projection([d.lon, d.lat])[0];
-          //     })
-          //     .attr('cy', function(d) {
-          //       return projection([d.lon, d.lat])[1];
-          //     })
-          //     .attr('r', '8px')
-          //     .style('fill', function(d) {
-          //       if (d.region == 'west') {
-          //         return colorBrew[0][1];
-          //       } else if (d.region == 'east') {
-          //         return colorBrew[1][1];
-          //       } else if (d.region == 'southern') {
-          //         return colorBrew[2][1];
-          //       }
-          //     })
-          //     .style('stroke', function(d) {
-          //       if (d.region == 'west') {
-          //         return colorBrew[0][0];
-          //       } else if (d.region == 'east') {
-          //         return colorBrew[1][0];
-          //       } else if (d.region == 'southern') {
-          //         return colorBrew[2][0];
-          //       }
-          //     })
-          //     .attr('class', function(d) {
-          //       return d.region + '-africa-wildlife-ports'
-          //     });
-          // });
-          //
-          // var capeTownCoords = [18.466, -34];
-          //
-          // d3.select('.labels').append('text')
-          //   .classed('cape-town-label card-layer invisible', true)
-          //   .attr('x', function() {
-          //     return projection(capeTownCoords)[0];
-          //   })
-          //   .attr('y', function() {
-          //     return projection(capeTownCoords)[1];
-          //   })
-          //   .text('Cape Town');
-
-
-          // Class with layer
         },
         switch: function(index) {
           // Simply show target layer
@@ -841,7 +795,7 @@ var illicitTradeData = {
         },
         {
           tag: 'img',
-          src: '../../assets/illicit-trade/rhino_poaching_infographic.png', // This should be on the Stable Seas Deck - comments
+          src: '../../assets/illicit-trade/rhino_and_ivory_values.png', // This should be on the Stable Seas Deck - comments
         },
         {
           tag: 'p',
@@ -851,10 +805,7 @@ var illicitTradeData = {
           tag: 'p',
           html: 'Maritime shipping is an integral component of this trade: most of the rhino horn is trafficked out of South African ports, with Mozambique’s Maputo port and Nigeria’s Lagos port playing increasingly important roles. The contraband is usually containerized and concealed as timber or agricultural products.<sup>52</sup> Between 2009 and 2013, 72 percent of ivory seizures by weight were from cargo containers at sea.<sup>53</sup>'
         },
-        {
-          tag: 'img',
-          src: '../../assets/illicit-trade/rhino_and_ivory_values.png', // This should be on the Stable Seas Deck - comments
-        },
+
         {
           tag: 'p',
           html: 'In 2008, the ports of Lagos, Nigeria; Douala, Cameroon; and Accra, Ghana served as the main West African maritime trafficking hubs for ivory. The ports of Mombasa, Kenya and Maputo, Mozambique were prominent maritime trafficking hubs on the eastern and southern coastlines. South Africa’s port of Durban, however, was the single largest conduit for ivory trafficking on the continent, with Tanzania’s ports of Dar es Salaam and Zanzibar combined serving as the second largest conduit.<sup>54</sup>'
@@ -923,8 +874,90 @@ var illicitTradeData = {
       ] // end of els array
     },
     { // Card 5
-      title: 'Methodology',
-      menu: 'Methodology',
+      title: 'Black Market Pharmaceuticals',
+      menu: 'Black Market Pharmaceuticals',
+      metadata: {
+        owner: 'John Filitz',
+        description: 'Special focus on the pharmaceutical trade.'
+      },
+      map: {
+        type: 'boolean',
+        scale: [],
+        classes: '',
+        translate: [],
+        //highlights: ['SEN','GNB','GIN','SLE','LBR','CIV','GHA','TGO','BEN','NGA','CMR','GAB','COG','COD','AGO','NAM','ZAF','MOZ','TZA','KEN'],
+        tooltip: true,
+        legend: '',
+        tooltipHTML: function(iso) {
+        },
+        load: function (index, csv) {  // ### *** This only should be for the first card ...
+          // Load points layer with boxes
+          var layer = 'card-'+index+'-layer';
+          classEEZ(layer);
+          // Class with layer
+
+        },
+        switch: function (index) {
+          // Simply show target layer
+          d3.select('.card-' + index + '-layer')
+            .classed('invisible', false);
+
+      //    choropleth(index, 1, 'pharma_seizure')
+
+        }
+      },
+      els: [
+        { tag: 'h1',
+          text: 'Black Market Pharmaceuticals',
+        },
+        { tag: 'caption',
+          text: 'The health crisis of counterfeit medicines in Africa'
+        },
+        { tag: 'legend',
+          text: 'Map Legend',
+          legendContent: '<em>Highlighted countries have recorded a major seizure of black market pharmaceuticals in recent years.</em>'
+        },
+        { tag: 'p',
+          html: 'Counterfeit and pirated goods are classified as the most valuable illicit economy subsector, with estimates of annual revenue ranging between USD$923 billion and $1.13 trillion. Counterfeit pharmaceuticals and medicines comprise approximately 25 percent of this market, and are valued at between USD$70 and $200 billion annually.<sup>68</sup> It is also the only counterfeiting sector that completely displaces original products from the market.<sup>69</sup>'
+        },
+        { tag: 'p',
+           html: 'China is the largest single source of counterfeit medicines, with substantial factories also reported in India and Russia.<sup>70</sup> Most of the counterfeit medicines emanate from commercial shipping ports and are transported in containers.<sup>71</sup> Recently, Nigeria has been cited as a key emerging source of counterfeit medicine production and distribution in Africa.<sup>72</sup>'
+        },
+
+        {
+        //  gif: true,
+          tag: 'img',
+      //    videoId: 'nGL85NkTbUg',
+          thumb: '../assets/illicit-trade/Counterfeit-Medicine-Flows.gif' // ###
+        },
+
+            //###Insert JP's GIF
+        { tag: 'p',
+           html: 'The prevalence of counterfeit medicines is a particular challenge for sub-Saharan African countries, with estimates indicating that on average, 30 percent of medicines available are counterfeit. According to critics, the impact of counterfeit medicines, with specific reference to anti-malarials, should be viewed as a crime against humanity as they deliberately derail efforts to prevent the 660,000 annual deaths attributed to Malaria.<sup>73</sup> For instance, 59 percent of the anti-malarial medication monitored in the period 2002–2010 in Burkina Faso, Chad, Cameroon, the Democratic Republic of the Congo, Ghana, Kenya, Nigeria, Rwanda, and Senegal failed chemical analysis. Governance, consumer awareness, and education are central to combating this problem.<sup>74</sup>'
+        },
+        { tag: 'h3',
+          text: 'Law Enforcement Efforts',
+        },
+        { tag: 'p',
+           html: 'There are ongoing efforts by sub-Saharan African countries and international development agencies to address the challenge of counterfeit medicine. Four law enforcement operations led by the World Customs Organization and the International Institute of Research Against Counterfeit Medicines in partnership with African countries have yielded significant successes, with an average interception rate of 78 percent. The seized counterfeit medications include antibiotics and painkillers as well as anti-malarial, anti-inflammatory, anti-cancer, and diabetes medications that posed direct threats to human health. Starting in 2012, 869 million counterfeit medicines have been seized by the four enforcement operations, with the seized contraband valued at an estimated USD$569 million.<sup>75</sup>'
+        },
+        { tag: 'links',
+          items: [
+            {org: '<sup>68</sup> May, “Transnational Crime and the Developing World.”'},
+            {org: '<sup>69</sup> “The Economic Impact of Counterfeiting and Piracy: Report Prepared for BASCAP and INTA,” Frontier Economics, 2017,', url: 'https://www.inta.org/Communications/Documents/2017_Frontier_Report.pdf'},
+            {org: '<sup>70</sup> “The Globalization of Crime,” United Nations Office on Drugs and Crime.'},
+            {org: '<sup>71</sup> Ibid.'},
+            {org: '<sup>72</sup> Ibid.'},
+            {org: '<sup>73</sup> Kaliyaperumal Karunamoorthi, “The Counterfeit Anti-Malarial is a Crime Against Humanity: A Systematic Review of the Scientific Evidence,” <em>Malaria Journal</em> 13 (209): 2014, doi: 10.1186/1475-2875-13-209. '},
+            {org: '<sup>74</sup> <em>Illicit Trade: Converging Criminal Networks</em>, Organisation for Economic Co-operation and Development.'},
+            {org: '<sup>75</sup> “Operation Vice Grips 2: Record Seizure of Counterfeit Medicines in Africa, Alert to Public Health Emergency,” International Institute of Research Against Counterfeit Medicines, 25 October 2012,', url: 'http://www.iracm.com/en/vice-grips-2-2/'}
+          ]
+        }
+      ] // end of els array
+    },
+    { // Card 6
+      title: 'Data and Methods',
+      menu: 'Data and Methods',
       metadata: {
         owner: 'Curtis Bell',
         description: 'Card will provide basic methodology info.'
@@ -960,7 +993,11 @@ var illicitTradeData = {
       },
       els: [
         { tag: 'h1',
-          text: 'Methodology',
+          text: 'Data and Methods',
+        },
+        {
+          tag: 'caption',
+          text: 'How we created the Illicit Trade score'
         },
         { tag: 'p',
           html: 'Illicit trades are a problem nearly everywhere, but the goods being trafficked vary by region. To capture the breadth of the maritime illicit trades, we created scorecards evaluating each country’s participation in the illicit maritime movement of the following products: coca and its derivatives, opiates, cannabis, synthetic narcotics, small arms and light weapons, wildlife products, and miscellaneous contraband. The nature of the shadow economy means precise estimates of the scale of these trades are impossible to obtain. However, we can evaluate the relative severity of each trade and the diversity of illicit goods moving through each country’s waters.'
@@ -973,235 +1010,5 @@ var illicitTradeData = {
         }
       ] // end of els array
     }
-    // { // Card 5
-    //   title: 'Illicit Abalone',
-    //   menu: 'Illicit Abalone',
-    //   metadata: {
-    //     owner: 'Sean Duncan',
-    //     description: 'Describes the illicit abalone trade occurring in the southern cone of Africa.'
-    //   },
-    //   map: {
-    //     scale: [],
-    //     classes: '',
-    //     extent: [
-    //       [18, -35.90803],
-    //       [20.41995, -32.90803]
-    //     ],
-    //     translate: [],
-    //     highlights: [],
-    //     tooltip: true,
-    //     units: {
-    //       text: 'xo units',
-    //       multiplier: 100
-    //     },
-    //     load: function(index, csv) { // ### *** This only should be for the first card ...
-    //       // Load flow map layer
-    //       var layer = 'card-' + index + '-layer';
-    //       // Load topoJSON of flow map
-    //       var capeTownCoords = [18.466, -34];
-    //
-    //       d3.select('.labels').append('text')
-    //         .classed('cape-town-label card-layer invisible', true)
-    //         .attr('x', function() {
-    //           return projection(capeTownCoords)[0];
-    //         })
-    //         .attr('y', function() {
-    //           return projection(capeTownCoords)[1];
-    //         })
-    //         .text('Cape Town');
-    //
-    //
-    //       // Class with layer
-    //     },
-    //     switch: function(index) {
-    //       // Simply show target layer
-    //       d3.select('.cape-town-label')
-    //         .classed('active', true)
-    //         .classed('invisible', false);
-    //
-    //     }
-    //   },
-    //   els: [{
-    //       tag: 'h1',
-    //       text: 'Illicit Abalone',
-    //     },
-    //     {
-    //       tag: 'caption',
-    //       text: 'Africa\'s "white gold"'
-    //     },
-    //     {
-    //       tag: 'legend',
-    //       text: 'Map Legend',
-    //       legendContent: '<em>Cape Town is considered a hotspot for the illicit abalone trade.</em>'
-    //     },
-    //     {
-    //       tag: 'p',
-    //       html: 'Abalone, a shellfish known also as “white gold,” is one of South Africa’s most valuable marine resources.<sup>58</sup> The price for legally sourced South African abalone can reach over USD$30–$50 per kilogram, and in 2015 the sector was valued at USD$73,434,900.<sup>59</sup> South African abalone in particular is prized as a delicacy, and abalone is valued in some cultures for its perceived medicinal and aphrodisiacal properties.<sup>60</sup> Illegal harvesting was banned in 2007 under the Convention on International Trade in Endangered Species of Wild Fauna and Flora, but the protection on abalone was removed again in 2010.<sup>61</sup>'
-    //     },
-    //     {
-    //       tag: 'img',
-    //       src: '../../assets/illicit-trade/abalone_flickr.jpg', // This should be on the Stable Seas Deck - comments
-    //     },
-    //     {
-    //       tag: 'p',
-    //       html: 'South Africa is the third-largest producer of farmed abalone after China and South Korea; however, there is also a thriving illicit trade in wild abalone. The illegal abalone market is said to be worth USD$440 million annually.<sup>62</sup> To put this in perspective, wild, legally harvested abalone in South African waters during 2015 amounted to 105 tons, with poached abalone amounting to 3,477 tons.<sup>63</sup> South Africa’s Department of Agriculture, Forestry and Fisheries has placed the value of the illicit abalone trade at roughly USD$33 million a year.<sup>64</sup>'
-    //     },
-    //     {
-    //       tag: 'p',
-    //       html: 'Most of the abalone from South Africa ends up in Asian markets, specifically in Hong Kong and China. The link between international organized-crime groups such as the Triads and the illicit abalone industry in South Africa is well established.<sup>65</sup> In at least one case, poachers exchanged the abalone they harvested for ingredients to make methamphetamine. The leader of the notorious gang involved in the trade was quoted in 2007 as saying that he could trade $43,000 worth of abalone for roughly $64,000 worth of methamphetamine.<sup>66</sup>'
-    //     },
-    //     {
-    //       tag: 'p',
-    //       html: 'While not all poachers are drug users or dealers, the abalone trade helps drive transnational organized crime subsectors such as narcotics that are controlled by highly organized criminal groups in Asia. Trafficking of abalone is conducted using multiple transportation methods, including refrigerated shipping containers. The risk of detection is significantly lower when using refrigerated containers given the significant replacement and compensation costs for authorities seizing legitimate refrigerated cargo.<sup>67</sup>'
-    //     },
-    //     {
-    //       tag: 'p',
-    //       html: 'Protecting this valuable resource requires cooperation between producers and consumer countries that serve as destinations for illicit abalone. Despite a number of prosecutions related to illicit abalone trafficking on both continents, the trade continues relatively unabated.'
-    //     },
-    //     {
-    //       tag: 'links',
-    //       items: [{
-    //           org: '<sup>58</sup> “South African Abalone,” South African National Biodiversity Institute, accessed 5 September 2017,',
-    //           url: 'https://www.sanbi.org/creature/south-african-abalone'
-    //         },
-    //         {
-    //           org: '<sup>59</sup> “Maximizing Niche Markets: South African Abalone,” Trade and Industrial Policy Strategies policy brief, April 2016,',
-    //           url: 'http://bit.ly/2gnry46'
-    //         },
-    //         {
-    //           org: '<sup>60</sup> Khalil Goga, “The Illegal Abalone Trade in the Western Cape,” Institute of Security Studies Paper 261, August 2014,',
-    //           url: 'https://www.files.ethz.ch/isn/183159/Paper261.pdf'
-    //         },
-    //         {
-    //           org: '<sup>61</sup> International Union for Conservation of Nature and Natural Resources, “South African Abalone,” <em>The Red List</em>,',
-    //           url: 'http://support.iucnredlist.org/species/south-african-abalone'
-    //         },
-    //         {
-    //           org: '<sup>62</sup> Crystal Chow, “The Ecological, Industrial and Drug War Behind the Abalone on Your Dinner Table,” Africa-China Reporting Project, 31 May 2017,',
-    //           url: 'http://africachinareporting.co.za/2017/05/the-ecological-industrial-and-drug-war-behind-the-abalone-on-your-dinner-table/'
-    //         },
-    //         {
-    //           org: '<sup>63</sup> Paul Steyn, “Poaching for Abalone, Africa’s \'White Gold,\' Reaches Fever Pitch,” National Geographic, 14 February 2017,',
-    //           url: 'http://news.nationalgeographic.com/2017/02/wildlife-watch-abalone-poaching-south-africa/'
-    //         },
-    //         {
-    //           org: '<sup>64</sup> Food and Agricultural Organization of the United Nations, “Abalone Production Continues to Grow, Coupled with Continuing Demand, Prices High and Stable,” <em>GLOBEFISH</em>, 3 July 2017,',
-    //           url: 'http://www.fao.org/in-action/globefish/market-reports/resource-detail/en/c/902597/'
-    //         },
-    //         {
-    //           org: '<sup>65</sup> Jonny Steinberg, “The Illicit Abalone Trade in South Africa,” Institute of Security Studies Paper 105, April 2005,',
-    //           url: 'https://www.files.ethz.ch/isn/99200/105.pdf'
-    //         },
-    //         {
-    //           org: '<sup>66</sup> Goga, “The Illegal Abalone Trade in the Western Cape.”'
-    //         },
-    //         {
-    //           org: '<sup>67</sup> Ibid.'
-    //         }
-    //       ]
-    //     }
-    //   ] // end of els array
-    // },
-    // { // Card 6
-    //   title: 'Black Market Pharmaceuticals',
-    //   menu: 'Black Market Pharmaceuticals',
-    //   metadata: {
-    //     owner: 'John Filitz',
-    //     description: 'Special focus on the pharmaceutical trade.'
-    //   },
-    //   map: {
-    //     scale: [],
-    //     classes: '',
-    //     translate: [],
-    //     highlights: ['SEN', 'GNB', 'GIN', 'SLE', 'LBR', 'CIV', 'GHA', 'TGO', 'BEN', 'NGA', 'CMR', 'GAB', 'COG', 'COD', 'AGO', 'NAM', 'ZAF', 'MOZ', 'TZA', 'KEN'],
-    //     load: function(index, csv) { // ### *** This only should be for the first card ...
-    //       // Load points layer with boxes
-    //       var layer = 'card-' + index + '-layer';
-    //
-    //       // Class with layer
-    //
-    //     },
-    //     switch: function(index) {
-    //       // Simply show target layer
-    //       d3.select('.card-' + index + '-layer')
-    //         .classed('invisible', false);
-    //
-    //     }
-    //   },
-    //   els: [{
-    //       tag: 'h1',
-    //       text: 'Black Market Pharmaceuticals',
-    //     },
-    //     {
-    //       tag: 'caption',
-    //       text: 'The health crisis of counterfeit medicines in Africa'
-    //     },
-    //     {
-    //       tag: 'legend',
-    //       text: 'Map Legend',
-    //       legendContent: '<em>Highlighted countries have recorded a major seizure of black market pharmaceuticals in recent years.</em>'
-    //     },
-    //     {
-    //       tag: 'p',
-    //       html: 'Counterfeit and pirated goods are classified as the most valuable illicit economy subsector, with estimates of annual revenue ranging between USD$923 billion and $1.13 trillion. Counterfeit pharmaceuticals and medicines comprise approximately 25 percent of this market, and are valued at between USD$70 and $200 billion annually.<sup>68</sup> It is also the only counterfeiting sector that completely displaces original products from the market.<sup>69</sup>'
-    //     },
-    //     {
-    //       tag: 'p',
-    //       html: 'China is the largest single source of counterfeit medicines, with substantial factories also reported in India and Russia.<sup>70</sup> Most of the counterfeit medicines emanate from commercial shipping ports and are transported in containers.<sup>71</sup> Recently, Nigeria has been cited as a key emerging source of counterfeit medicine production and distribution in Africa.<sup>72</sup>'
-    //     },
-    //
-    //     {
-    //       gif: true,
-    //       tag: 'video',
-    //       videoId: 'nGL85NkTbUg',
-    //       thumb: '../../assets/illicit-trade/Counterfeit-Medicine-Flows.gif' // ###
-    //     },
-    //
-    //     //###Insert JP's GIF
-    //     {
-    //       tag: 'p',
-    //       html: 'The prevalence of counterfeit medicines is a particular challenge for sub-Saharan African countries, with estimates indicating that on average, 30 percent of medicines available are counterfeit. According to critics, the impact of counterfeit medicines, with specific reference to anti-malarials, should be viewed as a crime against humanity as they deliberately derail efforts to prevent the 660,000 annual deaths attributed to Malaria.<sup>73</sup> For instance, 59 percent of the anti-malarial medication monitored in the period 2002–2010 in Burkina Faso, Chad, Cameroon, the Democratic Republic of the Congo, Ghana, Kenya, Nigeria, Rwanda, and Senegal failed chemical analysis. Governance, consumer awareness, and education are central to combating this problem.<sup>74</sup>'
-    //     },
-    //     {
-    //       tag: 'h3',
-    //       text: 'Law Enforcement Efforts',
-    //     },
-    //     {
-    //       tag: 'p',
-    //       html: 'There are ongoing efforts by sub-Saharan African countries and international development agencies to address the challenge of counterfeit medicine. Four law enforcement operations led by the World Customs Organization and the International Institute of Research Against Counterfeit Medicines in partnership with African countries have yielded significant successes, with an average interception rate of 78 percent. The seized counterfeit medications include antibiotics and painkillers as well as anti-malarial, anti-inflammatory, anti-cancer, and diabetes medications that posed direct threats to human health. Starting in 2012, 869 million counterfeit medicines have been seized by the four enforcement operations, with the seized contraband valued at an estimated USD$569 million.<sup>75</sup>'
-    //     },
-    //     {
-    //       tag: 'links',
-    //       items: [{
-    //           org: '<sup>68</sup> May, “Transnational Crime and the Developing World.”'
-    //         },
-    //         {
-    //           org: '<sup>69</sup> “The Economic Impact of Counterfeiting and Piracy: Report Prepared for BASCAP and INTA,” Frontier Economics, 2017,',
-    //           url: 'https://www.inta.org/Communications/Documents/2017_Frontier_Report.pdf'
-    //         },
-    //         {
-    //           org: '<sup>70</sup> “The Globalization of Crime,” United Nations Office on Drugs and Crime.'
-    //         },
-    //         {
-    //           org: '<sup>71</sup> Ibid.'
-    //         },
-    //         {
-    //           org: '<sup>72</sup> Ibid.'
-    //         },
-    //         {
-    //           org: '<sup>73</sup> Kaliyaperumal Karunamoorthi, “The Counterfeit Anti-Malarial is a Crime Against Humanity: A Systematic Review of the Scientific Evidence,” <em>Malaria Journal</em> 13 (209): 2014, doi: 10.1186/1475-2875-13-209. '
-    //         },
-    //         {
-    //           org: '<sup>74</sup> <em>Illicit Trade: Converging Criminal Networks</em>, Organisation for Economic Co-operation and Development.'
-    //         },
-    //         {
-    //           org: '<sup>75</sup> “Operation Vice Grips 2: Record Seizure of Counterfeit Medicines in Africa, Alert to Public Health Emergency,” International Institute of Research Against Counterfeit Medicines, 25 October 2012,',
-    //           url: 'http://www.iracm.com/en/vice-grips-2-2/'
-    //         }
-    //       ]
-    //     }
-    //   ] // end of els array
-    // },
-
   ]
 };

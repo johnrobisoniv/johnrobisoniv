@@ -74,7 +74,7 @@ var internationalCooperationData = {
         },
         {
           tag: 'img',
-          src: '../../assets/international-cooperation/international cooperation-coin-cloud.png',
+          src: '../../assets/international-cooperation/international-cooperation-coin-cloud.png',
           alt: 'Pie graph' // ###ks have to put x img here
           //caption: 'al estimate.'
         },
