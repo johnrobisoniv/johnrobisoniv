@@ -1801,7 +1801,7 @@ var regionsData = {
                   var path = d3.select(this).attr('data-region');
                   console.log(path);
 
-                  window.location.href = './' + path;
+                  window.location.href = '../' + path;
                 });
 
               d3.selectAll('.eez.' + iso)
@@ -1814,7 +1814,7 @@ var regionsData = {
                   var path = d3.select(this).attr('data-region');
                   console.log(path);
 
-                  window.location.href = './' + path;
+                  window.location.href = '../' + path;
                 });;
 
 
