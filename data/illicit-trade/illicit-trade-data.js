@@ -145,20 +145,22 @@ var illicitTradeData = {
         description: 'Focuses on Indian Ocean routes to / from China.'
       },
       map: {
+        type: 'continuous',
         scale: [],
         path: '../../data/illicit-trade/smack-track.csv',
         classes: '',
         translate: [],
         highlights: [],
         tooltip: true,
-        units: {
-          text: 'xo units',
-          multiplier: 100
+        legend: 'Measurement of opiates trade',
+        tooltipHTML: function(iso) {
+
+          var tooltipVal = issueAreaData[issueArea].metadata.countryData[iso]['opiates'];
+          tooltipVal = Math.round(tooltipVal * 100);
+          updatePointer(tooltipVal);
+          return "Measurement of opiates trade:<br />" + tooltipVal + " / 100";
+
         },
-        // extent: [
-        //   [15, -65],
-        //   [150, 60]
-        // ],
         load: function(index, csv) { // ### *** This only should be for the first card ...
           var layer = 'card-' + index + '-layer';
 
@@ -201,7 +203,7 @@ var illicitTradeData = {
 
           // d3.select('.card-' + index + '-layer')
           //   .classed('invisible', false);
-
+          choropleth(index, 1, 'opiates');
         }
       },
       els: [{
@@ -303,120 +305,32 @@ var illicitTradeData = {
         description: 'Focuses on Atlantic trade, West Africa.'
       },
       map: {
+        type: 'continuous',
         scale: [],
         classes: '',
         path: '../../data/illicit-trade/narcotics-west-africa.csv',
         translate: [],
-        extent: [
-          [-40, -15],
-          [70, 40]
-        ],
+        // extent: [
+        //   [-40, -15],
+        //   [70, 40]
+        // ],
         highlights: [],
         tooltip: true,
-        tooltipHTML: function (iso3) {
-        //  console.log(iso3);
-          return iso3;
-        },
+        legend: 'Measurement of cocaine trade',
+        tooltipHTML: function(iso) {
 
+          var tooltipVal = issueAreaData[issueArea].metadata.countryData[iso]['cocaine'];
+          tooltipVal = Math.round(tooltipVal * 100);
+          updatePointer(tooltipVal);
+          return "Measurement of cocaine trade:<br />" + tooltipVal + " / 100";
+
+        },
         load: function(index, csv) { // ### *** This only should be for the first card ...
           var layer = 'card-' + index + '-layer';
           classEEZ(layer);
-
-          // Load flow map layer
-
-          // ### I don't love this map
-          // var layer = 'card-' + index + '-layer';
-          // // Load topoJSON of flow map
-          // d3.csv(csv, function(rows) {
-          //   rows.forEach(function(row, i) {
-          //     row.lat = +row.lat;
-          //     row.lon = +row.lon;
-          //   });
-          //
-          //   var narcotics = mapg.append('g')
-          //     .classed('west-africa-narcotics-routes card-layer invisible ' + layer, true);
-          //
-          //   narcotics.selectAll('circle')
-          //     .data(rows).enter()
-          //     .append('circle')
-          //     .attr('cx', function(d) {
-          //       return projection([d.lon, d.lat])[0];
-          //     })
-          //     .attr('cy', function(d) {
-          //       return projection([d.lon, d.lat])[1];
-          //     })
-          //     .attr('r', '4px')
-          //     .attr('class', function(d) {
-          //       return d.route;
-          //     })
-          //     .style('fill', function(d) {
-          //       if (d.route == 'main') {
-          //         return rampColor(1);
-          //       } else if (d.route == 'southern') {
-          //         return colorBrew[0][1];
-          //       } else if (d.route == 'eastern') {
-          //         return colorBrew[1][1];
-          //       } else if (d.route == 'northern') {
-          //         return colorBrew[2][1];
-          //       }
-          //     })
-          //     .on('mouseenter', function() {
-          //       var route = d3.select(this).attr('class');
-          //       d3.selectAll('.' + route + '.route-label')
-          //         .classed('invisible', false)
-          //     })
-          //     .on('mouseleave', function() {
-          //       var route = d3.select(this).attr('class');
-          //       d3.selectAll('.' + route + '.route-label')
-          //         .classed('invisible', true)
-          //     });
-          //
-          //   var labels = [{
-          //       title: 'Southern Route',
-          //       class: 'southern',
-          //       coords: [0, 17.5]
-          //     },
-          //     {
-          //       title: 'Northern Route',
-          //       class: 'northern',
-          //       coords: [-16.3, 15.76]
-          //     },
-          //     {
-          //       title: 'Eastern Route',
-          //       class: 'eastern',
-          //       coords: [-15.2, 23.9]
-          //     }
-          //   ];
-          //
-          //
-          //
-          //   var routeLabels = mapg.append('g')
-          //     .classed('route-labels', true);
-          //
-          //   routeLabels.selectAll('.route-label')
-          //     .data(labels).enter()
-          //     .append('text')
-          //     .attr('x', function(d) {
-          //       return projection(d.coords)[0];
-          //     })
-          //     .attr('y', function(d) {
-          //       return projection(d.coords)[1];
-          //     })
-          //     .text(function(d) {
-          //       return d.title
-          //     })
-          //     .attr('class', function(d) {
-          //       return 'route-label invisible ' + d.class
-          //     });
-          // });
-
-          // Class with layer
         },
         switch: function(index) {
-          // Simply show target layer
-          d3.select('.card-' + index + '-layer')
-            .classed('invisible', false);
-
+          choropleth(index, 1, 'cocaine');
         }
       },
       els: [{
@@ -542,101 +456,32 @@ var illicitTradeData = {
         description: 'Gulf of Aden.'
       },
       map: {
-        path: '../../data/illicit-trade/weapons-of-war.csv',
+        type: 'continuous',
         scale: [],
         classes: '',
+        path: '../../data/illicit-trade/narcotics-west-africa.csv',
         translate: [],
-        extent: [
-          [40, 15],
-          [65, -20]
-        ],
+        // extent: [
+        //   [-40, -15],
+        //   [70, 40]
+        // ],
         highlights: [],
         tooltip: true,
-        units: {
-          text: 'xo units',
-          multiplier: 100
-        },
-        load: function(index, file) { // ### *** This only should be for the first card ...
-          // Load flow map layer
+        legend: 'Measurement of arms trade',
+        tooltipHTML: function(iso) {
 
+          var tooltipVal = issueAreaData[issueArea].metadata.countryData[iso]['arms'];
+          tooltipVal = Math.round(tooltipVal * 100);
+          updatePointer(tooltipVal);
+          return "Measurement of arms trade:<br />" + tooltipVal + " / 100";
+
+        },
+        load: function(index, csv) { // ### *** This only should be for the first card ...
           var layer = 'card-' + index + '-layer';
           classEEZ(layer);
-          // Load topoJSON of flow map
-          // d3.csv(file, function(rows) {
-          //   rows.forEach(function(row, i) {
-          //     row.lat = +row.lat;
-          //     row.lon = +row.lon;
-          //   });
-          //
-          //   // console.log(rows);
-          //   var arms = mapg.append('g')
-          //     .classed('east-africa-arms-flows card-layer invisible ' + layer, true);
-          //
-          //   arms.selectAll('circle')
-          //     .data(rows).enter()
-          //     .append('circle')
-          //     .attr('cx', function(d) {
-          //       return projection([d.lon, d.lat])[0];
-          //     })
-          //     .attr('cy', function(d) {
-          //       return projection([d.lon, d.lat])[1];
-          //     })
-          //     .attr('r', '3px')
-          //     .attr('class', 'east-africa-arms-route')
-          //     .style('fill', function(d, i) {
-          //       return rampColor(i / rows.length);
-          //     });
-          //   // .on('mouseenter', function () {
-          //   //   var route = d3.select(this).attr('class');
-          //   //   d3.selectAll('.' + route + '.route-label')
-          //   //     .classed('invisible', false)
-          //   // })
-          //   // .on('mouseleave', function () {
-          //   //   var route = d3.select(this).attr('class');
-          //   //   d3.selectAll('.' + route + '.route-label')
-          //   //     .classed('invisible', true)
-          //   // });
-          //   //
-          //   var label = {
-          //     title: 'Port of Mombasa',
-          //     coords: [40.66, -3.06]
-          //   };
-          //
-          //
-          //
-          //
-          //
-          //   var mombasa = d3.select('.labels');
-          //
-          //   mombasa.append('text')
-          //     .attr('x', function(d) {
-          //       return projection(label.coords)[0];
-          //     })
-          //     .attr('y', function(d) {
-          //       return projection(label.coords)[1];
-          //     })
-          //     .text(function(d) {
-          //       return label.title;
-          //     })
-          //     .attr('class', function(d) {
-          //       return 'mombasa label invisible card-layer';
-          //     });
-          // });
-
-
-          // Class with layer
         },
         switch: function(index) {
-          // Add code to load eez with choropleth - arms scores
-
-
-          // Simply show target layer
-          // d3.select('.card-' + index + '-layer')
-          //   .classed('invisible', false);
-          //
-          // d3.select('.mombasa.label')
-          //   .classed('invisible', false)
-          //   .classed('active', true);
+          choropleth(index, 1, 'arms');
         }
       },
       els: [{
@@ -753,27 +598,32 @@ var illicitTradeData = {
         description: 'Southern Africa.'
       },
       map: {
+        type: 'continuous',
         scale: [],
-        path: '../../data/illicit-trade/illicit-trade-c4.csv',
         classes: '',
+      //  path: '../../data/illicit-trade/narcotics-west-africa.csv',
         translate: [],
+        // extent: [
+        //   [-40, -15],
+        //   [70, 40]
+        // ],
         highlights: [],
         tooltip: true,
-        units: {
-          text: 'xo units',
-          multiplier: 100
+        legend: 'Measurement of wildlife trade',
+        tooltipHTML: function(iso) {
+
+          var tooltipVal = issueAreaData[issueArea].metadata.countryData[iso]['wildlife'];
+          tooltipVal = Math.round(tooltipVal * 100);
+          updatePointer(tooltipVal);
+          return "Measurement of wildlife trade:<br />" + tooltipVal + " / 100";
+
         },
         load: function(index, csv) { // ### *** This only should be for the first card ...
-          // Load flow map layer
           var layer = 'card-' + index + '-layer';
           classEEZ(layer);
         },
         switch: function(index) {
-          // Simply show target layer
-          d3.select('.cape-town-label')
-            .classed('active', true)
-            .classed('invisible', false);
-
+          choropleth(index, 1, 'wildlife');
         }
       },
       els: [{
@@ -902,7 +752,7 @@ var illicitTradeData = {
           d3.select('.card-' + index + '-layer')
             .classed('invisible', false);
 
-      //    choropleth(index, 1, 'pharma_seizure')
+          // choropleth(index, 1, 'pharma_seizure')
 
         }
       },
