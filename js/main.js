@@ -725,25 +725,45 @@ function buildLinks(obj, container, cardIndex, elIndex) {
 
   var links = obj.items;
   links.forEach(function(link) {
-    var a = linksDiv.append('a')
-      .attr('href', link.url)
-      .attr('target', '_blank')
-      .append('div')
-      .classed('link', true)
-      .style('background-color', function() {
-        return themeColor(0.3);
-      })
-      .style('border-right', function() {
-        return '5px solid ' + themeColor(1);
-      });
+    if (link.url) {
+      var a = linksDiv.append('a')
+        .attr('href', link.url)
+        .attr('target', '_blank')
+        .append('div')
+        .classed('link', true)
+        .style('background-color', function() {
+          return themeColor(0.3);
+        })
+        .style('border-right', function() {
+          return '5px solid ' + themeColor(1);
+        });
 
-    a.append('p')
-      .classed('title', true)
-      .text(link.title);
+      a.append('p')
+        .classed('title', true)
+        .text(link.title);
 
-    a.append('p')
-      .classed('source', true)
-      .html(link.org);
+      a.append('p')
+        .classed('source', true)
+        .html(link.org);
+    } else {
+      var a = linksDiv.append('div')
+        .classed('link', true)
+        .style('background-color', function() {
+          return themeColor(0.3);
+        })
+        .style('border-right', function() {
+          return '5px solid ' + themeColor(1);
+        });
+
+      a.append('p')
+        .classed('title', true)
+        .text(link.title);
+
+      a.append('p')
+        .classed('source', true)
+        .html(link.org);
+    }
+
   })
 }
 
@@ -1881,7 +1901,7 @@ function choropleth(cardIndex, order, key, animated) {
 function updatePointer(tooltipVal) {
   d3.select('.legend-pointer')
     .classed('hidden', false)
-    .transition().delay(5)
+  //  .transition().delay(5)
     .attr('transform', 'translate(' + ((tooltipVal * 3) - 8.5) + ', -15)');
 
 }
