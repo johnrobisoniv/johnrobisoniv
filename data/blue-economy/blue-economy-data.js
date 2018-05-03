@@ -23,28 +23,9 @@ var blueEconomyData = {
   },
   load: function(csv, callback) {
     loadIAcsv(csv, callback)
-    // var md = issueAreaData[issueArea].metadata;
-    // d3.csv(csv, function(vals) {
-    //
-    //   vals.forEach(function(d) {
-    //     d.ia6c1 = +d.ia6c1;
-    //     d.ia6c2 = +d.ia6c2;
-    //     d.ia6c4 = +d.ia6c4;
-    //     d.ia6c5 = +d.ia6c5;
-    //     d.ia6c6 = +d.ia6c6;
-    //   });
-    //   issueAreaData[issueArea].metadata.countryData = vals;
-    //   callback('blueEconomy load csv function callback');
-    // });
-    // //    console.log('../../data/' + md.path + '/indexValues.csv');
-    //
-    // d3.csv('../../data/' + md.path + '/indexValues.csv', function(vals) {
-    //   issueAreaData[issueArea].metadata.indexData = vals;
-    //
-    // });
   },
   cards: [
-    { // Card 0 //###version 1.0
+    { // Card 0
       title: 'Blue Economy',
       menu: 'Blue Economy',
       metadata: {
@@ -52,27 +33,29 @@ var blueEconomyData = {
         description: 'Overview of the sub-index.'
       },
       map: {
+        type: 'continuous',
         scale: [],
         classes: 'card-eez-layer',
-        path: '',
         translate: [],
         highlights: [],
         tooltip: true,
-        units: {
-          text: 'ports',
-          multiplier: 100
+        legend: 'Blue Economy Score',
+        tooltipHTML: function(iso) {
+
+          var tooltipVal = issueAreaData[issueArea].metadata.countryData[iso]['BE_INDEX'];
+          tooltipVal = Math.round(tooltipVal * 100);
+          updatePointer(tooltipVal);
+          return "Blue Economy:<br />" + tooltipVal + " / 100";
+
         },
-        load: function(index, file) {
-          // var layer = 'card-'+index+'-layer';
-          // var l = d3.select('.card-eez-layer')
-          //   .classed(layer, true);
+        load: function(index, csv) {
+          // Class EEZ with card-0-layer to enable switch() method
+          var layer = 'card-' + index + '-layer';
+          var l = d3.select('.card-eez-layer')
+            .classed(layer, true);
         },
         switch: function(index) {
-          //  switchMainIndex(index); // ### will this work elsewhere??
-
-          // Let's keep this code in case not ...
-
-
+          choropleth(index, 1, 'BE_INDEX');
         }
       },
       els: [{
@@ -88,26 +71,16 @@ var blueEconomyData = {
           text: 'Map Legend',
           legendContent: '<em>Larger dots indicate larger ports, smaller dots indicate smaller ports</em>.'
         },
-        // { tag: 'legend',
-        //   text: 'Map Legend',
-        //   legendContent: '<em></em>.'
-        // },
-        //###<<The map complementing this section will be a choropleth map showing the Blue Economy Sub-Index Score.>>
         {
           tag: 'p',
           html: 'Economic growth is a pillar of national security. Nations with strong economies are less likely to go to war. Nations with weak economies are more likely to face conditions that precipitate or escalate violence.<sup>1</sup> The Blue Economy has recently emerged as a framework for understanding the economic contribution ocean-based sectors make to a state’s overall economic health.'
         },
-        // { tag: 'p',
-        //    html: 'Our Blue Economy Score considers six factors: fisheries, marine and coastal tourism, maritime transportation and shipping, offshore oil and gas, adjusted net savings, and vulnerability to climate change. This year’s scores range from 20 to 62 on a scale of 0 to 100; this truncated range shows the potential for substantial growth in the Blue Economy that exists for the African nations considered in this year’s study as compared to the rest of the world. For more information about how these scores are calculated, please see our “Methodology” page.'
-        // },
-        // { tag: 'h3',
-        //   text: 'The Blue Economy Sub-index'
-        // },
-        // {tag: 'indexTable'
-        // },
-        // { tag: 'caption',
-        //   text: 'Note: scores are rounded to the nearest whole number.'
-        // },
+        {
+          tag: 'img',
+          src: '../../assets/blue-economy/blue-economy-coin-cloud.png',
+          alt: 'Coin Cloud - Blue Economy and related issues ' // ###ks have to put x img here
+          //caption: 'al estimate.'
+        },
         {
           tag: 'p',
           html: 'The ocean is an increasingly important source of economic opportunity, holding potential in the fields of energy (both renewable and non-renewable), food, tourism, coastal protection from storms, transportation that links the global economy, and natural products that promise advances in medicine. It is frequently lamented—with awe—that our maps of the seafloor are less detailed and complete than our maps of Mars.<sup>2</sup> Yet, with technology in sonar, satellite mapping and tracking, deep sea exploration, and remotely operated vehicles all advancing rapidly, the ocean and its riches present a new frontier. Greater access also brings greater risks, however: the threat of overfishing, destructive drilling and extraction, conflict over shared or disputed spaces, and difficult trade-offs to make between coastal development and conservation.'
@@ -134,106 +107,72 @@ var blueEconomyData = {
       ] // end of els array
     },
     { // Card 1
-      title: 'The Future of Aquaculture',
-      menu: 'The Future of Aquaculture',
+      title: 'Fisheries',
+      menu: 'Fisheries',
       metadata: {
         owner: 'Sarah Glaser',
         description: 'Future potential for aquaculture and cost benefit analysis (sustainability issue).'
       },
       map: {
-        type: 'categorical',
+        type: 'continuous',
         scale: [],
-        classes: '',
+        classes: 'card-eez-layer',
         translate: [],
-        path: '',
         highlights: [],
         tooltip: true,
-        units: {
-          text: 'xo units',
-          multiplier: 100
+        legend: 'Measure of fisheries****?',
+        tooltipHTML: function(iso) {
+
+          var tooltipVal = issueAreaData[issueArea].metadata.countryData[iso]['BE_FISHERIES'];
+          tooltipVal = Math.round(tooltipVal * 100);
+          updatePointer(tooltipVal);
+          return "Measure of fisheries***?:<br />" + tooltipVal + " / 100";
+
         },
-        load: function(index, file) {
+        load: function(index, csv) {
+          // Class EEZ with card-0-layer to enable switch() method
           var layer = 'card-' + index + '-layer';
           var l = d3.select('.card-eez-layer')
             .classed(layer, true);
         },
         switch: function(index) {
-          choropleth(index, 1, 'ia6c1');
-        //   var target = 'card-' + index + '-layer';
-        //   var vals = issueAreaData[issueArea].metadata.countryData;
-        //
-        //   vals.forEach(function(d, i) { // ### this is a misuse of D3! or is it?!
-        //     if (d.ia6c1 == 1) {
-        //       d3.selectAll('.country.' + d.iso3)
-        //         .classed('active', true)
-        //         .transition().delay(i * 10)
-        //         .style('fill', rampColor(0.5))
-        //         .style('stroke', rampColor(1));
-        //
-        //       d3.selectAll('.eez.' + d.iso3)
-        //         .classed('active', true)
-        //         .transition().delay(i * 10)
-        //         .style('stroke', rampColor(1));
-        //     }
-        //   });
-        //
-        //   d3.select('.' + target)
-        //     .classed('invisible', false);
+          choropleth(index, 1, 'BE_FISHERIES');
         }
       },
       els: [{
           tag: 'h1',
-          text: 'The Future of Aquaculture',
+          text: 'Fisheries',
         },
         {
           tag: 'caption',
           text: 'Ensuring economic and food security '
         },
         {
-          tag: 'legend',
-          text: 'Map Legend',
-          legendContent: '<em>Highlighted countries had active mariculture industries in 2015.</em>'
+          tag: 'p',
+          html: 'In 2015, the United Nations FAO estimated worldwide production of fish from aquaculture surpassed - for the first time in history - production of fish from the wild.<sup>1</sup> The history of aquaculture is fraught: while many laud it as the inevitable and welcome progress of time and a shift that will increase global food production, others see it as a threat to the environment, to sustainable livelihoods, and to ways of life.'
         },
-        //###<<The map complementing this section will be a choropleth map highlighting the countries that currently have active mariculture sectors.>>
         {
           tag: 'p',
-          html: 'In 2015, the United Nations Food and Agriculture Organization estimated worldwide production of fish from aquaculture surpassed—for the first time in history—production of fish from the wild.<sup>3</sup> The history of aquaculture is fraught: while many laud it as the inevitable and welcome progress of time and a shift that will increase global food production, others see it as a threat to the environment, to sustainable livelihoods, and to ways of life. Both sides are likely correct.'
+          html: 'Small-scale fish farming can provide alternative forms of employment for wild fishers and farmers alike, creating economic resilience in communities vulnerable to economic and natural resource shocks.<sup>2</sup> Aquaculture may also provide new employment avenues for women who are often overlooked in the value chains of wild fisheries.'
         },
-        {
-          tag: 'blockquote',
-          html: '“[T]he extent of the damage to the ocean is many decades shy of the impact of industrialisation on land, and there is still time, if we act now, to get the principles and the framework for the development of the ocean economy right. Business as usual is clearly not an option.” <br />- The Economist Intelligence Unit Limited, 2015'
-        },
-
-        {
-          tag: 'p',
-          html: 'Most aquaculture produced today comprise freshwater species such as tilapia and carp. Marine aquaculture, or mariculture, is a rapidly expanding and highly varied industry with elements that can range from high-tech floating cages that grow bluefin tuna worth thousands of dollars each to low-tech shrimp farms that produce 90 percent of all shrimp imported to the United States. Generally, large-scale studies of aquaculture are conflicting and often inconclusive.<sup>4</sup>'
-        },
-        {
-          tag: 'bigtext',
-          html: 'Mariculture: The cultivation of marine species, such as fish and shrimp, in enclosures filled with seawater.'
-        },
+        // {
+        //   tag: 'bigtext',
+        //   html: 'Mariculture: The cultivation of marine species, such as fish and shrimp, in enclosures filled with seawater.'
+        // },
         //Insert graph from comms
         {
           tag: 'p',
-          html: 'On the one hand, the future of aquaculture is promising: small-scale fish-farming can provide alternative forms of employment for wild fishers and farmers alike, creating economic resilience in communities vulnerable to economic and natural resource shocks.<sup>5</sup> Aquaculture may also provide new employment avenues for women, who are often overlooked in the value chains of <a class="blue-economy inline internal-ref" data-link="4">wild fisheries.</a>'
+          html: 'But aquaculture also has drawbacks. It is highly capitalized and requires access to and familiarity with technology and investment dollars. Mariculture typically occurs directly in marine habitats, such as mangroves or estuaries, and the water pollution and habitat destruction have negative impacts for wild fisheries and the marine ecosystem in general. Finally, as aquaculture markets and demand grows, the value chain for fisheries will be affected, and women and small-scale (i.e., poor) fishers may lost out on the market altogether.<sup>3</sup>'
         },
         //###<<<insert video of Mama Winnie, aquaculture entrepreneur from Kenya>>>
         {
           tag: 'p',
-          html: 'Aquaculture also has drawbacks. It is capital-intensive and requires significant access to and familiarity with technology and investment dollars. Mariculture typically occurs directly in marine habitats, such as mangroves or estuaries, and the resulting water pollution and habitat destruction have negative impacts for wild fisheries and the marine ecosystem in general. Finally, as aquaculture markets and demand both grow, the value chain for fisheries will be affected, and women and small-scale (i.e., poor) fishers may lose out on the market altogether.<sup>6</sup>'
-        },
-        {
-          tag: 'p',
-          html: 'Ultimately, aquaculture epitomizes the coming conflicts over usage of the marine space. Should habitats be protected for wild fish stocks, or capitalized to produce higher yields of fish that may end up feeding cows and other terrestrial animals? Should aquaculture be encouraged in order to increase the supply of (relatively) cheap, healthy protein, or should profits be maximized by encouraging production of high-value species that tend to promote market monopolization?'
-        },
-        {
-          tag: 'p',
-          html: 'In our study, only 10 of 30 countries have reported income from mariculture activities, while only Somalia did not report income from aquaculture. Aquaculture is ubiquitous, but marine aquaculture is nascent. South Africa and Madagascar are two exceptions; South Africa reported over USD$43 million from mariculture in 2015, while Madagascar reported over USD$20 million.<sup>7</sup> For Madagascar especially, this represents a significant contribution to the domestic economy. South Africa primarily grows mussels and <a class="illicit-trade inline" href="../../illicit-trade#5">abalone</a>; these stocks of bivalves are typically highly sustainable in terms of growth, feeding, and harvesting. Madagascar, on the other hand, relies on shrimp aquaculture<sup>8</sup> that is implicated in significant mangrove deforestation and water pollution. The future of aquaculture in other African nations could follow the lead of South Africa in promoting sustainable approaches to cultivating high-value species, if the global market will support it.'
+          html: 'In our study, only ten of 30 countries have reported income from mariculture activities. South Africa reported over $43 million from mariculture in 2015, while Madagascar reported over $20 million.<sup>4</sup> For Madagascar especially, this represents a significant contribution to the domestic economies. South Africa primarily grows mussels and abalone; these stocks of bivalves are typically highly sustainable in terms of growing, feeding, and harvesting. Madagascar, on the other hand, relies on shrimp aquaculture<sup>5</sup> that is implicated in significant mangrove deforestation and water pollution. The future of aquaculture in other African nations could follow the lead of South Africa in promoting sustainable approaches to high-value species if the global market will support it.'
         },
         {
           tag: 'links',
           items: [{
-              org: '<sup>3</sup> United Nations Food and Agriculture Organization, “The State of World Fisheries and Aquaculture,” 2016.',
+              org: '<sup>3</sup> ###### ALLL OF THESE NEEED UPDATINGG###### United Nations Food and Agriculture Organization, “The State of World Fisheries and Aquaculture,” 2016.',
               url: 'http://www.fao.org/3/a-i5555e.pdf'
             },
             {
@@ -258,8 +197,8 @@ var blueEconomyData = {
       ] // end of els array
     },
     { // Card 2
-      title: 'Marine Tourism',
-      menu: 'Marine Tourism',
+      title: 'Marine and Coastal Tourism',
+      menu: 'Marine and Coastal Tourism',
       metadata: {
         owner: 'Sean Duncan',
         description: 'The impact of maritime insecurity on tourism (Seychelles as impacted by piracy, Nigeria as impacted by insecurity).'
@@ -267,55 +206,32 @@ var blueEconomyData = {
       map: {
         type: 'continuous',
         scale: [],
-        classes: '',
+        classes: 'card-eez-layer',
         translate: [],
-        path: '',
         highlights: [],
         tooltip: true,
-        tooltipHTML: function (iso) {
-          var tooltipVal = issueAreaData[issueArea].metadata.countryData[iso]['ia6c2'];
-      //    tooltipVal = Math.round((tooltipVal * 100));
+        legend: 'Tourism Score',
+        tooltipHTML: function(iso) {
+
+          var tooltipVal = issueAreaData[issueArea].metadata.countryData[iso]['BE_TOURISM'];
+          tooltipVal = Math.round(tooltipVal * 100);
           updatePointer(tooltipVal);
-          return "Marine Tourism Score:<br />" + tooltipVal + " / 100";
+          return "Tourism Score:<br />" + tooltipVal + " / 100";
 
         },
-        units: {
-          text: 'xo units',
-          multiplier: 100
-        },
-        load: function(index, file) {
-          // Define what the map should be.
-          d3.select('.card-eez-layer')
-            .classed('card-' + index + '-layer', true);
+        load: function(index, csv) {
+          // Class EEZ with card-0-layer to enable switch() method
+          var layer = 'card-' + index + '-layer';
+          var l = d3.select('.card-eez-layer')
+            .classed(layer, true);
         },
         switch: function(index) {
-          choropleth(index, 1, 'ia6c2');
-
-          // Figure out what to switch to.
-          // var values = issueAreaData[issueArea].metadata.countryData;
-          //
-          // var valsArr = [];
-          //
-          // values.forEach(function(row, i) {
-          //   valsArr.push(row.ia6c2);
-          // });
-          //
-          // var max = d3.max(valsArr);
-          // var min = d3.min(valsArr);
-          // var range = max - min;
-          //
-          // values.forEach(function(row, i) {
-          //   d3.selectAll('.eez.' + row.iso3)
-          //     .classed('active', true)
-          //     .transition().delay(i * 10)
-          //     .style('fill', rampColor(1 - ((row.ia6c2 - min) / range)))
-          //     .style('stroke', rampColor(1));
-          // });
+          choropleth(index, 1, 'BE_TOURISM');
         }
       },
       els: [{
           tag: 'h1',
-          text: 'Marine Tourism',
+          text: 'Marine and Coastal Tourism',
         },
         {
           tag: 'caption',
@@ -385,59 +301,29 @@ var blueEconomyData = {
         description: 'Describes port development in Gulf of Guinea (capacity and connetivity, overview of projects in Ghana, Togo, Benin, Nigeria, and Cameroon) and East Africa (capacity and connectivity, overview of projects in Somalia, Tanzania, Kenya, and Djibouti).'
       },
       map: {
+        type: 'continuous',
         scale: [],
-        classes: '',
-        extent: [
-          [-20, -45],
-          [137, 27]
-        ],
+        classes: 'card-eez-layer',
         translate: [],
-        path: '../../data/blue-economy/world-port-index.csv',
         highlights: [],
         tooltip: true,
-        units: {
-          text: 'xo units',
-          multiplier: 100
+        legend: 'Transportation Score',
+        tooltipHTML: function(iso) {
+
+          var tooltipVal = issueAreaData[issueArea].metadata.countryData[iso]['BE_TRANSPORTATION'];
+          tooltipVal = Math.round(tooltipVal * 100);
+          updatePointer(tooltipVal);
+          return "Transportation Score:<br />" + tooltipVal + " / 100";
+
         },
-        load: function(index, file) {
-
-          // What about adding a choropleth - total port capacity (all port scores added up)??
+        load: function(index, csv) {
+          // Class EEZ with card-0-layer to enable switch() method
           var layer = 'card-' + index + '-layer';
-          d3.csv(file, function(vals) {
-            vals.forEach(function(d) {
-              d.lat = +d.lat;
-              d.lon = +d.lon;
-              d.Harbor_2ize_code = +d.Harbor_2ize_code;
-            });
-
-            var wpi = mapg.append('g')
-              .classed('card-layer wpi-layer card-0-layer ' + layer, true);
-
-            wpi.selectAll('circle')
-              .data(vals).enter()
-              .append('circle')
-              .attr('cx', function(d) {
-                return projection([d.lon, d.lat])[0];
-              })
-              .attr('cy', function(d) {
-                return projection([d.lon, d.lat])[1];
-              })
-              .attr('r', function(d) {
-                return d.Harbor_2ize_code * 2;
-              })
-              .classed('wpi-port', true)
-              .style('fill', function() {
-                return rampColor(1);
-              });
-          });
-          // Load point data
-          // Class point data with layer
-
+          var l = d3.select('.card-eez-layer')
+            .classed(layer, true);
         },
         switch: function(index) {
-          // Figure out what to switch to.
-          d3.select('.card-' + index + '-layer')
-            .classed('invisible', false);
+          choropleth(index, 1, 'BE_TRANSPORTATION');
         }
       },
       els: [{
@@ -449,36 +335,30 @@ var blueEconomyData = {
           text: 'Africa\'s links to the global economy'
         },
         {
-          tag: 'legend',
-          text: 'Map Legend',
-          legendContent: '<em>Larger dots indicate larger ports, smaller dots indicate smaller ports</em>.'
-        },
-        //###<<The map complementing this section will be a point map showing identifying small, medium, and large ports in our area of study.>>
-        {
           tag: 'p',
           html: 'Foreign direct investment (FDI) in Africa has increased significantly in recent years, with a large portion of the money going into port and infrastructure development. Port investment will promote economic development through trade while reducing risks to ships entering ports around the continent.'
         },
         {
           tag: 'p',
-          html: 'For instance, Dubai-based company DP World will develop the port of Berbera, a concession by Somaliland that will last for 30 years with an automatic 10-year extension.<sup>14</sup> As a result of the deal, DP World will invest up to USD$442 million in three phases to expand port infrastructure and will own 65 percent of a joint venture with Somaliland.'
+          html: 'This influx of FDI is positive. African ports remain largely underdeveloped overall, and the lack of proper port infrastructure continues to contribute to expensive delays stemming from the increased amount of time that vessels need to spend in port or waiting to enter a crowded port.15 However, without proper maritime security and safety in these developing ports, vessels can be vulnerable to threats such as piracy and armed robbery.'
         },
-        {
-          tag: 'p',
-          html: 'This influx of FDI is positive. African ports remain largely underdeveloped overall, and the lack of proper port infrastructure continues to contribute to expensive delays stemming from the increased amount of time that vessels need to spend in port or waiting to enter a crowded port.<sup>15</sup> However, without proper maritime security and safety in these developing ports, vessels can be vulnerable to threats such as piracy and armed robbery.'
-        },
-        //###<<< video: https://www.youtube.com/watch?v=vM_f2g0jXTg>>>
         {
           tag: 'p',
           html: 'These threats can be detrimental to maritime trade and port revenue. For example, commerce in the Gulf of Guinea was significantly impacted during 2011 when more than 20 attacks were recorded off the coast of Benin. The port of Cotonou, which handles approximately 90 percent of the country’s foreign trade and accounts for roughly 80 percent of national fiscal revenue, experienced a steep 70 percent decline in port traffic due to piracy and armed robbery,<sup>16</sup> leading to an estimated loss of USD$81 million in customs revenue for the year as the shipping industry moved business operations to other ports and anchorages in the Gulf of Guinea.<sup>17</sup>'
         },
+        //###<<< video: https://www.youtube.com/watch?v=vM_f2g0jXTg>>>
         {
           tag: 'p',
           html: 'Similarly, the large number of piracy and armed robbery–related incidents recorded in the Gulf of Guinea in 2015 likely had something to do with the dramatic decreases in gross tonnage handled at Nigerian ports. The Rivers and Delta port complexes recorded the largest declines in volume throughout the year, with decreases in gross tonnage of 29 percent and 33.5 percent respectively.<sup>18</sup> Enhancing port capacity would decrease the amount of time vessels spend in port and waiting to enter port, and would likely lead to increased port revenue stemming from enhanced efficiency.'
         },
         {
+          tag: 'p',
+          html: 'To establish a scoring methodology for maritime transportation and shipping, One Earth Future used the IMO GISIS Database to evaluate port infrastructure quality and the Liner Shipping Connectivity Index from UNCTAD to capture how well-connected individual countries are to global shipping networks.'
+        },
+        {
           tag: 'links',
           items: [{
-              org: '<sup>14</sup> Matina Stevis and Asa Fitch, “Dubai’s DP World Agrees to Manage Port in Somaliland for 30 Years,” <em>The Wall Street Journal</em>, 30 May 2016,',
+              org: '<sup>14</sup> ### These need review ####*** Matina Stevis and Asa Fitch, “Dubai’s DP World Agrees to Manage Port in Somaliland for 30 Years,” <em>The Wall Street Journal</em>, 30 May 2016,',
               url: 'https://www.wsj.com/articles/dubais-dp-world-agrees-to-manage-port-in-somaliland-for-30-years-1464549937'
             },
             {
@@ -629,8 +509,8 @@ var blueEconomyData = {
     //   ] // end of els array
     // },
     { // Card 5
-      title: 'Sustainability in the Blue Economy',
-      menu: 'Sustainability in the Blue Economy',
+      title: 'Adjusted Net Savings',
+      menu: 'Adjusted Net Savings',
       metadata: {
         owner: 'Sean Duncan',
         description: 'Sustainable vs unsustainable economic growth, focus on Cabo Verde, Namibia, Guinea, Liberia.'
@@ -638,55 +518,28 @@ var blueEconomyData = {
       map: {
         type: 'continuous',
         scale: [],
-        classes: '',
+        classes: 'card-eez-layer',
         translate: [],
-        path: '',
         highlights: [],
         tooltip: true,
-        legend: "Measure of Sustainability***",
+        legend: 'Adjusted Net Savings',
         tooltipHTML: function(iso) {
 
-          var tooltipVal = issueAreaData[issueArea].metadata.countryData[iso]['ia6c5'];
-        //  tooltipVal = Math.round((tooltipVal * 100));
+          var tooltipVal = issueAreaData[issueArea].metadata.countryData[iso]['BE_ANS'];
+          tooltipVal = Math.round(tooltipVal * 100);
           updatePointer(tooltipVal);
-          return "Measures of Sustainability **:<br />" + tooltipVal + " / 100";
+          return "Adjusted Net Savings:<br />" + tooltipVal + " / 100";
 
         },
-        units: {
-          text: 'xo units',
-          multiplier: 100
-        },
-        load: function(index, file) {
+        load: function(index, csv) {
+          // Class EEZ with card-0-layer to enable switch() method
           var layer = 'card-' + index + '-layer';
-          d3.select('.card-eez-layer')
+          var l = d3.select('.card-eez-layer')
             .classed(layer, true);
         },
         switch: function(index) {
-          choropleth(index, 1, 'ia6c5')
-        //   var values = issueAreaData[issueArea].metadata.countryData;
-        //
-        //   var valsArr = [];
-        //
-        //   values.forEach(function(row, i) {
-        //     valsArr.push(row.ia6c4);
-        //   });
-        //
-        //   var max = d3.max(valsArr);
-        //   var min = d3.min(valsArr);
-        //   var range = max - min;
-        //
-        //   values.forEach(function(row, i) {
-        //     if (row.ia6c5 > 0) {
-        //
-        //       d3.selectAll('.eez.' + row.iso3)
-        //         .classed('active', true)
-        //         .transition().delay(i * 10)
-        //         .style('fill', rampColor(1 - ((row.ia6c5 - min) / range)))
-        //         .style('stroke', rampColor(1));
-        //     }
-        //   });
+          choropleth(index, 1, 'BE_ANS');
         }
-
       },
       els: [{
           tag: 'h1',
@@ -696,45 +549,31 @@ var blueEconomyData = {
           tag: 'caption',
           text: 'Toward a more accurate measure of development'
         },
-        {
-          tag: 'legend',
-          text: 'Map Legend',
-          legendContent: '<em>Lighter shades indicate higher Adjusted Net Savings (ANS) scores.<br />Source: <a href="https://data.worldbank.org/products/data-books/little-green-data-book" target="_blank">World Bank</a></em>.'
-        },
+        // {
+        //   tag: 'legend',
+        //   text: 'Map Legend',
+        //   legendContent: '<em>Lighter shades indicate higher Adjusted Net Savings (ANS) scores.<br />Source: <a href="https://data.worldbank.org/products/data-books/little-green-data-book" target="_blank">World Bank</a></em>.'
+        // },
         {
           tag: 'blockquote',
-          html: '“The extent of the damage to the ocean is many decades shy of the impact of industrialisation on land, and there is still time, if we act now, to get the principles and the framework for the development of the ocean economy right. Business as usual is clearly not an option.” <br />Source: The Economist Intelligence Unit Limited, 2015'
+          html: '“The extent of the damage to the ocean is many decades shy of the impact of industrialisation on land, and there is still time, if we act now, to get the principles and the framework for the development of the ocean economy right. Business as usual is clearly not an option.” <br />Source: The Economist Intelligence Unit Limited, 2015<sup>6</sup>'
         },
         {
           tag: 'p',
-          html: 'So begins an extensive—and ultimately optimistic—recent review of the Blue Economy framework by The Economist Intelligence Unit for the World Ocean Summit. The Blue Economy is more than a system of accounting and dollar signs attached to ocean-based enterprises. It is an aspirational framework that seeks to guide maritime development in a manner that is sustainable and equitable. Consequently, the Blue Economy framework includes progressive and novel metrics that provide a more holistic view of economic growth.'
-        },
-        {
-          tag: 'video',
-          videoId: 'sQCon-JSpfA',
-          thumb: '../../assets/blue-economy/drought_famine_video.jpg' // ###
+          html: 'So begins an extensive - and ultimately optimistic - recent review of the Blue Economy framework by the Economist Intelligence Unit, for the World Ocean Summit. The Blue Economy is more than a system of accounting and dollar signs attached to ocean-based enterprises. It is an aspirational framework that seeks to guide maritime development in a manner that is sustainable and equitable. Consequently, Blue Economy framework includes progressive and novel metrics that provide a more holistic view of economic growth.'
         },
         {
           tag: 'p',
-          html: 'Adjusted net savings (ANS) measures sustainable development by examining changes in comprehensive wealth after accounting for depletion of natural resources and investments in human capital.<sup>26</sup> One of the core principles behind ANS is that it is necessary for countries to create a surplus investment in order to escape low-level subsistence—which is particularly relevant in the African context.'
+          html: 'Adjusted Net Savings (ANS) measures sustainable development by examining changes in comprehensive wealth and after accounting for depletion of natural resources and investments in human capital.<sup>7</sup> One of the core principles behind ANS is that it is necessary for countries to create a surplus investment in order to escape low-level subsistence—which is particularly relevant in the African context.'
         },
         {
           tag: 'p',
-          html: 'High values of ANS suggest that a country’s degradation of natural resources and changes in human capital are being balanced by net savings—indicating sustainable growth. In our study, Cabo Verde and Namibia had the highest ANS scores in 2016. Both nations benefited from high gross domestic savings, and Namibia saw large investments into education. Conversely, if ANS numbers are negative over multiple years, it indicates that the country is on an unsustainable path. Guinea, for instance, had the lowest measured value out of any country in the world. This is because Guinea suffers from resource depletion (represented by high rates of both mineral and net forest depletion), but also from negative gross domestic savings—indicating that the Guinean economy is expending more income than it produces.'
-        },
-
-        {
-          tag: 'p',
-          html: 'Climate change presents varied risks to sustainable economic development: depending on the underlying biome and other geophysical considerations, a given nation may experience more or less rainfall in the future, the rise in sea surface temperature may be minor or major, and sea-level rise may or may not threaten coastal developments. The risk of conflict is strongly related.<sup>27</sup>  The ND-GAIN climate vulnerability index<sup>28</sup> accounts for 75 different climate-related variables.'
-        },
-        {
-          tag: 'p',
-          html: 'The Somali region ranks last in this measure of climate vulnerability, indicating that the economy and people are the most vulnerable to the impacts of climate change in the future. In the Horn of Africa, the physical connections between ocean dynamics like temperature and terrestrial dynamics like rainfall are strongly linked. The Somali region is currently facing one of the worst droughts in its history—over 22 million people are at risk of starvation. And while short-term climate impacts are most profound—and visible—on land, the impacts on the ocean will not be avoided. Just when the Somali fishing sector is attracting both domestic and international investment, the species that inhabit Somali waters might migrate elsewhere and short-circuit this nascent economic sector.'
+          html: 'High values of ANS suggest a country’s degradation of natural resources and changes in human capital are being balanced by net savings—indicating sustainable growth. In our study, Cabo Verde and Namibia had the highest ANS scores in 2016.  Both nations benefitted from high Gross Domestic Savings, and Namibia also saw large investments into education. Conversely, if ANS is negative over multiple years, the country is on an unsustainable path. Guinea, for instance, had the lowest measured value out of any country in the world. This is because Guinea suffered from resource depletion (represented by high rates of mineral and net forest depletion), but also from negative Gross Domestic Savings—indicating that the Guinean economy is expending more income than it produces.'
         },
         {
           tag: 'links',
           items: [{
-              org: '<sup>25</sup> The Economist Intelligence Unit, <em>“The Blue Economy: Growth, Opportunity and a Sustainable Ocean Economy,”</em> Briefing Paper presented at the World Ocean Summit 2015,',
+              org: '<sup>25</sup> ### all NEED REVIEW### The Economist Intelligence Unit, <em>“The Blue Economy: Growth, Opportunity and a Sustainable Ocean Economy,”</em> Briefing Paper presented at the World Ocean Summit 2015,',
               url: 'https://www.eiuperspectives.economist.com/sustainability/blue-economy'
             },
             {
@@ -749,94 +588,61 @@ var blueEconomyData = {
       ] // end of els array
     },
     { // Card 6
-      title: 'Oil and Gas',
-      menu: 'Oil and Gas',
+      title: 'Climate Vulnerability',
+      menu: 'Climate Vulnerability',
       metadata: {
         owner: 'John Filitz',
         description: 'Oil and gas.'
       },
       map: {
-        path: '../../data/blue-economy/offshore-oil.json',
+        type: 'continuous',
         scale: [],
-        classes: '',
-        extent: [
-          [-20, -65],
-          [105, 50]
-        ],
+        classes: 'card-eez-layer',
         translate: [],
         highlights: [],
-        tooltip: false,
-        units: {
-          text: 'xo units',
-          multiplier: 100
+        tooltip: true,
+        legend: 'Climate Vulnerability Score',
+        tooltipHTML: function(iso) {
+
+          var tooltipVal = issueAreaData[issueArea].metadata.countryData[iso]['BE_CLIMATE'];
+          tooltipVal = Math.round(tooltipVal * 100);
+          updatePointer(tooltipVal);
+          return "Climate Vulnerability Score:<br />" + tooltipVal + " / 100";
+
         },
-        load: function(index, file) { // ### *** This only should be for the first card ...
+        load: function(index, csv) {
+          // Class EEZ with card-0-layer to enable switch() method
           var layer = 'card-' + index + '-layer';
-          d3.json(file, function(error, offshoreOil) {
-
-            var oilInfrastructure = mapg.append('g')
-              .classed('card-layer invisible ' + layer, true);
-
-            oilInfrastructure.selectAll('.offshore-oil')
-              .data(topojson.feature(offshoreOil, offshoreOil.objects.offshoreOil).features)
-              .enter()
-              .append('path')
-              .attr('d', path)
-              .style('fill', function() {
-                return rampColor(0.5);
-              })
-              .style('stroke', 'white')
-              .classed('offshore-oil', true);
-          })
-          // Load offshore oil infrastructure layer
-
-          // Class with layer
-
+          var l = d3.select('.card-eez-layer')
+            .classed(layer, true);
         },
         switch: function(index) {
-          d3.selectAll('.card-' + index + '-layer')
-            .classed('invisible', false);
+          choropleth(index, 1, 'BE_CLIMATE');
         }
       },
 
       els: [{
           tag: 'h1',
-          text: 'Oil and Gas',
+          text: 'Climate Vulnerability',
         },
         {
           tag: 'caption',
-          text: 'Africa’s natural resource bonanza'
-        },
-        {
-          tag: 'legend',
-          text: 'Map Legend',
-          legendContent: 'Light blue polygons represenet known offshore oil and gas deposits in sub-Saharan Africa. <br> Source: PRIO'
-        },
-        //###<<<The map complementing this section will be a choropleth map of the offshore oil and gas producing nations in our study>>>
-        {
-          tag: 'p',
-          html: 'Sub-Saharan Africa may hold 203 billion barrels of recoverable oil resources, and the region accounted for 30 percent of global oil and gas discoveries made from 2009 to 2014.<sup>29</sup> These discoveries have boosted the reserves of major oil producers like Nigeria and Angola (the world’s 16th and 17th largest producers, respectively)<sup>30</sup> while also bringing new countries into the international oil and gas trade, including Kenya, Madagascar, and Mozambique.<sup>31</sup>'
-        },
-        {
-          tag: 'bigtext',
-          html: 'Sub-Saharan Africa accounted for 30 percent of global oil and gas discoveries made from 2009 to 2014.'
+          text: 'Climate change poses risks to blue economic growth'
         },
         {
           tag: 'p',
-          html: 'Although some of these recent discoveries are, at this stage, deemed to be non-transformative, these resources could potentially play a key role in meeting the current and future domestic energy demands of sub-Saharan African countries in addition to being a key earner in foreign exchange. Realizing sub-Saharan Africa’s natural resource energy potential requires continuing investment in further exploration, shortening the transition from exploration to production, and creating a more certain political and regulatory environment. Arguably the most challenging binding constraint in this sector concerns the high levels of corruption and rent-seeking in sub-Saharan African natural resource–rich states: for example, Africa’s largest oil and gas producers, Nigeria and Angola, ranked poorly as 136th and 164th out of 176 countries, respectively, according to <a href="https://www.transparency.org/research/cpi/overview" target="_blank">Transparency International’s 2016 Corruption Perceptions Index</a>.<sup>32</sup>'
+          html: 'Climate change presents varied risks to sustainable economic development: depending on the underlying biome and other geophysical considerations, a given nation may experience more or less rainfall in the future, rise in sea surface temperature may be minor or major, and sea level rise may threaten coastal developments or not. The risk of conflict is strongly related.<sup>8</sup> The ND-GAIN Climate Vulnerability index, incorporated into our measure of Blue Economy, accounts for 75 different climate-related variables.'
         },
+
         {
           tag: 'p',
-          html: 'While governance challenges remain, Africa’s oil and gas bounty will nevertheless undoubtedly play a crucial role in the future social and economic development of the continent. This was underscored at the 37th Ordinary Southern African Development Community (SADC) Summit, when the newly elected Chair of the SADC, South Africa’s President Jacob Zuma, noted:'
+          html: 'The Somali region ranks last in our measure of climate vulnerability - the economy and people are the most vulnerable to the impacts of climate change in the future. In the Horn of Africa, the physical connections between ocean dynamics like temperature and terrestrial dynamics like rainfall are strongly linked. The Somali region is currently facing one of the worst droughts in its history - over 22 million people are at risk of starvation. And while short-term climate impacts are most profound - and visible - on land, the impacts on the ocean will not be avoided. Just as the Somali fishing sector is attracting both domestic and international investment, the species that inhabit Somali waters might migrate elsewhere and short-circuit this nascent economic sector.'
         },
-        {
-          tag: 'blockquote',
-          html: '“One of the potential game-changers for the region is the discovery of globally significant natural gas resources both onshore and offshore in a number of our member states. As a new initiative, we are proposing the establishment of an Inter-state Natural Gas Committee to share learning for regional gas development and to prepare for the development of the wider gas economy. As such, the inclusion and promotion of gas into the regional energy mix will facilitate an increase in universal access to energy, as well as industrial development in SADC.”<sup>33</sup>'
-        },
+
         {
           tag: 'links',
           items: [{
-              org: '<sup>28</sup> International Energy Agency, “Africa Energy Outlook: A Focus on Energy Prospects in Sub-Sharan Africa,” World Energy Outlook Special Report, 2014,',
+              org: '<sup>28</sup>### NEEDS REVIEW ####  International Energy Agency, “Africa Energy Outlook: A Focus on Energy Prospects in Sub-Sharan Africa,” World Energy Outlook Special Report, 2014,',
               url: 'https://www.iea.org/publications/freepublications/publication/WEO2014_AfricaEnergyOutlook.pdf'
             },
             {
@@ -859,84 +665,99 @@ var blueEconomyData = {
         //###INSERT BLOCKQUOTE: “One of the potential game-changers for the region is the discovery of globally significant natural gas resources both onshore and offshore in a number of our member states. As a new initiative, we are proposing the establishment of an Inter-state Natural Gas Committee to share learning for regional gas development and to prepare for the development of the wider gas economy. As such, the inclusion and promotion of gas into the regional energy mix will facilitate an increase in universal access to energy, as well as industrial development in SADC.”<sup>33</sup>
       ] // end of els array
     },
-    // { // Card 7
-    //   title: 'Methodology',
-    //   menu: 'Methodology',
-    //   metadata: {
-    //     owner: 'Curtis Bell',
-    //     description: 'Methods.'
-    //   },
-    //   map: {
-    //     scale: [],
-    //     classes: 'card-7-layer',
-    //     translate: [],
-    //       //highlights: null,
-    //     load: function (index, file) {  // ### *** This only should be for the first card ...
-    //       // Color EEZ according to master Stable Seas index
-    //       var layer = 'card-'+index+'-layer';
-    //
-    //       d3.select('.card-eez-layer')
-    //         .classed(layer, true);
-    //     },
-    //     switch: function (index) {
-    //       switchMainIndex(0);
-    //     }
-    //   },
-    //   els: [
-    // { tag: 'h1',
-    //   text: 'Methodology'
-    // },
-    // { tag: 'p',
-    //   text: 'The Blue Economy Score incorporates six central concepts: fisheries, marine and coastal tourism, maritime transportation and shipping, offshore oil and gas, adjusted net savings, and climate change. These variables were chosen after a review of the literature pertaining to the Blue Economy generally (i.e., globally) and the Blue Economy in Africa specifically. These variables were commonly cited as being the most important components of the Blue Economy and most relevant to current and future trends in Africa. We calculate these six scores and then average them across the six areas. We provide an overview of our methodology below and a more complete technical summary in the supporting materials for download.'
-    // },
-    // { tag: 'h3',
-    //   text: 'Inputs'
-    // },
-    // { tag: 'h4',
-    //   text: 'Fisheries'
-    // },
-    // { tag: 'p',
-    //   text: 'Fisheries are an important part of the economy throughout Africa. In some countries, fisheries products are the top-grossing export. In others, the income from artisanal and small-scale fisheries are important for livelihoods. We combine the value (in U.S. dollars) of wild-caught fisheries and mariculture (aquaculture occurring in the marine environment or of marine species) for this input. Value of wild-caught fish for a given country (i.e., excluding fish caught by foreign-flagged vessels) was obtained from the Sea Around Us program. Value of mariculture by a given country was obtained from the UN Food and Agriculture Organization’s Global Statistical collection. The values were summed and then standardized by dividing by total population of the given country as reported by the World Bank.'
-    // },
-    // { tag: 'h4',
-    //   text: 'Marine and Coastal tourism'
-    // },
-    // { tag: 'p',
-    //   text: 'Sustainable coastal tourism supports jobs and livelihoods in coastal communities. We use the score from the Tourism and Recreation Score in the Ocean Health Index.<sup>34</sup> The Ocean Health Index  measures countries on biological, physical, economic, and social factors to assess how sustainably humans are using the ocean. The Tourism and Recreation Score measures the proportion of the total labor force engaged in the coastal tourism and travel sector, factoring in unemployment and sustainability. Countries where such employment was 9.5 percent or greater of the total labor force received a perfect score (100). The Ocean Health Index collects data for all countries of the world and issues annual updates. We used the Tourism and Recreation Score directly.'
-    // },
-    // { tag: 'h4',
-    //   text: 'Marine Transportation and Shipping'
-    // },
-    // { tag: 'p',
-    //   text: 'Maritime ports and the shipping and commerce they support are pillars of the Blue Economy. Large, well-functioning ports support larger volumes of shipping and greater export and import markets, and link national economies to the global economy. We calculated this score by combining two sub-scores: port quantity and port quality. Port quantity was calculated from the Liner Shipping Connectivity Index, a national-level metric developed by the United Nations Conference on Trade and Development which accounts for number of ships, container capacity of those ships, maximum vessel size, number of services, and number of companies that operate in ports. We developed our own port quality metric that accounted for harbor size plus availability of the following services: first port of entry, tug assist, air and rail communications, medical facilities, water and fuel supplies, and dry-dock repair. The overall transportation score was calculated by equally weighting the port quantity and quality sub-scores.'
-    // },
-    // { tag: 'h4',
-    //   text: 'Offshore Oil and Gas'
-    // },
-    // { tag: 'p',
-    //   text: 'Offshore oil and natural gas development contributes substantially to the economies of some African nations, like Nigeria, but the distribution is highly skewed: of the 30 nations included in this report, 17 of them gain no income from offshore oil or gas. For oil, we placed nations into one of five tiers based on volume of proven reserves, ultimately recoverable oil, cumulative production, and remaining recoverable resources. Tier 1 countries had high volumes of offshore oil, while Tier 5 countries had no proven reserves or current production. For natural gas we placed nations into one of four tiers based on the same criteria. Tiers were converted to scores between 0 and 1 and the oil and gas scores were averaged.'
-    // },
-    // { tag: 'h4',
-    //   text: 'Adjusted Net Savings'
-    // },
-    // { tag: 'p',
-    //   text: 'Adjusted net savings (ANS) is a measure of true savings in a country after taking into account depletion of natural resources and damages, as well as investments in human capital.<sup>35</sup> .  Many economists have adopted ANS as a metric that overcomes some shortfalls in using gross domestic product to measure economic growth and development. ANS is derived from the standard national accounting measure of gross saving by making four adjustments: consumption of fixed capital is deducted to obtain net national saving; current public expenditure on education is added to account for investment in human capital; estimates of the depletion of a variety of natural resources are deducted to reflect the decline in asset values associated with extraction and depletion; and deductions are made for damages from carbon dioxide and particulate emissions. We use ANS measures from the World Bank’s World Development Indicators <i>Little Green Data Book</i>. Values for 23 of the countries here were used, and the regional average was used for countries without ANS values. Raw scores ranged from −47.8 to 36.9, so we normalized scores and benchmarked regional values to the global range.'
-    // },
-    // { tag: 'h4',
-    //   text: 'Climate Vulnerability'
-    // },
-    // { tag: 'p',
-    //   text: 'Several components of the Blue Economy, such as fisheries and tourism, may be affected by global climate change. To account for this risk, we included a measure of vulnerability to climate change. We used the University of Notre Dame’s Global Adaptation Index<sup>37</sup>   (known as ND-GAIN). The index measures a country’s vulnerability to climate change based on: (1) exposure to climate-related or climate-exacerbated hazards, (2) sensitivity to the hazard’s impacts, and (3) capacity to adapt or manage to the impacts. We use the ND-GAIN Vulnerability score which is calculated at a national scale and updated annually.'
-    // },
-    // { tag: 'links',
-    //   items: [
-    //     {org: '<sup>32</sup> “The Ocean Health Index,” Ocean Health Index, accessed 1 September 2017,', url: 'http://www.oceanhealthindex.org'},
-    // /// ### added http to the website as original did not include it. Please check if valid.
-    //     {org: '<sup>33</sup> World Bank, <em>The Little Green Data Book 2017</em>, World Development Indicators (Washington, DC: World Bank, 2017),', url: 'https://openknowledge.worldbank.org/handle/10986/27466 License: CC BY 3.0 IGO'},
-    //     {org: '<sup>34</sup> Ibid.'},
-    //   ]
-    // }
-    //   ]
-    // }
+    { // Card 7
+      title: 'Data and Methods',
+      menu: 'Data and Methods',
+      metadata: {
+        owner: 'Curtis Bell',
+        description: 'Methods.'
+      },
+      map: {
+        type: 'continuous',
+        scale: [],
+        classes: 'card-eez-layer',
+        translate: [],
+        highlights: [],
+        tooltip: true,
+        legend: 'Blue Economy Score',
+        tooltipHTML: function(iso) {
+
+          var tooltipVal = issueAreaData[issueArea].metadata.countryData[iso]['BE_INDEX'];
+          tooltipVal = Math.round(tooltipVal * 100);
+          updatePointer(tooltipVal);
+          return "Blue Economy:<br />" + tooltipVal + " / 100";
+
+        },
+        load: function(index, csv) {
+          // Class EEZ with card-0-layer to enable switch() method
+          var layer = 'card-' + index + '-layer';
+          var l = d3.select('.card-eez-layer')
+            .classed(layer, true);
+        },
+        switch: function(index) {
+          choropleth(index, 1, 'BE_INDEX');
+        }
+      },
+      els: [
+    { tag: 'h1',
+      text: 'Data and Methods'
+    },
+    {
+      tag: 'caption',
+      text: 'How we created the Blue Economy score'
+    },
+    { tag: 'p',
+      text: 'The Blue Economy score incorporates six equally-weighted components that are central to the blue economy: fisheries, marine and coastal tourism, maritime transportation and shipping, offshore oil and gas, adjusted net savings, and climate change.'
+    },
+    { tag: 'h4',
+      text: 'Fisheries'
+    },
+    { tag: 'p',
+      text: 'Fisheries are an important part of the economy throughout Africa. In some countries, fisheries products are the top grossing export. In others, the income from artisanal and small-scale fisheries are important for livelihoods. We combine the value (in U.S. dollars) of wild caught fisheries and mariculture (aquaculture occurring in the marine environment or of marine species) for this input. Value of wild caught fish by a given country (i.e., excluding fish caught by foreign-flagged vessels) was obtained from the Sea Around Us program. Value of mariculture by a given country was obtained from the UN Food and Agriculture Organization’s Global Statistical collection. The values were summed, and standardized by dividing by total population of a country as reported by the World Bank.'
+    },
+    { tag: 'h4',
+      text: 'Marine and Coastal tourism'
+    },
+    { tag: 'p',
+      text: 'Sustainable coastal tourism supports jobs and livelihoods in coastal communities. We use the score from the Tourism and Recreation goal in the Ocean Health Index. The Ocean Health Index  measures countries on biological, physical, economic, and social factors to assess how sustainably humans are using the ocean. The Tourism and Recreation goal measures the proportion of the total labor force engaged in the coastal tourism and travel sector, factoring in unemployment and sustainability. Countries where such employment was 9.5% or greater of the total labor force received a perfect (100) score.'
+    },
+    { tag: 'h4',
+      text: 'Marine Transportation and Shipping'
+    },
+    { tag: 'p',
+      text: 'Maritime ports and the shipping and commerce they support are pillars of the Blue Economy. Large, well-functioning ports support larger volumes of shipping, geater export and import markets, and link national economies to the global economy. We calculated this score by combining two sub-scores: port quantity and port quality. Port quantity was calculated from the Liner Shipping Connectivity Index, a national-level metric developed by the United Nations Conference on Trade and Development and accounts for number of ships, container capacity of those ships, maximum vessel size, number of services, and number of companies that operate in ports. We developed our own port quality metric that accounted for harbor size plus availability of the following services: first port of entry, tug assist, air and rail communications, medical facilities, water and fuel supplies, and dry dock repair. The overall transportation score was calculated by equally weighting the port quantity and quality sub-scores.'
+    },
+    { tag: 'h4',
+      text: 'Offshore Oil and Gas'
+    },
+    { tag: 'p',
+      text: 'Offshore oil and natural gas development contributes substantially to some African nations, like Nigeria, but the distribution is highly skewed: of the 30 nations included in this report, 17 of them gain no income from offshore oil or gas. For oil, we placed nations into one of five tiers based on volume of proven reserves, ultimately recoverable oil, cumulative production, and remaining recoverable resources. Tier 1 countries had high volumes of offshore oil, while Tier 5 countries had no proven reserves or current production. Likewise, for natural gas we placed nations into one of four tiers based on the same criteria. Tiers were converted to scores of 0 - 1 and the oil and gas scores were averaged.'
+    },
+    { tag: 'h4',
+      text: 'Adjusted Net Savings'
+    },
+    { tag: 'p',
+      text: 'Adjusted Net Savings (ANS) is a measure of true savings in a country after taking into account depletion of natural resources and damages, as well as investments in human capital.[1] Many economists have adopted ANS as a metric that overcomes some shortfalls in using Gross Domestic Product to measure economic growth and development. ANS is derived from the standard national accounting measure of gross saving by making four adjustments: consumption of fixed capital is deducted to obtain net national saving; current public expenditure on education is added to account for investment in human capital; estimates of the depletion of a variety of natural resources are deducted to reflect the decline in asset values associated with extraction and depletion; and deductions are made for damages from carbon dioxide and particulate emissions. We use ANS measures from the World Bank’s World Development Indicators Little Green Book. Values for 23 of the countries here were used, and the regional average was used for countries without ANS values. Raw scores ranged from -47.8 to 36.9 so we normalized scores and benchmarked regional values to the global range.'
+    },
+    { tag: 'h4',
+      text: 'Climate Vulnerability'
+    },
+    { tag: 'p',
+      text: 'Several components of the Blue Economy, such as fisheries and tourism, may be affected by global climate change. To account for this risk, we included a measure of vulnerability to climate change. We used the University of Notre Dame’s Global Adaptation Index (known as ND-GAIN). The index measures a country’s vulnerability to climate change based on: (1) exposure to climate-related or climate-exacerbated hazards, (2) sensitivity to the hazard’s impacts and (3) capacity to adapt or manage to the impacts. We use the ND-GAIN Vulnerability score which is calculated at a national scale and updated annually.'
+    },
+    {
+      tag: 'p',
+      html: 'More details about all of these scores are available on our data page.'
+    },
+    { tag: 'links',
+      items: [
+        {org: '<sup>32</sup>#### Review #### “The Ocean Health Index,” Ocean Health Index, accessed 1 September 2017,', url: 'http://www.oceanhealthindex.org'},
+    /// ### added http to the website as original did not include it. Please check if valid.
+        {org: '<sup>33</sup> World Bank, <em>The Little Green Data Book 2017</em>, World Development Indicators (Washington, DC: World Bank, 2017),', url: 'https://openknowledge.worldbank.org/handle/10986/27466 License: CC BY 3.0 IGO'},
+        {org: '<sup>34</sup> Ibid.'},
+      ]
+    }
+      ]
+    }
   ]
 };

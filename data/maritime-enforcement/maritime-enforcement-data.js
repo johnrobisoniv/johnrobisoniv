@@ -318,23 +318,23 @@ var maritimeEnforcementData = {
         description: 'Most states lack committed coast guards.'
       },
       map: {
-        type: 'categorical',
+        type: 'continuous',
         path: '',
         scale: [],
         classes: 'card-4-layer',
         translate: [],
         highlights: null,
-        legend: 'Types of maritime capacity',
-        categories: ['Navy', 'Law Enforcement', 'Navy & Law Enforcement'],
+        legend: 'Coastal Patrol Assets Score',
+      //  categories: ['Navy', 'Law Enforcement', 'Navy & Law Enforcement'],
         tooltip: true,
         tooltipHTML: function(iso) {
 
-          var tooltipVal = issueAreaData[issueArea].metadata.countryData[iso].naviesLawEnf - 1;
-          var legend = issueAreaData[issueArea].cards[activeCard].map.categories;
-          //  console.log(legend);
-          //  tooltipVal = Math.round((tooltipVal * 100));
-          //  updatePointer(tooltipVal);
-          return "This country has " + legend[tooltipVal];
+          var tooltipVal = issueAreaData[issueArea].metadata.countryData[iso].vessels;
+        //  var legend = issueAreaData[issueArea].cards[activeCard].map.categories;
+        //   console.log(legend);
+           tooltipVal = Math.round((tooltipVal * 100));
+           updatePointer(tooltipVal);
+          return "Coastal Patrol Assets Score: " + tooltipVal + ' / 100';
         },
         load: function(index, file) {
           // Color map with vessel score chloropleth ...
@@ -343,7 +343,7 @@ var maritimeEnforcementData = {
         },
         switch: function(index) {
 
-          choropleth(index, 1, 'naviesLawEnf');
+          choropleth(index, 1, 'vessels');
         }
       },
       els: [{

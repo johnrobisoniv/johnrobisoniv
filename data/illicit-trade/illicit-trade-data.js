@@ -18,23 +18,7 @@ var illicitTradeData = {
     description: 'Criminal networks leverage new technologies to deal in the markets of narcotics, weapons, wildlife, and black market pharmaceuticals.'
   },
   load: function(csv, callback) {
-
     loadIAcsv(csv, callback);
-    // var md = issueAreaData[issueArea].metadata;
-    //
-    // d3.csv(csv, function(vals) {
-    //   vals.forEach(function(d) {
-    //     d.ia9c0 = +d.ia9c0;
-    //   });
-    //   issueAreaData[issueArea].metadata.countryData = vals;
-    //   callback('illicitTrade load csv function callback');
-    // });
-    //
-    // d3.csv('../../data/' + md.path + '/indexValues.csv', function(vals) {
-    //
-    //   issueAreaData[issueArea].metadata.indexData = vals;
-    //
-    // });
   },
   cards: [
     { // Card 0
@@ -104,16 +88,13 @@ var illicitTradeData = {
           tag: 'p',
           html: 'As transnational networks become entrenched, some expand and diversify their activities. It is not uncommon to find linkages between various trafficking activities. Some criminal networks directly fund non-state actors engaged in rebellion and terror.<sup>2</sup>'
         },
-        // { tag: 'p',
-        //   html: 'Our Illicit Trades score reflects expert evaluations of trade in four categories: arms, drugs, contraband, and wildlife. They reflect not only the scale of each problem but also the extent to which it exists in the maritime domain. High scores reflect the diversity in the types of illicit maritime trade rather than the volume, which is impossible to estimate reliably due to the nature of black markets.'
-        // },
         {
           tag: 'p',
           html: 'Sub-Saharan Africa has become an important consumer economy for contraband, but these scores also reflect the fact that many African ports have become preferred transshipment hubs for traffickers across a range of illicit economy sectors. This is evident in the global narcotics trade, with East Africa becoming the single largest conduit for heroin from Afghanistan to countries throughout the world. West Africa, too, is playing a leading role in the transshipment of cocaine from South America to Europe.<sup>3</sup>'
         }, //###above two paragraphs flagged for significant review
         {
           tag: 'img',
-          src: '../../assets/piracy/illicit-trade-coin-cloud.png',
+          src: '../../assets/illicit-trade/illicit-trade-coin-cloud.png',
           alt: 'Coin Cloud - Illicit Trade and related issues ' // ###ks have to put x img here
           //caption: 'al estimate.'
         },

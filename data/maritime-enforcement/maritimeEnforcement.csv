@@ -1,31 +1,31 @@
-country,iso3,index,navalCapacity,naviesLawEnf,COUNTRY,mda
-Angola,AGO,0.4667327072,0.54,1,Angola,0.35
-Benin,BEN,0.5361947264,0.33,1,Benin,0.75
-Cote d'Ivoire,CIV,0.5249086199,0.46,1,Cote d'Ivoire,0.70
-Cameroon,CMR,0.7937472402,0.75,3,Cameroon,1.00
-DRC,COD,0.356449357,0.13,1,DRC,0.30
-Congo,COG,0.4618108316,0.33,1,Congo,0.55
-Comoros,COM,0.3092181234,0.17,2,Comoros,0.50
-Cabo Verde,CPV,0.5667735379,0.54,2,Cabo Verde,0.75
-Djibouti,DJI,0.5495845849,0.42,3,Djibouti,0.65
-Gabon,GAB,0.5915427728,0.50,1,Gabon,0.80
-Ghana,GHA,0.6360907934,0.67,3,Ghana,0.75
-Guinea,GIN,0.3780936775,0.21,1,Guinea,0.45
-The Gambia,GMB,0.3933794396,0.25,1,The Gambia,0.25
-Guinea-Bissau,GNB,0.2804174265,0.13,1,Guinea-Bissau,0.25
-Equatorial Guinea,GNQ,0.5989164384,0.71,1,Equatorial Guinea,0.60
-Kenya,KEN,0.6503492409,0.75,3,Kenya,0.70
-Liberia,LBR,0.2039380209,0.17,2,Liberia,0.25
-Madagascar,MDG,0.3799312795,0.38,1,Madagascar,0.50
-Mozambique,MOZ,0.3432208322,0.25,1,Mozambique,0.45
-Mauritus,MUS,0.6598476978,0.63,2,Mauritus,0.80
-Namibia,NAM,0.4569840846,0.58,1,Namibia,0.40
-Nigeria,NGA,0.8460743067,0.88,3,Nigeria,0.90
-Senegal,SEN,0.6854679811,0.75,3,Senegal,0.85
-Sierra Leone,SLE,0.3754044599,0.25,1,Sierra Leone,0.55
-Somalia,SOM,0.1940985844,0.08,2,Somalia,0.40
-Sao Tome and Principe,STP,0.3892267004,0.17,2,Sao Tome and Principe,0.55
-Seychelles,SYC,0.519456177,0.46,2,Seychelles,0.75
-Togo,TGO,0.4869779648,0.42,1,Togo,0.60
-Tanzania,TZA,0.4946678741,0.46,1,Tanzania,0.55
-South Africa,ZAF,0.7406778344,1.00,1,South Africa,0.85
+country,iso3,index,navalCapacity,naviesLawEnf,COUNTRY,mda,vessels
+Angola,AGO,0.4667327072,0.54,1,Angola,0.35,0.68
+Benin,BEN,0.5361947264,0.33,1,Benin,0.75,0.39
+Cote d'Ivoire,CIV,0.5249086199,0.46,1,Cote d'Ivoire,0.70,0.42
+Cameroon,CMR,0.7937472402,0.75,3,Cameroon,1.00,0.63
+DRC,COD,0.356449357,0.13,1,DRC,0.30,0.61
+Congo,COG,0.4618108316,0.33,1,Congo,0.55,0.48
+Comoros,COM,0.3092181234,0.17,2,Comoros,0.50,0.24
+Cabo Verde,CPV,0.5667735379,0.54,2,Cabo Verde,0.75,0.39
+Djibouti,DJI,0.5495845849,0.42,3,Djibouti,0.65,0.69
+Gabon,GAB,0.5915427728,0.50,1,Gabon,0.80,0.54
+Ghana,GHA,0.6360907934,0.67,3,Ghana,0.75,0.59
+Guinea,GIN,0.3780936775,0.21,1,Guinea,0.45,0.35
+The Gambia,GMB,0.3933794396,0.25,1,The Gambia,0.25,0.50
+Guinea-Bissau,GNB,0.2804174265,0.13,1,Guinea-Bissau,0.25,0.24
+Equatorial Guinea,GNQ,0.5989164384,0.71,1,Equatorial Guinea,0.60,0.54
+Kenya,KEN,0.6503492409,0.75,3,Kenya,0.70,0.45
+Liberia,LBR,0.2039380209,0.17,2,Liberia,0.25,0.00
+Madagascar,MDG,0.3799312795,0.38,1,Madagascar,0.50,0.48
+Mozambique,MOZ,0.3432208322,0.25,1,Mozambique,0.45,0.42
+Mauritus,MUS,0.6598476978,0.63,2,Mauritus,0.80,0.61
+Namibia,NAM,0.4569840846,0.58,1,Namibia,0.40,0.35
+Nigeria,NGA,0.8460743067,0.88,3,Nigeria,0.90,1.00
+Senegal,SEN,0.6854679811,0.75,3,Senegal,0.85,0.35
+Sierra Leone,SLE,0.3754044599,0.25,1,Sierra Leone,0.55,0.24
+Somalia,SOM,0.1940985844,0.08,2,Somalia,0.40,0.00
+Sao Tome and Principe,STP,0.3892267004,0.17,2,Sao Tome and Principe,0.55,0.24
+Seychelles,SYC,0.519456177,0.46,2,Seychelles,0.75,0.48
+Togo,TGO,0.4869779648,0.42,1,Togo,0.60,0.30
+Tanzania,TZA,0.4946678741,0.46,1,Tanzania,0.55,0.52
+South Africa,ZAF,0.7406778344,1.00,1,South Africa,0.85,0.52

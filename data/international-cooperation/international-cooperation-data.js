@@ -65,7 +65,7 @@ var internationalCooperationData = {
         {
           tag: 'blockquote',
           html: '“We must continue in good spirit of partnership and alliances to support our continent and ensure that trade can advance freely. No one nation can deal with the challenges that we face in the world today. The ocean is so vast that a united effort is required to make sure that our oceans are safe.”',
-          source: 'Rear Adm. B.K. Mhlana, Fleet Flag Officer<br />South African Navy<sup>20</sup>',
+          source: 'Rear Adm. B.K. Mhlana, Fleet Flag Officer<br />South African Navy<sup>1</sup>',
           link: 'http://www.navy.mil/submit/display.asp?story_id=99689' // What about internal references?
         },
         {
@@ -75,7 +75,7 @@ var internationalCooperationData = {
         {
           tag: 'img',
           src: '../../assets/international-cooperation/international-cooperation-coin-cloud.png',
-          alt: 'Pie graph' // ###ks have to put x img here
+          alt: 'International Cooperation and related issues.' // ###ks have to put x img here
           //caption: 'al estimate.'
         },
         {
@@ -120,16 +120,17 @@ var internationalCooperationData = {
         // },
         {
           tag: 'links',
-          items: [{
-              org: '*** Still need these??*** <sup>1</sup> “Reflections on Africa and the Law of the Sea Regime,” <em>CEMLAWS Blog</em>, 24 November 2016,',
-              url: 'http://www.cemlawsafrica.com/blog/reflections-africa-and-law-sea-regime-part-i'
-            },
+          items: [
+            // {
+            //   org: '*** Still need these??*** <sup>1</sup> “Reflections on Africa and the Law of the Sea Regime,” <em>CEMLAWS Blog</em>, 24 November 2016,',
+            //   url: 'http://www.cemlawsafrica.com/blog/reflections-africa-and-law-sea-regime-part-i'
+            // },
+            // {
+            //   org: '<sup>2</sup> Peter Kerins, “Somali Perspectives on Piracy and Illegal Fishing,” Oceans Beyond Piracy,',
+            //   url: 'http://oceansbeyondpiracy.org/publications/somali-perspectives-piracy-and-illegal-fishing'
+            // },
             {
-              org: '<sup>2</sup> Peter Kerins, “Somali Perspectives on Piracy and Illegal Fishing,” Oceans Beyond Piracy,',
-              url: 'http://oceansbeyondpiracy.org/publications/somali-perspectives-piracy-and-illegal-fishing'
-            },
-            {
-              org: '<sup>20</sup> David Rider, “Exercise Cutlass Express 2015,” <em>Maritime Security Review</em>, 21 November 2014,',
+              org: '<sup>1</sup> David Rider, “Exercise Cutlass Express 2015,” <em>Maritime Security Review</em>, 21 November 2014.',
               url: 'http://www.marsecreview.com/2014/11/exercise-cutlass-express-2015/'
             }
           ]
@@ -161,7 +162,7 @@ var internationalCooperationData = {
         translate: [],
         highlights: [],
         tooltip: true,
-        legend: '### Global Agreements Scores',
+        legend: 'Global Agreements scores',
         tooltipHTML: function(iso) {
 
           var tooltipVal = issueAreaData[issueArea].metadata.countryData[iso]['ic_agreements'];
@@ -205,14 +206,14 @@ var internationalCooperationData = {
           tag: 'p',
           html: 'The 2009 Port State Measures Agreement counters illegal, unreported, and unregulated fishing (IUU) through the application of a new legal regime to fishing vessels docking at foreign ports. Ports of participating states can now inspect foreign fishing vessels, request documentation, and even deny service to suspect vessels. This agreement is a huge step towards combating one of the African continent’s most intractable problems, yet only half of sub-Saharan African states have ratified it. However, the agreement is quickly gaining traction. Kenya, Djibouti, and Namibia all ratified the PSMA in late 2017.'
         },
-        {
-          tag: 'links',
-          items: [{
-              org: '<sup>1</sup> “XXXX,” <em>Add citation</em>, Add date,',
-              url: '#'
-            }
-          ]
-        },
+        // {
+        //   tag: 'links',
+        //   items: [{
+        //       org: '<sup>1</sup> “XXXX,” <em>Add citation</em>, Add date,',
+        //       url: '#'
+        //     }
+        //   ]
+        // },
       ] // end of els array
     },
     // { // Card 1
@@ -469,19 +470,19 @@ var internationalCooperationData = {
           tag: 'caption',
           text: 'An ambitious plan for governing African waters'
         },
-        {
-          tag: 'legend',
-          text: 'Map Legend',
-          legendContent: '<em>Highlights represent sub-Saharan countries that have signed the African Union\'s Lomé Charter</em>.'
-        },
+        // {
+        //   tag: 'legend',
+        //   text: 'Map Legend',
+        //   legendContent: '<em>Highlights represent sub-Saharan countries that have signed the African Union\'s Lomé Charter</em>.'
+        // },
         //###Insert Map: This one is tough. Do you think it would be possible to recalculate the scores in the enforcement section but based on the AU’s five regions (only 4 of which are relevant to SSA)? I think it could be interesting for getting an idea of what larger regions in SSA have the capacity to really improve governance towards AIMS
         {
           tag: 'p',
-          html: 'In January of 2014, the African Union (AU) adopted Africa’s Integrated Maritime Strategy (AIMS)<sup>14</sup> to provide a framework for enhanced governance in Africa’s maritime domain, develop a platform for shared maritime policy, and facilitate the development of the <a class="blue-economy inline" href="./blue-economy">Blue Economy</a>. Implementation of the ambitious strategy continues to be challenging, but huge strides were made by the adoption of the African Charter on Maritime Security, Safety and Development in Africa (the Lomé Charter) in October 2016. The Lomé Charter moves the AIM strategy from a soft law, non-binding approach to a hard law, legally binding treaty which clearly defines the blue economy and emphasizes linkages between maritime safety, security, and marine resource development.'
+          html: 'In January of 2014, the African Union (AU) adopted Africa’s Integrated Maritime Strategy (AIMS)<sup>2</sup> to provide a framework for enhanced governance in Africa’s maritime domain, develop a platform for shared maritime policy, and facilitate the development of the <a class="blue-economy inline" href="./blue-economy">Blue Economy</a>. Implementation of the ambitious strategy continues to be challenging, but huge strides were made by the adoption of the African Charter on Maritime Security, Safety and Development in Africa (the Lomé Charter) in October 2016. The Lomé Charter moves the AIM strategy from a soft law, non-binding approach to a hard law, legally binding treaty which clearly defines the blue economy and emphasizes linkages between maritime safety, security, and marine resource development.'
         },
         {
           tag: 'p',
-          html: 'The African maritime domain is confronted with a variety of security and governance challenges from <a class="piracy inline" href="../../piracy">piracy</a> to <a class="maritime-mixed-migration inline" href="../../maritime-mixed-migration">human trafficking</a> and <a class="maritime-enforcement inline" href="../../maritime-enforcement#2">waste dumping</a> to <a class="fisheries inline" href="../../fisheries#1">IUU Fishing</a>. AIMS builds a comprehensive, unified set of maritime policies to address these challenges, including issues of economic development, environmental protection, maritime crime, disaster management, and maritime law.<sup>15</sup>'
+          html: 'The African maritime domain is confronted with a variety of security and governance challenges from <a class="piracy inline" href="../../piracy">piracy</a> to <a class="maritime-mixed-migration inline" href="../../maritime-mixed-migration">human trafficking</a> and <a class="maritime-enforcement inline" href="../../maritime-enforcement#2">waste dumping</a> to <a class="fisheries inline" href="../../fisheries#1">IUU Fishing</a>. AIMS builds a comprehensive, unified set of maritime policies to address these challenges, including issues of economic development, environmental protection, maritime crime, disaster management, and maritime law.<sup>3</sup>'
         },
         {
           tag: 'p',
@@ -503,11 +504,11 @@ var internationalCooperationData = {
         {
           tag: 'links',
           items: [{
-              org: '<sup>14</sup> “African Maritime Action Plan Adopted,” <em>Maritime Executive</em>, 2 February 2014.',
+              org: '<sup>2</sup> “African Maritime Action Plan Adopted,” <em>Maritime Executive</em>, 2 February 2014.',
               url: 'http://www.maritime-executive.com/article/African-Maritime-Action-Plan-Adopted-2014-02-02'
             },
             {
-              org: '<sup>15</sup> “2050 Africa’s Integrated Maritime Strategy,” African Union, 2012, Version 1.0.',
+              org: '<sup>3</sup> “2050 Africa’s Integrated Maritime Strategy,” African Union, 2012, Version 1.0.',
               url: 'http://cggrps.org/wp-content/uploads/2050-AIM-Strategy_EN.pdf'
             },
           ]
@@ -529,13 +530,9 @@ var internationalCooperationData = {
         translate: [],
         highlights: [],
         tooltip: true,
-        categories: ['Yaoundé Zone A', 'Yaoundé Zone D', 'Yaoundé Zone E', 'Yaoundé Zone F', 'Yaoundé Zone G', 'Djibouti Code of Conduct (*)'],
+        categories: ['Yaoundé Zone A', 'Yaoundé Zone D', 'Yaoundé Zone E', 'Yaoundé Zone F', 'Yaoundé Zone G', 'Djibouti Code of Conduct'],
         tooltipHTML: function(iso) {
           var zone = issueAreaData[issueArea].metadata.countryData[iso];
-          // leverage some map.legend array? replace switch statement with
-          // return "Yaounde " + legend[zoneIndex] ...
-          // Also would enable us to build the legend lower left corner ...
-
           switch (zone.yaounde) {
             case 1:
               return "Yaoundé Zone A";
@@ -555,10 +552,6 @@ var internationalCooperationData = {
             case 6:
               return "Party to Djibouti Code of Conduct";
               break;
-            // case 0:
-            //   if (zone.djibouti == 1) {
-            //     return "Party to Djibouti Code of Conduct"
-            //   }
             default:
               return null;
           }
@@ -568,102 +561,13 @@ var internationalCooperationData = {
         load: function(index, file) { // ### *** This only should be for the first card ...
 
           var layer = 'card-' + index + '-layer';
-
           d3.select('.card-eez-layer')
             .classed(layer, true);
+
         },
         switch: function(index) {
 
-
-          // First highlight yaounde members .country.in
-
-        //  choropleth(index, 1, 'djibouti');
           choropleth(index, 1, 'yaounde');
-
-          // var vals = issueAreaData[issueArea].metadata.countryData;
-          // var mapData = issueAreaData[issueArea].cards[index].map;
-          // var mapType = mapData.type;
-          //
-          //
-          // console.log(mapType);
-          //
-          // d3.selectAll('.legend')
-          //   .classed('invisible', true);
-          //
-          // d3.selectAll('.legend-cat')
-          //   .classed('invisible', true);
-          //
-          //
-          //   var i = 0;
-          //   var legendCategories = mapData.categories;
-          //   var legendTitle = mapData.legend;
-          //
-          //   // This is hard coded at a 433px tall categorical legend ... which i don't like. but it works for now.
-          //   var translateTitle = 'translate(0, ' + (450 - (55 * legendCategories.length)) + ')';
-          //
-          //   d3.select('.legend-categorical-title')
-          //     .attr('transform', translateTitle)
-          //     .text(legendTitle);
-          //
-          //   //console.log(legendCategories);
-          //
-          //   d3.select('.legend.categorical')
-          //     .classed('invisible', false);
-          //   // .select('.legend-title')
-          //   // .text(mapData.legend ? mapData.legend : null);
-          //   //
-          //   legendCategories.forEach(function(category, i) {
-          //
-          //     d3.select('.legend-cat text.cat-' + i)
-          //       .text(category);
-          //     d3.select('.legend-cat.cat-' + i)
-          //       .classed('invisible', false);
-          //
-          //
-          //     console.log(category, i);
-          //   })
-          //
-          //   var key = 'yaounde';
-          //   for (iso3 in vals) {
-          //
-          //     var highlightedEEZ = d3.selectAll('.eez.' + iso3);
-          //     var highlightedCountry = d3.selectAll('.country.' + iso3);
-          //
-          //     var val = vals[iso3][key];
-          //
-          //     highlightedCountry.classed('active', true)
-          //       .transition()
-          //       .delay(i * 10)
-          //       .style('fill', function() {
-          //         //  console.log('fill', colorBrew[(val * 2) - 1]);
-          //         if (val == 0) {
-          //           return null;
-          //         } else {
-          //           return colorBrew[(val % 2)];
-          //         }
-          //       });
-          //
-          //     d3.selectAll('.eez.' + iso3).classed('active', true)
-          //       .transition()
-          //       .delay(i * 10)
-          //       .style('fill', function() {
-          //         //  console.log('fill', colorBrew[(val * 2) - 1]);
-          //         if (val == 0) {
-          //           return null;
-          //         } else {
-          //           return colorBrew[(val * 2) - 1];
-          //         }
-          //       })
-          //       .style('opacity', 0.2);
-          //
-          //     d3.selectAll('.country.' + iso3)
-          //       .attr('data-val', val);
-          //
-          //     d3.selectAll('.eez.' + iso3)
-          //       .attr('data-val', val);
-          //     i++;
-          //
-          //   }
           }
       },
       els: [{
@@ -706,7 +610,7 @@ var internationalCooperationData = {
         },
         {
           tag: 'p',
-          html: 'In East Africa, the Djibouti Code of Conduct developed as a response to the piracy crisis in the mid- to late 2000s.In January 2017, the Jeddah Amendment expanded the scope of maritime crimes addressed by the Djibouti Code of Conduct and incorporated efforts to develop the blue economy.'
+          html: 'In East Africa, the Djibouti Code of Conduct developed as a response to the piracy crisis in the mid- to late 2000s. In January 2017, the Jeddah Amendment expanded the scope of maritime crimes addressed by the Djibouti Code of Conduct and incorporated efforts to develop the blue economy.'
         },
         {
           tag: 'p',
@@ -1544,6 +1448,10 @@ var internationalCooperationData = {
           text: 'Data and Methods',
         },
         {
+          tag: 'caption',
+          text: 'How we created the International Cooperation score'
+        },
+        {
           tag: 'p',
           html: 'International cooperation is measured with three equally weighted components: participation in relevant international agreements, regional security strategies, and maritime boundary violations or disputes.'
         },
@@ -1577,81 +1485,5 @@ var internationalCooperationData = {
         }
       ] // end of els array
     }
-    // { // Card 8
-    //   title: 'A Global Effort',
-    //   menu: 'A Global Effort',
-    //   metadata: {
-    //     owner: 'Curtis Bell',
-    //     description: 'A Global Effort'
-    //   },
-    //   map: {
-    //     scale: [],
-    //     classes: 'card-8-layer',
-    //     translate: [],
-    //     highlights: null,
-    //     load: function(index, file) { // ### *** This only should be for the first card ...
-    //       // Color EEZ according to master Stable Seas index
-    //       var layer = 'card-' + index + '-layer';
-    //
-    //       d3.select('.card-eez-layer')
-    //         .classed(layer, true);
-    //     },
-    //     switch: function(index) {
-    //
-    //       choropleth(index, 1, 'index');
-    //
-    //
-    //     }
-    //   },
-    //   els: [{
-    //       tag: 'h1',
-    //       text: 'A Global Effort'
-    //     },
-    //     {
-    //       tag: 'caption',
-    //       text: 'How global partners complement Africa\'s maritime security strategies'
-    //     },
-    //     {
-    //       tag: 'legend',
-    //       text: 'Map Legend',
-    //       legendContent: '<em>Highlighted countries are party to the Convention for the Suppression of Unlawful Acts against the Safety of Maritime Navigation.</em>'
-    //     },
-    //     {
-    //       tag: 'p',
-    //       html: 'African maritime governance is of material interest to stakeholders well beyond the African continent. International institutions, non-African states, and private stakeholders are important participants in the global effort to improve sub-Saharan maritime security.'
-    //     },
-    //     {
-    //       tag: 'img',
-    //       src: '../../assets/international-cooperation/EUCAP-NESTOR-Djibouti-joint-training.jpg', // This should be on the Stable Seas Deck - comments
-    //       alt: 'Command exercise, Crew of EU Naval Force frigate FGS Augsburg, police officers with EUCAP NESTOR and Djibouti Navy. Photo credit: European Union Naval Force',
-    //       caption: 'Command exercise, Crew of EU Naval Force frigate FGS Augsburg, police officers with EUCAP NESTOR and Djibouti Navy. Photo credit: European Union Naval Force'
-    //     },
-    //
-    //     {
-    //       tag: 'p',
-    //       html: 'UN organizations play a very valuable role, primarily through the <a href="https://www.unodc.org/unodc/en/piracy/index_new.html" target="_blank">UN Office on Drugs and Crime (UNODC)</a> and the <a href="http://www.imo.org/en/Pages/Default.aspx" target="_blank">International Maritime Organization (IMO)</a>. The UNODC seeks to build national capacities for maritime law enforcement through the Global Maritime Crime Program, which, for example, is working with the Federal Government of Somalia to build the nascent state justice system. IMO does a variety of work, much of it focused on maritime law and the building of regional maritime institutions.'
-    //     },
-    //     {
-    //       tag: 'p',
-    //       html: 'Regional bodies also play an important role. The EU, for example, has three different programs in the realm of African maritime governance and security. The Program to Promote Maritime Security is EU-funded but implemented by regional institutions. It seeks to counteract piracy and crime in the Western Indian Ocean by building local maritime security capacity and undermining the root causes of these activities. Similarly, EUCAP Somalia builds capacity through providing training in relevant skillsets. Additionally, EU NAVFOR has deployed European naval vessels to protect vital shipping routes threatened by the rise of piracy off the Somali coast.'
-    //     },
-    //     {
-    //       tag: 'p',
-    //       html: 'More purpose-specific coalitions also contribute. Maritime Domain Awareness for Trade—Gulf of Guinea, an initiative of the French and British navies, serves as a maritime information-sharing center in the Gulf of Guinea, helping to mitigate the general lack of maritime domain awareness in African waters. The Combined Maritime Forces is another multilateral initiative comprised of 31 states which patrols the Western Indian Ocean on counter-piracy and counter-terrorism missions.'
-    //     },
-    //     {
-    //       tag: 'p',
-    //       html: 'Finally, individual states can also partner with local actors to improve maritime security. U.S. Naval Forces Africa provides training to African maritime security forces and puts on <a class="maritime-enforcement inline" href="../../maritime-enforcement#4">annual naval exercises</a> aimed at improving regional interoperability. Similarly, the French ASECMAR project supports reform of maritime security institutions in the Gulf of Guinea.'
-    //     },
-    //     {
-    //       tag: 'p',
-    //       html: 'This is by no means an exhaustive list. Across the globe, individual states, civil society workers, multilateral institutions, business associations, academics, security professionals, and a host of others are collaborating to help address the complex security and governance challenges faced in African waters.'
-    //     },
-    //     //###Insert images, videos, and quotes
-    //   ]
-    // },
-
-    //   ]
-    // }
   ] // End of cards array
 };
