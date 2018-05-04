@@ -1720,10 +1720,10 @@ function choropleth(cardIndex, order, key, animated) {
           val = val / 100;
         }
 
-        if (animated) {
+        if (animated || animated == null ) {
           highlightedEEZ.classed('active', true)
             .transition()
-            .delay(i * 10)
+            .delay(i * 5)
             .style('fill', function() {
               if (order == -1) {
                 return rampColor(1 - val);

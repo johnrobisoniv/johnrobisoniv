@@ -72,8 +72,7 @@ var maritimeEnforcementData = {
         {
           tag: 'img',
           src: '../../assets/maritime-enforcement/maritime-enforcement-coin-cloud.png',
-          alt: 'Maritime Enforcement and related issues' // ###ks have to put x img here
-          //caption: 'al estimate.'
+          alt: 'Maritime Enforcement and related issues'
         },
 
         {
@@ -86,7 +85,78 @@ var maritimeEnforcementData = {
         },
       ] // end of els array
     }, // End of first element of cards object
-    // {}, // Card 1
+    { // Card 1
+      title: 'Assessing the Challenge',
+      menu: 'Assessing the Challenge',
+      metadata: {
+        owner: 'Jay Benson',
+        description: 'Importance of not only vessels, but communications and monitoring equipment.'
+      },
+      map: {
+        type: 'continuous',
+        path: '../../data/maritime-enforcement/information-sharing-centers.js',
+        scale: [],
+        classes: 'card-2-layer',
+        translate: [],
+        tooltip: true,
+        legend: 'Maritime Domain Awareness Score ####?',
+        tooltipHTML: function(iso) {
+          var tooltipVal = issueAreaData[issueArea].metadata.countryData[iso].mda;
+          tooltipVal = Math.round((tooltipVal * 100));
+          updatePointer(tooltipVal);
+          return "Maritime Domain Awareness:<br />" + tooltipVal + " / 100";
+
+        },
+        highlights: null,
+        load: function(index, file) {
+          var layer = 'card-' + index + '-layer';
+          classEEZ(layer);
+        },
+        switch: function(index) {
+          // Show loaded GIS layer
+          choropleth(index, 1, 'mda')
+
+        }
+      },
+      els: [{
+          tag: 'h1',
+          text: 'Assessing the Challenge'
+        },
+        {
+          tag: 'caption',
+          text: '??'
+        },
+        {
+          tag: 'p',
+          html: 'Every state in the Stable Seas Index is presented with a unique geographic challenge in ensuring the security of its maritime space. Stable Seas measures the scope of the hurdles presented to each state by its maritime geography, because this geography defines their maritime enforcement needs. When considering the scope of these geographic challenges four components are likely to be important:'
+        },
+        {
+          tag: 'ul',
+          rows: ['EEZ Size- EEZ’s across Africa range extensively in size. The Seychelles has an EEZ of 1,336,559 square km, which is larger than the land area of France, Spain and the United Kingdom combined (<a href="https://data.worldbank.org/indicator/AG.LND.TOTL.K2?year_high_desc=true" target="_blank">World Bank</a>). The Democratic Republic of Congo, by contrast, has an EEZ of 1,606 square km, roughly 832 times smaller. Obviously, this means they have significantly different needs when it comes to the capacity to provide security and governance in their respective maritime domains.','Coastline Length- Coastlines are important because they represent the space in which threats to security in the maritime domain can move onshore. Long coastlines are difficult to monitor, allowing opportunities for nontraditional security threat like trafficking in weapons, drugs and illicit goods to make their make their way onshore.', "Number of Maritime Boundaries- The number of maritime neighbors a state has is not a threat to security in itself, but higher numbers of maritime neighbors do present a problem of coordination and information sharing. Even more than on land, maritime boundaries are difficult to monitor and control and security threats at sea are inherently transnational. Without strong coordination and information sharing with maritime neighbors, effective responses to emerging threats at sea are incredibly difficult. In this vital coordination task, a state such as Madagascar, with five maritime neighbors, faces a more significant challenge than a state like Gambia, with only one.", "Number of Maritime Disputes- Territorial disputes represent a clear challenge to maritime security and governance. It is rare that they lead to actual armed conflict between states, but they often create areas of unclear or disputed authority at sea, hampering efforts to counter maritime crime and realize the full potential of the blue economy."]
+        },
+        {
+          tag: 'p',
+          html: 'The geography of Africa’s extensive maritime domain presents significant challenges but also incredible opportunities. By enhancing the region’s maritime enforcement capabilities through additional resources, improved maritime domain awareness, strengthened regional cooperation, and continued capacity building efforts, effective maritime security and governance can be provided, transforming this challenge into a tremendous asset.'
+        },
+        // {
+        //   tag: 'links',
+        //   items: [{
+        //       org: '<sup>1</sup> DefenceWeb, “European Union Enhances Maritime Awareness of Seychelles Air Force,” April 7, 2014,',
+        //       url: 'http://www.defenceweb.co.za/index.php?option=com_content&view=article&id=34272:european-union-enhances-maritime-awareness-of-seychelles-air-force&catid=35:Aerospace&Itemid=107'
+        //     },
+        //     {
+        //       org: '<sup>4</sup> CRIMARIO, “The IORIS Network,” 2016,',
+        //       url: 'http://www.crimario.eu/en/information-sharing/the-ioris-network/'
+        //     },
+        //     {
+        //       org: '<sup>5</sup> CRIMARIO, “Achievements,” 2017,',
+        //       url: 'http://www.crimario.eu/en/training/achievements/'
+        //     },
+        //   ],
+        // }
+      ]
+
+    },
     { // Card 2
       title: 'Maritime Domain Awareness',
       menu: 'Maritime Domain Awareness',

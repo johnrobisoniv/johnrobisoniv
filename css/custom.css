@@ -1086,7 +1086,8 @@ div.navy-and-maritime-law-enforcement {
 /* ia8c4 - Piracy: Offshore Oil Infrastructure */
 
 .offshore-oil {
-  fill: blue;
+/* //  fill: blue; */
+  pointer-events: none;
 }
 
 /* ia9c4 - Illicit Trade: The Wildlife Trafficking Crisis */

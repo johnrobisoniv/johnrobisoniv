@@ -380,134 +380,116 @@ var blueEconomyData = {
         }
       ] // end of els array
     },
-    // { // Card 4 #### This card will be included !!!!
-    //   title: 'The Invisible Fishers',
-    //   menu: 'The Invisible Fishers',
-    //   metadata: {
-    //     owner: 'Laura Burroughs',
-    //     description: 'Women\'s work goes unrecognized in fisheries sector; highlight women\'s role in processing in Sierra Leone and related challenges.'
-    //   },
-    //   map: {
-    //     scale: [],
-    //     classes: '',
-    //     translate: [],
-    //     path: '',
-    //     extent: [
-    //       // [-15, 15],
-    //       // [8, -1]
-    //     ],
-    //     highlights: [],
-    //     tooltip: true,
-    //     units: {
-    //       text: 'xo units',
-    //       multiplier: 100
-    //     },
-    //     load: function(index, file) {
-    //       var layer = 'card-' + index + '-layer';
-    //       // Load higher resolution Sierra Leone layer
-    //
-    //       // Load point data
-    //
-    //       // Class point & GIS data with layer
-    //       d3.select('.card-eez-layer')
-    //         .classed(layer, true);
-    //
-    //     },
-    //     switch: function(index) {
-    //       // Figure out what to switch to.
-    //       var values = issueAreaData[issueArea].metadata.countryData;
-    //
-    //       var valsArr = [];
-    //
-    //       values.forEach(function(row, i) {
-    //         valsArr.push(row.ia6c4);
-    //       });
-    //
-    //       var max = d3.max(valsArr);
-    //       var min = d3.min(valsArr);
-    //       var range = max - min;
-    //
-    //       values.forEach(function(row, i) {
-    //         d3.selectAll('.eez.' + row.iso3)
-    //           .classed('active', true)
-    //           .transition().delay(i * 10)
-    //           .style('fill', rampColor(1 - ((row.ia6c4 - min) / range)))
-    //           .style('stroke', rampColor(1));
-    //       });
-    //     }
-    //
-    //   },
-    //   els: [{
-    //       tag: 'h1',
-    //       text: 'The Invisible Fishers',
-    //     },
-    //     {
-    //       tag: 'caption',
-    //       text: 'The overlooked role of women in fisheries supply chains'
-    //     },
-    //     {
-    //       tag: 'legend',
-    //       text: 'Map Legend',
-    //       legendContent: '<em>Lighter shades indicate greater opportunities for artisanal fishing<br />\
-    //         Source: <a href="http://www.oceanhealthindex.org/" target="_blank">Ocean Health Index</a></em>.'
-    //     },
-    //     {
-    //       tag: 'bigtext',
-    //       html: '“[T]he extent of the damage to the ocean is many decades shy of the impact of industrialisation on land, and there is still time, if we act now, to get the principles and the framework for the development of the ocean economy right. Business as usual is clearly not an option.” - The Economist Intelligence Unit Limited, 2015'
-    //     },
-    //     //###<<<The map complementing this section will be a zoom in on Sierra Leone>>>
-    //     {
-    //       tag: 'p',
-    //       html: 'Imagine a person who makes their living from fisheries. The picture is likely of a “fisherman” traveling out to sea in a boat to catch fish. However, the fisheries value chain consists of many important links, from the mending of nets to the drying of fish for sale, and women make up a large and vital portion of this sector. In fisheries, women comprise the majority of processing and post-harvest workers worldwide; the Food and Agriculture Organization of the United Nations (FAO) estimates over 90 percent of this sector is women.<sup>19</sup>'
-    //     },
-    //     {
-    //       tag: 'img',
-    //       src: '../../assets/blue-economy/Youpwe_Fishing_Village8S6A6034_JP.jpg',
-    //       alt: 'Women play a key role in the fisheries value chain. Photo: Jean-Pierre Larroque',
-    //       caption: 'Women play a key role in the fisheries value chain. Photo: Jean-Pierre Larroque'
-    //     },
-    //     {
-    //       tag: 'p',
-    //       html: 'Despite the vital roles women play in the fisheries value chain, fishing is most often perceived to be men’s work. Women’s work in the fisheries sector often goes unrecognized by creditors, policymakers, development programs, and in research, resulting in a lack of support for their work, lack of access to markets, and exclusion from fisheries management and policy decisions. This is problematic for women’s livelihoods and empowerment, and it distorts fisheries data and results in misinformed management measures. Women’s work in the fisheries sector must be understood and supported in order to advance gender equity, food security, and effective fisheries management.'
-    //     },
-    //     //###<<<photo of women fishers in Sierra Leone>>>
-    //     {
-    //       tag: 'p',
-    //       html: 'In Sierra Leone, the fisheries sector provides substantial revenue and employment, supporting over 500,000 people.<sup>20</sup> Around 85 percent of those employed in fisheries processing are women.<sup>21</sup> Women and men generally occupy complementary roles in the value chain. Men catch fish from canoes or work from shore in groups to pull in nets of fish.<sup>22</sup> Once they come into port, they sell their catch to women who then perform the post-harvest activities, such as cleaning and drying the fish or bringing it directly to markets for sale. Much of the fish is obtained from family members and most of the processing work is conducted within the home rather than in formal facilities.'
-    //     },
-    //     {
-    //       tag: 'p',
-    //       html: 'Beyond post-harvest work, some women also catch fish directly, using nets to catch small fish in rivers and other small water bodies. Some women even lease boats and own fishing companies.<sup>23</sup> The fisheries sector and processing in particular provide important livelihood opportunities for women. However, their incomes are still much lower than those of their male counterparts,<sup>24</sup> and many women report struggling with other restrictive factors.'
-    //     },
-    //     {
-    //       tag: 'links',
-    //       items: [{
-    //           org: '<sup>19</sup> Food and Agriculture Organization of the United Nations, “Promoting Gender in Fisheries Activities in Somalia,” <em>Blue Growth Blog</em>, 5 June 2016,',
-    //           url: 'http://www.fao.org/blogs/blue-growth-blog/promoting-gender-in-fisheries-activities-in-somalia/en/'
-    //         },
-    //         {
-    //           org: '<sup>20</sup> “Sierra Leone News: Revitalizing the Fishing Sector,” <em>Awoko Newspaper</em>, 22 June 2017,',
-    //           url: 'http://awoko.org/2017/06/22/sierra-leone-news-revitalizing-the-fishing-sector/'
-    //         },
-    //         {
-    //           org: '<sup>21</sup> Andy Thorpe, Nicky Pouw, Andrew Baio, Ranita Sandi, Ernest Ndomahina, and Thomas Lebbie, “\'Fishing Na Everybody Business\’: Women\’s Work and Gender Relations in Sierra Leone\’s Fisheries,” <em>Feminist Economics</em> 20, no. 3 (April 2014): 53–77,',
-    //           url: 'http://dx.doi.org/10.1080/13545701.2014.895403'
-    //         },
-    //         {
-    //           org: '<sup>22</sup> Larry Tucker, “What We Can Learn from Artisanal Fishermen, Fish-women in Sierra Leone,” SwitSalone, 15 February 2017,',
-    //           url: 'http://www.switsalone.com/24920_what-we-can-learn-from-artisanal-fishermen-fish-women-in-sierra-leone/'
-    //         },
-    //         {
-    //           org: '<sup>23</sup> P.B. Browne, “Women Do Fish: A Case Study on Gender and the Fishing Industry in Sierra Leone” in <em>Global Symposium on Women in Fisheries</em>, eds. M.J. Williams, N.H. Chao-Liao, P.S. Choo, K. Matics, M.C. Nandeesha, M. Shariff, I. Saison, E. Tech, J.M.C Wong (Penang, Malaysia: ICLARM—The World Fish Centre, 2002): 169–172,',
-    //           url: 'http://pubs.iclarm.net/resource_centre/WF_328.pdf'
-    //         },
-    //         {
-    //           org: '<sup>24</sup> Ibid.'
-    //         },
-    //       ]
-    //     }
-    //   ] // end of els array
-    // },
+    { // Card 6
+      title: 'Oil and Gas',
+      menu: 'Oil and Gas',
+      metadata: {
+        owner: 'John Filitz',
+        description: 'Oil and gas.'
+      },
+      map: {
+        type: 'continuous',
+        scale: [],
+        classes: 'card-eez-layer',
+        translate: [],
+        highlights: [],
+        tooltip: true,
+        legend: 'Oil and Gas measurement',
+        path: '../data/blue-economy/offshore-oil.json',
+        tooltipHTML: function(iso) {
+
+          var tooltipVal = issueAreaData[issueArea].metadata.countryData[iso]['BE_OILGAS'];
+          tooltipVal = Math.round(tooltipVal * 100);
+          updatePointer(tooltipVal);
+          return "Oil and Gas measurement:<br />" + tooltipVal + " / 100";
+
+        },
+        load: function(index, file) {
+          // Class EEZ with card-0-layer to enable switch() method
+          var layer = 'card-' + index + '-layer';
+          d3.select('.card-eez-layer')
+            .classed(layer, true);
+          //  console.log('?!@#!@#', csv);
+          d3.json(file, function (error, offshoreOil) {
+
+            var oilInfrastructure = mapg.append('g')
+              .classed('card-layer invisible ' + layer, true);
+              console.log(offshoreOil);
+            oilInfrastructure.selectAll('.offshore-oil')
+              .data(topojson.feature(offshoreOil, offshoreOil.objects.offshoreOil).features)
+                .enter()
+              .append('path')
+                .attr('d', path)
+                .style('fill', 'black')
+            //     .style('stroke', 'white')
+                .classed('offshore-oil', true);
+          })
+
+        },
+        switch: function(index) {
+          choropleth(index, 1, 'BE_OILGAS');
+        }
+      },
+      els: [{
+          tag: 'h1',
+          text: 'Oil and Gas',
+        },
+        {
+          tag: 'caption',
+          text: 'Africa’s natural resource bonanza'
+        },
+        {
+          tag: 'legend',
+          text: 'Map Legend',
+          legendContent: 'Light blue polygons represenet known offshore oil and gas deposits in sub-Saharan Africa. <br> Source: PRIO'
+        },
+        //###<<<The map complementing this section will be a choropleth map of the offshore oil and gas producing nations in our study>>>
+        {
+          tag: 'p',
+          html: 'Sub-Saharan Africa may hold 203 billion barrels of recoverable oil resources, and the region accounted for 30 percent of global oil and gas discoveries made from 2009 to 2014.<sup>29</sup> These discoveries have boosted the reserves of major oil producers like Nigeria and Angola (the world’s 16th and 17th largest producers, respectively)<sup>30</sup> while also bringing new countries into the international oil and gas trade, including Kenya, Madagascar, and Mozambique.<sup>31</sup>'
+        },
+        {
+          tag: 'bigtext',
+          html: 'Sub-Saharan Africa accounted for 30 percent of global oil and gas discoveries made from 2009 to 2014.'
+        },
+        {
+          tag: 'p',
+          html: 'Although some of these recent discoveries are, at this stage, deemed to be non-transformative, these resources could potentially play a key role in meeting the current and future domestic energy demands of sub-Saharan African countries in addition to being a key earner in foreign exchange. Realizing sub-Saharan Africa’s natural resource energy potential requires continuing investment in further exploration, shortening the transition from exploration to production, and creating a more certain political and regulatory environment. Arguably the most challenging binding constraint in this sector concerns the high levels of corruption and rent-seeking in sub-Saharan African natural resource–rich states: for example, Africa’s largest oil and gas producers, Nigeria and Angola, ranked poorly as 136th and 164th out of 176 countries, respectively, according to <a href="https://www.transparency.org/research/cpi/overview" target="_blank">Transparency International’s 2016 Corruption Perceptions Index</a>.<sup>32</sup>'
+        },
+        {
+          tag: 'p',
+          html: 'While governance challenges remain, Africa’s oil and gas bounty will nevertheless undoubtedly play a crucial role in the future social and economic development of the continent. This was underscored at the 37th Ordinary Southern African Development Community (SADC) Summit, when the newly elected Chair of the SADC, South Africa’s President Jacob Zuma, noted:'
+        },
+        {
+          tag: 'blockquote',
+          html: '“One of the potential game-changers for the region is the discovery of globally significant natural gas resources both onshore and offshore in a number of our member states. As a new initiative, we are proposing the establishment of an Inter-state Natural Gas Committee to share learning for regional gas development and to prepare for the development of the wider gas economy. As such, the inclusion and promotion of gas into the regional energy mix will facilitate an increase in universal access to energy, as well as industrial development in SADC.”<sup>33</sup>'
+        },
+        {
+          tag: 'links',
+          items: [{
+              org: '<sup>28</sup> International Energy Agency, “Africa Energy Outlook: A Focus on Energy Prospects in Sub-Sharan Africa,” World Energy Outlook Special Report, 2014,',
+              url: 'https://www.iea.org/publications/freepublications/publication/WEO2014_AfricaEnergyOutlook.pdf'
+            },
+            {
+              org: '<sup>29</sup> Ibid.'
+            },
+            {
+              org: '<sup>30</sup> “Corruption Perceptions Index 2016,” Transparency International, 25 January 2017,',
+              url: 'https://www.transparency.org/news/feature/corruption_perceptions_index_2016'
+            },
+            {
+              org: '<sup>31</sup> Jacob Zuma, “Acceptance Speech by President Jacob Zuma on the Occasion of the 37th SADC Summit of Heads of State and Government, Pretoria, 19th of August 2017,” The Presidency of the Republic of South Africa,',
+              url: 'http://www.thepresidency.gov.za/speeches/acceptance-speech-president-jacob-zuma-occasion-37th-sadc-summit-heads-state-and-government'
+            },
+            {
+              org: '<sup>32</sup> “Corruption Perceptions Index 2016,” Transparency International, 25 January 2017,',
+              url: 'https://www.transparency.org/news/feature/corruption_perceptions_index_2016'
+            },
+          ]
+        }
+        //###INSERT BLOCKQUOTE: “One of the potential game-changers for the region is the discovery of globally significant natural gas resources both onshore and offshore in a number of our member states. As a new initiative, we are proposing the establishment of an Inter-state Natural Gas Committee to share learning for regional gas development and to prepare for the development of the wider gas economy. As such, the inclusion and promotion of gas into the regional energy mix will facilitate an increase in universal access to energy, as well as industrial development in SADC.”<sup>33</sup>
+      ] // end of els array
+    },
     { // Card 5
       title: 'Adjusted Net Savings',
       menu: 'Adjusted Net Savings',
@@ -698,65 +680,86 @@ var blueEconomyData = {
           choropleth(index, 1, 'BE_INDEX');
         }
       },
-      els: [
-    { tag: 'h1',
-      text: 'Data and Methods'
-    },
-    {
-      tag: 'caption',
-      text: 'How we created the Blue Economy score'
-    },
-    { tag: 'p',
-      text: 'The Blue Economy score incorporates six equally-weighted components that are central to the blue economy: fisheries, marine and coastal tourism, maritime transportation and shipping, offshore oil and gas, adjusted net savings, and climate change.'
-    },
-    { tag: 'h4',
-      text: 'Fisheries'
-    },
-    { tag: 'p',
-      text: 'Fisheries are an important part of the economy throughout Africa. In some countries, fisheries products are the top grossing export. In others, the income from artisanal and small-scale fisheries are important for livelihoods. We combine the value (in U.S. dollars) of wild caught fisheries and mariculture (aquaculture occurring in the marine environment or of marine species) for this input. Value of wild caught fish by a given country (i.e., excluding fish caught by foreign-flagged vessels) was obtained from the Sea Around Us program. Value of mariculture by a given country was obtained from the UN Food and Agriculture Organization’s Global Statistical collection. The values were summed, and standardized by dividing by total population of a country as reported by the World Bank.'
-    },
-    { tag: 'h4',
-      text: 'Marine and Coastal tourism'
-    },
-    { tag: 'p',
-      text: 'Sustainable coastal tourism supports jobs and livelihoods in coastal communities. We use the score from the Tourism and Recreation goal in the Ocean Health Index. The Ocean Health Index  measures countries on biological, physical, economic, and social factors to assess how sustainably humans are using the ocean. The Tourism and Recreation goal measures the proportion of the total labor force engaged in the coastal tourism and travel sector, factoring in unemployment and sustainability. Countries where such employment was 9.5% or greater of the total labor force received a perfect (100) score.'
-    },
-    { tag: 'h4',
-      text: 'Marine Transportation and Shipping'
-    },
-    { tag: 'p',
-      text: 'Maritime ports and the shipping and commerce they support are pillars of the Blue Economy. Large, well-functioning ports support larger volumes of shipping, geater export and import markets, and link national economies to the global economy. We calculated this score by combining two sub-scores: port quantity and port quality. Port quantity was calculated from the Liner Shipping Connectivity Index, a national-level metric developed by the United Nations Conference on Trade and Development and accounts for number of ships, container capacity of those ships, maximum vessel size, number of services, and number of companies that operate in ports. We developed our own port quality metric that accounted for harbor size plus availability of the following services: first port of entry, tug assist, air and rail communications, medical facilities, water and fuel supplies, and dry dock repair. The overall transportation score was calculated by equally weighting the port quantity and quality sub-scores.'
-    },
-    { tag: 'h4',
-      text: 'Offshore Oil and Gas'
-    },
-    { tag: 'p',
-      text: 'Offshore oil and natural gas development contributes substantially to some African nations, like Nigeria, but the distribution is highly skewed: of the 30 nations included in this report, 17 of them gain no income from offshore oil or gas. For oil, we placed nations into one of five tiers based on volume of proven reserves, ultimately recoverable oil, cumulative production, and remaining recoverable resources. Tier 1 countries had high volumes of offshore oil, while Tier 5 countries had no proven reserves or current production. Likewise, for natural gas we placed nations into one of four tiers based on the same criteria. Tiers were converted to scores of 0 - 1 and the oil and gas scores were averaged.'
-    },
-    { tag: 'h4',
-      text: 'Adjusted Net Savings'
-    },
-    { tag: 'p',
-      text: 'Adjusted Net Savings (ANS) is a measure of true savings in a country after taking into account depletion of natural resources and damages, as well as investments in human capital.[1] Many economists have adopted ANS as a metric that overcomes some shortfalls in using Gross Domestic Product to measure economic growth and development. ANS is derived from the standard national accounting measure of gross saving by making four adjustments: consumption of fixed capital is deducted to obtain net national saving; current public expenditure on education is added to account for investment in human capital; estimates of the depletion of a variety of natural resources are deducted to reflect the decline in asset values associated with extraction and depletion; and deductions are made for damages from carbon dioxide and particulate emissions. We use ANS measures from the World Bank’s World Development Indicators Little Green Book. Values for 23 of the countries here were used, and the regional average was used for countries without ANS values. Raw scores ranged from -47.8 to 36.9 so we normalized scores and benchmarked regional values to the global range.'
-    },
-    { tag: 'h4',
-      text: 'Climate Vulnerability'
-    },
-    { tag: 'p',
-      text: 'Several components of the Blue Economy, such as fisheries and tourism, may be affected by global climate change. To account for this risk, we included a measure of vulnerability to climate change. We used the University of Notre Dame’s Global Adaptation Index (known as ND-GAIN). The index measures a country’s vulnerability to climate change based on: (1) exposure to climate-related or climate-exacerbated hazards, (2) sensitivity to the hazard’s impacts and (3) capacity to adapt or manage to the impacts. We use the ND-GAIN Vulnerability score which is calculated at a national scale and updated annually.'
-    },
-    {
-      tag: 'p',
-      html: 'More details about all of these scores are available on our data page.'
-    },
-    { tag: 'links',
-      items: [
-        {org: '<sup>32</sup>#### Review #### “The Ocean Health Index,” Ocean Health Index, accessed 1 September 2017,', url: 'http://www.oceanhealthindex.org'},
-    /// ### added http to the website as original did not include it. Please check if valid.
-        {org: '<sup>33</sup> World Bank, <em>The Little Green Data Book 2017</em>, World Development Indicators (Washington, DC: World Bank, 2017),', url: 'https://openknowledge.worldbank.org/handle/10986/27466 License: CC BY 3.0 IGO'},
-        {org: '<sup>34</sup> Ibid.'},
-      ]
-    }
+      els: [{
+          tag: 'h1',
+          text: 'Data and Methods'
+        },
+        {
+          tag: 'caption',
+          text: 'How we created the Blue Economy score'
+        },
+        {
+          tag: 'p',
+          text: 'The Blue Economy score incorporates six equally-weighted components that are central to the blue economy: fisheries, marine and coastal tourism, maritime transportation and shipping, offshore oil and gas, adjusted net savings, and climate change.'
+        },
+        {
+          tag: 'h4',
+          text: 'Fisheries'
+        },
+        {
+          tag: 'p',
+          text: 'Fisheries are an important part of the economy throughout Africa. In some countries, fisheries products are the top grossing export. In others, the income from artisanal and small-scale fisheries are important for livelihoods. We combine the value (in U.S. dollars) of wild caught fisheries and mariculture (aquaculture occurring in the marine environment or of marine species) for this input. Value of wild caught fish by a given country (i.e., excluding fish caught by foreign-flagged vessels) was obtained from the Sea Around Us program. Value of mariculture by a given country was obtained from the UN Food and Agriculture Organization’s Global Statistical collection. The values were summed, and standardized by dividing by total population of a country as reported by the World Bank.'
+        },
+        {
+          tag: 'h4',
+          text: 'Marine and Coastal tourism'
+        },
+        {
+          tag: 'p',
+          text: 'Sustainable coastal tourism supports jobs and livelihoods in coastal communities. We use the score from the Tourism and Recreation goal in the Ocean Health Index. The Ocean Health Index  measures countries on biological, physical, economic, and social factors to assess how sustainably humans are using the ocean. The Tourism and Recreation goal measures the proportion of the total labor force engaged in the coastal tourism and travel sector, factoring in unemployment and sustainability. Countries where such employment was 9.5% or greater of the total labor force received a perfect (100) score.'
+        },
+        {
+          tag: 'h4',
+          text: 'Marine Transportation and Shipping'
+        },
+        {
+          tag: 'p',
+          text: 'Maritime ports and the shipping and commerce they support are pillars of the Blue Economy. Large, well-functioning ports support larger volumes of shipping, geater export and import markets, and link national economies to the global economy. We calculated this score by combining two sub-scores: port quantity and port quality. Port quantity was calculated from the Liner Shipping Connectivity Index, a national-level metric developed by the United Nations Conference on Trade and Development and accounts for number of ships, container capacity of those ships, maximum vessel size, number of services, and number of companies that operate in ports. We developed our own port quality metric that accounted for harbor size plus availability of the following services: first port of entry, tug assist, air and rail communications, medical facilities, water and fuel supplies, and dry dock repair. The overall transportation score was calculated by equally weighting the port quantity and quality sub-scores.'
+        },
+        {
+          tag: 'h4',
+          text: 'Offshore Oil and Gas'
+        },
+        {
+          tag: 'p',
+          text: 'Offshore oil and natural gas development contributes substantially to some African nations, like Nigeria, but the distribution is highly skewed. Our score accounts for six factors: proved oil reserves, proved gas reserves, oil production, gas production, the share of oil activities located offshore and the share of gas activities located offshore. Most of our data are from the United States Energy Information Administration, which updates these figures annually.'
+        },
+        {
+          tag: 'h4',
+          text: 'Adjusted Net Savings'
+        },
+        {
+          tag: 'p',
+          text: 'Adjusted Net Savings (ANS) is a measure of true savings in a country after taking into account depletion of natural resources and damages, as well as investments in human capital.[1] Many economists have adopted ANS as a metric that overcomes some shortfalls in using Gross Domestic Product to measure economic growth and development. ANS is derived from the standard national accounting measure of gross saving by making four adjustments: consumption of fixed capital is deducted to obtain net national saving; current public expenditure on education is added to account for investment in human capital; estimates of the depletion of a variety of natural resources are deducted to reflect the decline in asset values associated with extraction and depletion; and deductions are made for damages from carbon dioxide and particulate emissions. We use ANS measures from the World Bank’s World Development Indicators Little Green Book. Values for 23 of the countries here were used, and the regional average was used for countries without ANS values. Raw scores ranged from -47.8 to 36.9 so we normalized scores and benchmarked regional values to the global range.'
+        },
+        {
+          tag: 'h4',
+          text: 'Climate Vulnerability'
+        },
+        {
+          tag: 'p',
+          text: 'Several components of the Blue Economy, such as fisheries and tourism, may be affected by global climate change. To account for this risk, we included a measure of vulnerability to climate change. We used the University of Notre Dame’s Global Adaptation Index (known as ND-GAIN). The index measures a country’s vulnerability to climate change based on: (1) exposure to climate-related or climate-exacerbated hazards, (2) sensitivity to the hazard’s impacts and (3) capacity to adapt or manage to the impacts. We use the ND-GAIN Vulnerability score which is calculated at a national scale and updated annually.'
+        },
+        {
+          tag: 'p',
+          html: 'More details about all of these scores are available on our data page.'
+        },
+        {
+          tag: 'links',
+          items: [{
+              org: '<sup>32</sup>#### Review #### “The Ocean Health Index,” Ocean Health Index, accessed 1 September 2017,',
+              url: 'http://www.oceanhealthindex.org'
+            },
+            /// ### added http to the website as original did not include it. Please check if valid.
+            {
+              org: '<sup>33</sup> World Bank, <em>The Little Green Data Book 2017</em>, World Development Indicators (Washington, DC: World Bank, 2017),',
+              url: 'https://openknowledge.worldbank.org/handle/10986/27466 License: CC BY 3.0 IGO'
+            },
+            {
+              org: '<sup>34</sup> Ibid.'
+            },
+          ]
+        }
       ]
     }
   ]
